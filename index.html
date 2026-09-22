@@ -894,7 +894,7 @@ function ans(idx){
     var allCorrect=(correctCount===quizResults.length);
     var summary=document.createElement('div');
     summary.style='margin-top:14px;padding:14px;border-radius:12px;font-size:15px;text-align:center;'+(allCorrect?'background:#E8F8EF;color:var(--success);':'background:#FDE8E5;color:var(--danger);');
-    summary.innerHTML=(allCorrect?'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 3/3 \u5168\u5c0d':'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 '+correctCount+'/3 \u7b54\u5c0d')+(allCorrect?'':'<br><span style="font-size:13px;opacity:.8;">\u53ef\u4ee5\u56de\u982d\u518d\u7df4\u7fd2\u4e00\u6b21\u5594\uff01</span>');
+    summary.innerHTML=(allCorrect?'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 5/5 \u5168\u5c0d':'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 '+correctCount+'/5 \u7b54\u5c0d')+(allCorrect?'':'<br><span style="font-size:13px;opacity:.8;">\u53ef\u4ee5\u56de\u982d\u518d\u7df4\u7fd2\u4e00\u6b21\u5594\uff01</span>');
     feedback.appendChild(summary);
     if(allCorrect && progress.completed.indexOf(currentDay)<0){progress.completed.push(currentDay);save();}
     progress.quizResults[currentDay]=quizResults;
