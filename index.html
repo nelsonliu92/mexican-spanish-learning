@@ -1065,6 +1065,9 @@ function ans(idx){
   }else{
     // 答錯：顯示錯誤 + 再試一次按鈕
     quizResults.push({q:quizIndex,ans:idx,correct:false});
+    // 儲存錯誤進度（靜態儲存，避免刷新後遺失）
+    progress.quizResults[currentDay]=quizResults;
+    save();
     feedback.innerHTML='<div class="quiz-result wrong">❌ 答錯了</div><div class="quiz-explanation">'+esc(q.x)+'</div>';
     var retryBtn=document.createElement('button');
     retryBtn.textContent='再試一次 ↻';
@@ -1072,6 +1075,8 @@ function ans(idx){
     retryBtn.onclick=function(){
       // 移除最後一筆錯誤記錄，重置選項樣式，重新作答
       quizResults.pop();
+      progress.quizResults[currentDay]=quizResults;
+      save();
       answering=false;
       opts.forEach(function(btn,i){
         btn.disabled=false;
