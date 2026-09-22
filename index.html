@@ -779,7 +779,7 @@ function renderQuiz(lesson){
         'onclick="ansFill()">確認答案 &#10003;</button>'+
     '</div>';
   }else if(qType==='listen'){
-    optsHtml='<button class="quiz-option" onclick="speak('+JSON.stringify(q.audio)+')" style="background:var(--mx-yellow);border-color:var(--mx-orange);">'+
+    optsHtml='<button class="quiz-option" id="listen-btn" style="background:var(--mx-yellow);border-color:var(--mx-orange);">'+
       '<span class="opt-letter">&#128266;</span><span>播放句子 &#128266;</span>'+
     '</button>';
     optsHtml+=q.o.map(function(opt,i){
@@ -795,6 +795,10 @@ function renderQuiz(lesson){
     }).join('');
   }
   document.getElementById('quiz-options').innerHTML=optsHtml;
+  if(qType==='listen'){
+    var lb=document.getElementById('listen-btn');
+    if(lb)lb.onclick=function(){speak(q.audio);};
+  }
   document.getElementById('quiz-feedback').innerHTML='';
   if(qType==='fill'){
     setTimeout(function(){var el=document.getElementById('fill-input');if(el)el.focus();},100);
@@ -849,7 +853,7 @@ function ansFill(){
     save();
     feedback.innerHTML='<div class="quiz-result wrong">&#10060; 答錯了</div><div class="quiz-explanation">正確答案是：'+esc(q.answer)+'。'+esc(q.x)+'</div>';
     var retryBtn=document.createElement('button');
-    retryBtn.textContent='再試一次 &#8634;';
+    retryBtn.textContent='再試一次';
     retryBtn.style='margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;width:100%;-webkit-appearance:none;';
     retryBtn.onclick=function(){
       quizResults.pop();
