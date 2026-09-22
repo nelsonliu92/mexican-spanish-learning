@@ -832,7 +832,7 @@ function ansFill(){
     quizIndex++;
     if(quizIndex<lesson.quiz.length){
       var nextBtn=document.createElement('button');
-      nextBtn.textContent='下一題 &#8594;';
+      nextBtn.textContent='下一題';
       nextBtn.style='margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;width:100%;-webkit-appearance:none;';
       nextBtn.onclick=function(){renderQuiz(lesson);};
       feedback.appendChild(nextBtn);
