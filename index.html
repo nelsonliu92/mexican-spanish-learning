@@ -127,13 +127,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 .pronunciation-desc{color:var(--text-sub);font-size:14px;margin-bottom:16px;line-height:1.6}
 .alphabet-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 @media(min-width:480px){.alphabet-grid{grid-template-columns:repeat(7,1fr)}}
-.letter-card{background:#F5F9F7;border-radius:14px;padding:14px 8px;text-align:center;border:1px solid #E0EBE5;cursor:pointer;transition:all .15s}
+.letter-card{background:#F5F9F7;border-radius:14px;padding:12px 6px;text-align:center;border:1px solid #E0EBE5;cursor:pointer;transition:all .15s;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
 .letter-card:active{transform:scale(.95);background:var(--mx-green);color:#fff;border-color:var(--mx-green)}
-.letter-char{font-size:26px;font-weight:700;color:var(--mx-green);margin-bottom:4px}
+.letter-char{font-size:28px;font-weight:700;color:var(--mx-green);line-height:1}
 .letter-card:active .letter-char{color:#fff}
-.letter-name{font-size:11px;color:var(--text-sub);font-weight:600}
+.letter-name{font-size:11px;color:var(--text-sub);font-weight:700;text-transform:lowercase}
 .letter-card:active .letter-name{color:#fff}
-.phonetic-note{font-size:11px;color:var(--accent);margin-top:2px;font-weight:600}
+.letter-example{font-size:11px;color:var(--accent);font-weight:600;margin-top:2px}
+.letter-card:active .letter-example{color:#FFECB3}
+.letter-ex-zh{font-size:10px;color:#999;margin-top:1px}
+.letter-card:active .letter-ex-zh{color:#fff}
 .vowels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
 @media(min-width:480px){.vowels-grid{grid-template-columns:repeat(5,1fr)}}
 .vowel-card{background:#FFF4E8;border-radius:14px;padding:16px 12px;text-align:center;border:2px solid #FFE0B2}
@@ -411,10 +414,10 @@ function renderAlphabet(){
   if(!g||g.children.length>0)return;
   g.innerHTML=ALPHABET.map(function(a){
     var e=a.example.replace(/'/g,"\'");
-    return '<div class="letter-card" onclick="speakAlphabet(\''+a.name+'\',\''+e+'\')">'+
+    return '<div class="letter-card" onclick="speakAlphabet(\''+a.letter.toLowerCase()+'\',\''+a.name+'\',\''+e+'\')">'+
       '<div class="letter-char">'+a.letter+'</div>'+
       '<div class="letter-name">'+a.name+'</div>'+
-      '<div class="phonetic-note">'+a.sound.substring(0,12)+'…</div>'+
+      '<div class="letter-example">'+a.example+' · '+a.exZh+'</div>'+
     '</div>';
   }).join('');
   var s=document.getElementById('special-letters');
@@ -424,9 +427,10 @@ function renderAlphabet(){
     '<div class="sound-rule"><div class="sound-rule-title">RR - 強烈彈舌音</div><div class="sound-rule-desc">舌尖在齒齦後方快速顫動，發「得rrrr」的捲舌音。字母 R 在詞首也發此音。rraro（奇怪）、perro（狗）。</div><div class="sound-examples"><div class="sound-ex-card" onclick="speak(\'perro\')"><div class="sound-ex-word">perro</div><div class="sound-ex-zh">狗</div></div><div class="sound-ex-card" onclick="speak(\'ratón\')"><div class="sound-ex-word">ratón</div><div class="sound-ex-zh">老鼠</div></div></div></div>';
   }
 }
-function speakAlphabet(name,example){
-  speak(name);
-  setTimeout(function(){speak(example);},800);
+function speakAlphabet(letterSound,name,example){
+  speak(letterSound);
+  setTimeout(function(){speak(name);},900);
+  setTimeout(function(){speak(example);},1800);
 }
 
 var VOWELS=[
