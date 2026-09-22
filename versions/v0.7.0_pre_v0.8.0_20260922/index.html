@@ -119,46 +119,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 .week-status-idx.failed{background:var(--danger)}
 #fill-input:focus{outline:none;border-color:var(--accent)}
 
-/* ========== Pronunciation Module ========== */
-.pronunciation-view{display:none}
-.pronunciation-view.show{display:block}
-.pronunciation-section{margin:16px;padding:20px;background:var(--bg-card);border-radius:18px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.pronunciation-section .card-label{margin-bottom:14px}
-.pronunciation-desc{color:var(--text-sub);font-size:14px;margin-bottom:16px;line-height:1.6}
-.alphabet-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-@media(min-width:480px){.alphabet-grid{grid-template-columns:repeat(7,1fr)}}
-.letter-card{background:#F5F9F7;border-radius:14px;padding:12px 6px;text-align:center;border:1px solid #E0EBE5;cursor:pointer;transition:all .15s;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
-.letter-card:active{transform:scale(.95);background:var(--mx-green);color:#fff;border-color:var(--mx-green)}
-.letter-char{font-size:28px;font-weight:700;color:var(--mx-green);line-height:1}
-.letter-card:active .letter-char{color:#fff}
-.letter-name{font-size:11px;color:var(--text-sub);font-weight:700;text-transform:lowercase}
-.letter-card:active .letter-name{color:#fff}
-.letter-example{font-size:11px;color:var(--accent);font-weight:600;margin-top:2px}
-.letter-card:active .letter-example{color:#FFECB3}
-.letter-ex-zh{font-size:10px;color:#999;margin-top:1px}
-.letter-card:active .letter-ex-zh{color:#fff}
-.vowels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-@media(min-width:480px){.vowels-grid{grid-template-columns:repeat(5,1fr)}}
-.vowel-card{background:#FFF4E8;border-radius:14px;padding:16px 12px;text-align:center;border:2px solid #FFE0B2}
-.vowel-char{font-size:28px;font-weight:700;color:var(--accent)}
-.vowel-desc{font-size:13px;color:var(--text-sub);margin-top:6px;line-height:1.4}
-.vowel-example{font-size:12px;color:var(--mx-green);margin-top:4px;font-weight:600}
-.sound-rule{background:#F0F7F4;border-radius:14px;padding:16px;margin-bottom:14px;border-left:4px solid var(--mx-green)}
-.sound-rule-title{font-size:16px;font-weight:700;color:var(--mx-green);margin-bottom:8px}
-.sound-rule-desc{font-size:14px;color:var(--text-sub);line-height:1.6;margin-bottom:10px}
-.sound-examples{display:flex;flex-wrap:wrap;gap:10px}
-.sound-ex-card{background:#fff;border-radius:10px;padding:10px 14px;border:1px solid #E0EBE5;cursor:pointer;transition:all .15s;min-width:80px;text-align:center}
-.sound-ex-card:active{background:var(--mx-green);color:#fff;border-color:var(--mx-green)}
-.sound-ex-word{font-size:15px;font-weight:700}
-.sound-ex-zh{font-size:12px;margin-top:2px}
-.sound-ex-card:active .sound-ex-zh{color:#fff}
-.pronunciation-tabs{display:flex;gap:8px;padding:0 16px 10px;overflow-x:auto}
-.pronunciation-tab{background:var(--bg-card);border:2px solid var(--border);border-radius:12px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--text-sub);cursor:pointer;white-space:nowrap;-webkit-appearance:none}
-.pronunciation-tab.active{background:var(--mx-green);color:#fff;border-color:var(--mx-green)}
-.pronunciation-tab:active{transform:scale(.95)}
-.pronunciation-tab-content{display:none}
-.pronunciation-tab-content.active{display:block}
-
 
 </style>
 </head>
@@ -173,16 +133,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 <div class="welcome">選擇一週開始學習 👇</div>
 
 <div class="week-list" id="week-list">
-  <div class="week-card-idx" id="pronunciation-card" onclick="showPronunciation();return false;" style="cursor:pointer;">
-    <div class="week-header-idx">
-      <div class="week-title-idx">🔤 基礎發音</div>
-      <div class="week-status-idx" style="background:var(--accent);">查閱</div>
-    </div>
-    <div class="week-days-idx">
-      <div class="day-row-idx" style="border-top:none;cursor:default;"><span class="day-num">Aa-Zz</span><span class="day-theme">字母表、母音子音、重音規則</span></div>
-    </div>
-  </div>
-
   <div class="week-card-idx" data-week="1">
     <div class="week-header-idx">
       <div class="week-title-idx">第一週</div>
@@ -203,29 +153,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
     <div class="week-card-idx" id="vocab-card" onclick="showVocab();return false;" style="cursor:pointer;">
     <div class="week-header-idx">
       <div class="week-title-idx">🌍 我的單字本</div>
-      <div class="week-status-idx" style="background:#3498DB;">工具</div>
+      <div class="week-status-idx" id="vocab-card-count">0</div>
     </div>
     <div class="week-days-idx">
-      <div class="day-row-idx" style="border-top:none;cursor:default;"><span class="day-num">☆</span><span class="day-theme">收藏你查過的單字，隨時複習</span></div>
+      <div class="day-row-idx pending" style="border-top:none;"><span class="day-num">☆</span><span class="day-theme">收藏你查過的單字，隨時複習</span><span class="day-check"></span></div>
     </div>
   </div>
 
 
-<div class="week-card-idx" data-week="2">
+<div class="week-card-idx locked">
     <div class="week-header-idx">
       <div class="week-title-idx">第二週</div>
-      <div class="week-status-idx" id="week2-status">尚未開始</div>
+      <div class="week-status-idx">即將推出</div>
     </div>
     <div class="week-days-idx">
-      <a href="#" onclick="showWeek1(8);return false;"><div class="day-row-idx pending" id="home-day-8"><span class="day-num">Day 1</span><span class="day-theme">打電話與預約</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(9);return false;"><div class="day-row-idx pending" id="home-day-9"><span class="day-num">Day 2</span><span class="day-theme">銀行與換錢</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(10);return false;"><div class="day-row-idx pending" id="home-day-10"><span class="day-num">Day 3</span><span class="day-theme">看醫生與藥局</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(11);return false;"><div class="day-row-idx pending" id="home-day-11"><span class="day-num">Day 4</span><span class="day-theme">天氣與心情</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(12);return false;"><div class="day-row-idx pending" id="home-day-12"><span class="day-num">Day 5</span><span class="day-theme">家庭與朋友</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(13);return false;"><div class="day-row-idx pending" id="home-day-13"><span class="day-num">Day 6</span><span class="day-theme">超市採購</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(14);return false;"><div class="day-row-idx pending" id="home-day-14"><span class="day-num">Day 7</span><span class="day-theme">緊急求助</span><span class="day-check"></span></div></a>
+      <div class="day-row-idx pending"><span class="day-num">Day 1</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 2</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 3</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 4</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 5</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 6</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 7</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
     </div>
-    <div class="progress-bar-idx"><div class="progress-fill-idx" id="week2-progress" style="width:0%"></div></div>
+    <div class="progress-bar-idx"><div class="progress-fill-idx" style="width:0%"></div></div>
   </div>
 
   <div class="week-card-idx locked">
@@ -246,7 +196,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
   </div>
 </div>
 
-<div class="footer-idx">墨西哥語學習 App · v0.8.0 · 離線可用</div>
+<div class="footer-idx">墨西哥語學習 App · v0.7.0 · 離線可用</div>
 </div>
 
 <div id="week1-view" style="display:none">
@@ -269,7 +219,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 <div class="card"><div class="card-label">今日學什麼</div><div class="lesson-goal" id="lesson-goal">學會各種場合的墨西哥式問候與回應</div><div id="sentences-container"></div></div>
 <div class="card"><div class="card-label">關鍵單字</div><div class="keywords-grid" id="keywords-grid"></div></div>
 <div class="quiz-section"><div class="quiz-label">小測驗</div><div class="quiz-question" id="quiz-question">載入中...</div><div class="quiz-options" id="quiz-options"></div><div id="quiz-feedback"></div></div>
-<div class="footer">墨西哥語學習 App · v0.8.0 · 離線可用</div>
+<div class="footer">墨西哥語學習 App · v0.7.0 · 離線可用</div>
 
 <div class="dict-popup-overlay" id="dict-overlay"></div>
 <div class="dict-popup" id="dict-popup">
@@ -280,68 +230,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
   <button class="dict-popup-close" id="dict-popup-star" style="margin-bottom:8px;background:var(--accent);font-size:14px;">☆ 加入單字本</button>
   <button class="dict-popup-close" id="dict-close">關閉</button>
 </div>
-</div>
-
-<!-- ========== Pronunciation View ========== -->
-<div id="pronunciation-view" style="display:none">
-<div class="header">
-  <div style="padding:8px 20px 0;">
-    <a href="#" onclick="showHome();return false;" style="color:#fff;opacity:.85;font-size:13px;text-decoration:none;display:inline-block;padding:4px 0;">← 返回主頁</a>
-  </div>
-  <div class="header-top">
-    <div><div class="header-title">🔤 墨西哥西語基礎發音</div><div class="header-sub">掌握字母與發音規則</div></div>
-  </div>
-</div>
-
-<div class="pronunciation-tabs" id="pronunciation-tabs">
-  <button class="pronunciation-tab active" onclick="showPronunciationTab('alphabet',this)">字母表</button>
-  <button class="pronunciation-tab" onclick="showPronunciationTab('vowels',this)">母音</button>
-  <button class="pronunciation-tab" onclick="showPronunciationTab('consonants',this)">子音規則</button>
-  <button class="pronunciation-tab" onclick="showPronunciationTab('accent',this)">重音規則</button>
-</div>
-
-<div id="pronunciation-content-alphabet" class="pronunciation-tab-content active">
-  <div class="pronunciation-section">
-    <div class="card-label">西班牙字母表</div>
-    <div class="pronunciation-desc">點擊字母聆聽其西班牙語名稱和示例單字。墨西哥西班牙語共 27 個字母，其中 Ñ 是獨有字母。</div>
-    <div class="alphabet-grid" id="alphabet-grid"></div>
-  </div>
-  <div class="pronunciation-section">
-    <div class="card-label">特殊字母組合</div>
-    <div class="pronunciation-desc">這些字母組合在墨西哥西語中有特殊發音。</div>
-    <div id="special-letters"></div>
-  </div>
-</div>
-
-<div id="pronunciation-content-vowels" class="pronunciation-tab-content">
-  <div class="pronunciation-section">
-    <div class="card-label">五個母音</div>
-    <div class="pronunciation-desc">西班牙語只有 5 個母音（A、E、I、O、U），發音固定且清晰，不受位置影響。點擊聆聽發音。</div>
-    <div class="vowels-grid" id="vowels-grid"></div>
-  </div>
-  <div class="pronunciation-section">
-    <div class="card-label">雙母音（Diptongos）</div>
-    <div class="pronunciation-desc">兩個母音連在一起時，形成一個音節。點擊聆聽。</div>
-    <div id="diphthongs-grid"></div>
-  </div>
-</div>
-
-<div id="pronunciation-content-consonants" class="pronunciation-tab-content">
-  <div class="pronunciation-section">
-    <div class="card-label">重要子音規則</div>
-    <div id="consonant-rules"></div>
-  </div>
-</div>
-
-<div id="pronunciation-content-accent" class="pronunciation-tab-content">
-  <div class="pronunciation-section">
-    <div class="card-label">重音規則</div>
-    <div class="pronunciation-desc">西班牙語的重音位置有固定規則，掌握後看到任何單字都能正確發音。</div>
-    <div id="accent-rules"></div>
-  </div>
-</div>
-
-<div class="footer">墨西哥語學習 App · 基礎發音</div>
 </div>
 
 <div id="vocab-view" style="display:none">
@@ -360,160 +248,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 
 <script>
 
-/* ========== Pronunciation Module ========== */
-function showPronunciation(){
-  document.getElementById('home-view').style.display='none';
-  document.getElementById('week1-view').style.display='none';
-  document.getElementById('vocab-view').style.display='none';
-  document.getElementById('pronunciation-view').style.display='block';
-  window.scrollTo(0,0);
-  renderAlphabet();
-  renderVowels();
-  renderDiphthongs();
-  renderConsonantRules();
-  renderAccentRules();
-}
-function showPronunciationTab(tab,btn){
-  document.querySelectorAll('.pronunciation-tab-content').forEach(function(c){c.classList.remove('active');});
-  document.querySelectorAll('.pronunciation-tab').forEach(function(t){t.classList.remove('active');});
-  document.getElementById('pronunciation-content-'+tab).classList.add('active');
-  btn.classList.add('active');
-}
-
-var ALPHABET=[
-  {letter:'A',name:'a',sound:'近似「啊」',example:'amigo',exZh:'朋友',exEs:'amigo'},
-  {letter:'B',name:'be',sound:'雙唇輕碰',example:'bueno',exZh:'好的',exEs:'bueno'},
-  {letter:'C',name:'ce',sound:'ca/co/cu發「卡」音，ce/ci發「斯」音',example:'casa',exZh:'房子',exEs:'casa'},
-  {letter:'D',name:'de',sound:'舌尖輕碰上齒，發「ㄉ」音',example:'día',exZh:'白天',exEs:'día'},
-  {letter:'E',name:'e',sound:'近似「欸」（嘴巴小一點）',example:'elefante',exZh:'大象',exEs:'elefante'},
-  {letter:'F',name:'efe',sound:'上齒輕咬下唇，發「夫」音',example:'familia',exZh:'家庭',exEs:'familia'},
-  {letter:'G',name:'ge',sound:'ga/gu/go發「嘎」音，ge/gi發「嗨」音',example:'gato',exZh:'貓',exEs:'gato'},
-  {letter:'H',name:'hache',sound:'不發音！（靜音）',example:'hola',exZh:'哈囉',exEs:'hola'},
-  {letter:'I',name:'i',sound:'近似「衣」',example:'isla',exZh:'島嶼',exEs:'isla'},
-  {letter:'J',name:'jota',sound:'喉嚨摩擦音，近似「ㄏ」',example:'juntos',exZh:'一起',exEs:'juntos'},
-  {letter:'K',name:'ka',sound:'發「卡」音，只用於外來語',example:'kilo',exZh:'公斤',exEs:'kilo'},
-  {letter:'L',name:'ele',sound:'舌尖頂上齒齦，發「ㄌ」音',example:'leche',exZh:'牛奶',exEs:'leche'},
-  {letter:'M',name:'eme',sound:'雙唇閉合，發「ㄇ」音',example:'madre',exZh:'母親',exEs:'madre'},
-  {letter:'N',name:'ene',sound:'舌尖頂上齒齦，發「ㄋ」音',example:'no',exZh:'不',exEs:'no'},
-  {letter:'Ñ',name:'eñe',sound:'舌面頂硬顎，發「ㄋㄧ」音',example:'niño',exZh:'小孩',exEs:'niño'},
-  {letter:'O',name:'o',sound:'近似「歐」（嘴巴圓一點）',example:'oso',exZh:'熊',exEs:'oso'},
-  {letter:'P',name:'pe',sound:'雙唇輕碰，發「ㄆ」音（不送氣）',example:'papa',exZh:'爸爸/馬鈴薯',exEs:'papa'},
-  {letter:'Q',name:'cu',sound:'永遠跟 u，發「克」音',example:'queso',exZh:'起司',exEs:'queso'},
-  {letter:'R',name:'ere',sound:'舌尖輕彈一次，發「ㄌ」音',example:'rosa',exZh:'玫瑰',exEs:'rosa'},
-  {letter:'S',name:'ese',sound:'舌尖近上齒，發「斯」音',example:'si',exZh:'是',exEs:'si'},
-  {letter:'T',name:'te',sound:'舌尖頂上齒，發「ㄊ」音（不送氣）',example:'taco',exZh:'塔可',exEs:'taco'},
-  {letter:'U',name:'u',sound:'近似「嗚」（嘴唇嘟起）',example:'uno',exZh:'一',exEs:'uno'},
-  {letter:'V',name:'uve',sound:'上齒輕咬下唇，發「夫」音（與 B 同音）',example:'vino',exZh:'酒',exEs:'vino'},
-  {letter:'W',name:'uve doble',sound:'發「吾」音，只用於外來語',example:'wifi',exZh:'無線網路',exEs:'wifi'},
-  {letter:'X',name:'equis',sound:'發「克斯」音，墨西哥地名有多樣變化',example:'mexicano',exZh:'墨西哥人',exEs:'mexicano'},
-  {letter:'Y',name:'i griega / ye',sound:'單獨唸「衣」，在結尾唸「一」',example:'yo',exZh:'我',exEs:'yo'},
-  {letter:'Z',name:'zeta',sound:'發「斯」音（墨西哥與西班牙部分地區）',example:'zapato',exZh:'鞋子',exEs:'zapato'}
-];
-
-function renderAlphabet(){
-  var g=document.getElementById('alphabet-grid');
-  if(!g||g.children.length>0)return;
-  g.innerHTML=ALPHABET.map(function(a){
-    var e=a.example.replace(/'/g,"\\'");
-    return '<div class="letter-card" onclick="speakAlphabet(\''+a.letter.toLowerCase()+'\',\''+a.name+'\',\''+e+'\')">'+
-      '<div class="letter-char">'+a.letter+'</div>'+
-      '<div class="letter-name">'+a.name+'</div>'+
-      '<div class="letter-example">'+a.example+' · '+a.exZh+'</div>'+
-    '</div>';
-  }).join('');
-  var s=document.getElementById('special-letters');
-  if(s&&s.children.length===0){
-    s.innerHTML='<div class="sound-rule"><div class="sound-rule-title">CH - 發「ㄑ」音</div><div class="sound-rule-desc">類似英文 chair 的 ch，但更輕。chica（女孩）、chido（酷）。</div><div class="sound-examples"><div class="sound-ex-card" onclick="speak(\'chica\')"><div class="sound-ex-word">chica</div><div class="sound-ex-zh">女孩</div></div><div class="sound-ex-card" onclick="speak(\'chido\')"><div class="sound-ex-word">chido</div><div class="sound-ex-zh">酷</div></div><div class="sound-ex-card" onclick="speak(\'leche\')"><div class="sound-ex-word">leche</div><div class="sound-ex-zh">牛奶</div></div></div></div>'+
-    '<div class="sound-rule"><div class="sound-rule-title">LL - 發「ㄧ」或「ㄐ」音</div><div class="sound-rule-desc">墨西哥和大多數拉美地區發「ㄧ」音（yeísmo），與 Y 同音。llamar（打電話）、llave（鑰匙）。</div><div class="sound-examples"><div class="sound-ex-card" onclick="speak(\'llamar\')"><div class="sound-ex-word">llamar</div><div class="sound-ex-zh">打電話</div></div><div class="sound-ex-card" onclick="speak(\'llave\')"><div class="sound-ex-word">llave</div><div class="sound-ex-zh">鑰匙</div></div></div></div>'+
-    '<div class="sound-rule"><div class="sound-rule-title">RR - 強烈彈舌音</div><div class="sound-rule-desc">舌尖在齒齦後方快速顫動，發「得rrrr」的捲舌音。字母 R 在詞首也發此音。rraro（奇怪）、perro（狗）。</div><div class="sound-examples"><div class="sound-ex-card" onclick="speak(\'perro\')"><div class="sound-ex-word">perro</div><div class="sound-ex-zh">狗</div></div><div class="sound-ex-card" onclick="speak(\'ratón\')"><div class="sound-ex-word">ratón</div><div class="sound-ex-zh">老鼠</div></div></div></div>';
-  }
-}
-function speakAlphabet(letterSound,name,example){
-  speak(letterSound);
-  setTimeout(function(){speak(name);},900);
-  setTimeout(function(){speak(example);},1800);
-}
-
-var VOWELS=[
-  {vowel:'A',desc:'嘴巴張大，發「啊」音',example:'casa',exZh:'房子'},
-  {vowel:'E',desc:'嘴巴半開，發「欸」音',example:'elefante',exZh:'大象'},
-  {vowel:'I',desc:'嘴角微拉，發「衣」音',example:'isla',exZh:'島嶼'},
-  {vowel:'O',desc:'嘴巴圓起來，發「歐」音',example:'oso',exZh:'熊'},
-  {vowel:'U',desc:'嘴唇嘟起，發「嗚」音',example:'uno',exZh:'一'}
-];
-var DIPH_THONGS=[
-  {pair:'ai / ay',sound:'發「ㄞ」音',example:'hay',exZh:'有'},
-  {pair:'ei / ey',sound:'發「欸」音',example:'rey',exZh:'國王'},
-  {pair:'oi / oy',sound:'發「歐衣」音',example:'hoy',exZh:'今天'},
-  {pair:'au',sound:'發「凹」音',example:'auto',exZh:'汽車'},
-  {pair:'eu',sound:'發「欸嗚」音',example:'Europa',exZh:'歐洲'},
-  {pair:'ia',sound:'發「衣阿」音',example:'canía',exZh:'蘆葦'},
-  {pair:'ie',sound:'發「衣欸」音',example:'tierra',exZh:'土地'},
-  {pair:'io',sound:'發「衣歐」音',example:'río',exZh:'河'}
-];
-function renderVowels(){
-  var g=document.getElementById('vowels-grid');
-  if(!g||g.children.length>0)return;
-  g.innerHTML=VOWELS.map(function(v){
-    var e=v.example.replace(/'/g,"\\'");
-    return '<div class="vowel-card" onclick="speak(\''+e+'\')">'+
-      '<div class="vowel-char">'+v.vowel+'</div>'+
-      '<div class="vowel-desc">'+v.desc+'</div>'+
-      '<div class="vowel-example">'+v.example+' · '+v.exZh+'</div>'+
-    '</div>';
-  }).join('');
-}
-function renderDiphthongs(){
-  var g=document.getElementById('diphthongs-grid');
-  if(!g||g.children.length>0)return;
-  g.innerHTML='<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">'+DIPH_THONGS.map(function(d){
-    var e=d.example.replace(/'/g,"\\'");
-    return '<div class="sound-ex-card" onclick="speak(\''+e+'\')">'+
-      '<div class="sound-ex-word">'+d.pair+'</div>'+
-      '<div class="sound-ex-zh">'+d.sound+'</div>'+
-      '<div style="font-size:12px;color:var(--text-sub);margin-top:4px;">'+d.example+' · '+d.exZh+'</div>'+
-    '</div>';
-  }).join('')+'</div>';
-}
-
-var CONSONANT_RULES=[
-  {title:'C 的軟硬音',desc:'C 在 a、o、u 前發「卡」音（硬音），在 e、i 前發「斯」音（軟音）。這是西班牙語發音的核心規則之一。',examples:[{es:'casa',zh:'房子'},{es:'coco',zh:'椰子'},{es:'cena',zh:'晚餐'},{es:'cielo',zh:'天空'}]},
-  {title:'G 的軟硬音',desc:'G 在 a、o、u 前發「嘎」音（硬音），在 e、i 前發類似「嗨」的喉音（軟音）。墨西哥的軟 G 發音比較輕。',examples:[{es:'gato',zh:'貓'},{es:'gusto',zh:'榮幸'},{es:'genial',zh:'很棒'},{es:'gente',zh:'人們'}]},
-  {title:'R / RR 彈舌音',desc:'單獨的 R 在中間發輕彈舌（一次），RR 或詞首的 R 發強烈顫音（多次彈舌）。初學者可以先練習把舌尖輕輕頂在上牙齦後方，吹氣讓舌頭顫動。',examples:[{es:'perro',zh:'狗'},{es:'caro',zh:'貴的'},{es:'ratón',zh:'老鼠'},{es:'tres',zh:'三'}]},
-  {title:'J / G(軟) / H 的發音區別',desc:'H 永遠不發音。J 和軟 G（ge/gi）在墨西哥都發類似「ㄏ」的喉音，但 J 更重一些。',examples:[{es:'hola',zh:'哈囉'},{es:'juntos',zh:'一起'},{es:'jefe',zh:'老闆'},{es:'general',zh:'將軍'}]},
-  {title:'B / V 同音',desc:'在墨西哥，B 和 V 發音完全相同，都是雙唇輕碰的「夫」音（介於 b 和 v 之間）。初學者不需要刻意區分。',examples:[{es:'bueno',zh:'好的'},{es:'vino',zh:'酒'},{es:'beber',zh:'喝'},{es:'vida',zh:'生活'}]}
-];
-function renderConsonantRules(){
-  var c=document.getElementById('consonant-rules');
-  if(!c||c.children.length>0)return;
-  c.innerHTML=CONSONANT_RULES.map(function(rule){
-    var exHtml=rule.examples.map(function(ex){
-      var e=ex.es.replace(/'/g,"\\'");
-      return '<div class="sound-ex-card" onclick="speak(\''+e+'\')"><div class="sound-ex-word">'+ex.es+'</div><div class="sound-ex-zh">'+ex.zh+'</div></div>';
-    }).join('');
-    return '<div class="sound-rule"><div class="sound-rule-title">'+rule.title+'</div><div class="sound-rule-desc">'+rule.desc+'</div><div class="sound-examples">'+exHtml+'</div></div>';
-  }).join('');
-}
-
-var ACCENT_RULES=[
-  {title:'規則一：以母音、N、S 結尾的單字',desc:'重音落在倒數第二個音節上。例如：a-mi-go（朋友）、co-sas（東西）、co-men（吃）。不需要重音符號。',example:'amigo · casa · comen'},
-  {title:'規則二：以其他子音結尾的單字',desc:'重音落在最後一個音節上。例如：es-pa-ñol（西班牙語）、u-ni-ver-si-dad（大學）、hos-pi-tal（醫院）。不需要重音符號。',example:'español · hospital · verdad'},
-  {title:'規則三：重音符號（Tilde）',desc:'當實際重音位置與規則一、二不符時，需要在重音母音上標記重音符號（´）。例如：<b>mamá</b>（媽媽）以母音結尾，按規則一應該在 ma- 上，但實際在 -má 上，所以要寫 tilde。',example:'mamá · está · sí · inglés'},
-  {title:'規則四：問號與驚嘆號的反轉',desc:'西班牙語的問句和感嘆句需要在句首加上反轉的符號：¿ ... ? 和 ¡ ... !。這也暗示了句子的語調，問句尾音上揚，感嘆句尾音下降。',example:'¿Qué onda? ¡Qué chido!'}
-];
-function renderAccentRules(){
-  var c=document.getElementById('accent-rules');
-  if(!c||c.children.length>0)return;
-  c.innerHTML=ACCENT_RULES.map(function(rule,idx){
-    return '<div class="sound-rule"><div class="sound-rule-title">'+rule.title+'</div><div class="sound-rule-desc">'+rule.desc+'</div><div style="margin-top:10px;padding:12px;background:#FFF8EE;border-radius:10px;font-size:14px;color:#8B7355;"><b>範例：</b>'+rule.example+'</div></div>';
-  }).join('');
-}
-
 /* ========== SPA Navigation ========== */
 function showWeek1(day){
   document.getElementById('home-view').style.display='none';
-  document.getElementById('pronunciation-view').style.display='none';
-  document.getElementById('vocab-view').style.display='none';
   document.getElementById('week1-view').style.display='block';
   window.scrollTo(0,0);
   init(day);
@@ -523,7 +260,6 @@ function showHome(){
   loadVocab();
   document.getElementById('week1-view').style.display='none';
   document.getElementById('vocab-view').style.display='none';
-  document.getElementById('pronunciation-view').style.display='none';
   document.getElementById('home-view').style.display='block';
   window.scrollTo(0,0);
   updateHomeProgress();
@@ -533,15 +269,14 @@ function showVocab(){
   loadVocab();
   document.getElementById('home-view').style.display='none';
   document.getElementById('week1-view').style.display='none';
-  document.getElementById('pronunciation-view').style.display='none';
   document.getElementById('vocab-view').style.display='block';
   window.scrollTo(0,0);
   renderVocab();
 }
 
-function updateWeekProgress(startDay,statusId,progressId){
+function updateHomeProgress(){
   var doneCount=0,failedCount=0;
-  for(var i=startDay;i<=startDay+6;i++){
+  for(var i=1;i<=7;i++){
     var row=document.getElementById('home-day-'+i);
     if(!row)continue;
     row.classList.remove('done','failed','pending');
@@ -559,8 +294,8 @@ function updateWeekProgress(startDay,statusId,progressId){
     }
   }
   var total=doneCount+failedCount;
-  var statusEl=document.getElementById(statusId);
-  var progEl=document.getElementById(progressId);
+  var statusEl=document.getElementById('week1-status');
+  var progEl=document.getElementById('week1-progress');
   if(statusEl){
     if(doneCount===7){statusEl.textContent='已完成';statusEl.classList.add('done');statusEl.classList.remove('progress','failed');}
     else if(total>0){statusEl.textContent=doneCount+'/7 完成';statusEl.classList.add('progress');statusEl.classList.remove('done','failed');}
@@ -570,10 +305,6 @@ function updateWeekProgress(startDay,statusId,progressId){
     var pct=Math.round((doneCount/7)*100);
     progEl.style.width=pct+'%';
   }
-}
-function updateHomeProgress(){
-  updateWeekProgress(1,'week1-status','week1-progress');
-  updateWeekProgress(8,'week2-status','week2-progress');
 }
 
 /* ==================================== */
@@ -724,106 +455,6 @@ var DICT={
   "¡cuídate":["保重","Neutral","關心對方的道別語，比 adiós 更溫暖。"],
   "cuídate":["保重","Neutral","cuídate 原形是 cuidar（照顧），命令式表示『保重』。"],
   "mucho":["很 / 非常","Neutral","副詞，cuídate mucho = 保重（非常照顧自己）。"],
-  // --- Day 8 ---
-  "bueno":["喂（接電話用語）/ 好的","Coloquial","墨西哥人接電話時說 Bueno，是其他西語系國家少見的用法。"],
-  "¿quién":["誰","Neutral","疑問詞，用於詢問身份。"],
-  "quién":["誰","Neutral","疑問詞，用於詢問身份。"],
-  "habla":["（他/她）說話","Neutral","hablar 的第三人稱，¿Quién habla? = 哪位？（電話用語）。"],
-  "quisiera":["我想要（委婉）","Formal","querer 的條件式，比 quiero 更客氣委婉，常用於正式請求或預約。"],
-  "hacer":["做","Neutral","原形動詞，hacer una cita = 預約。"],
-  "cita":["預約 / 約會","Neutral","名詞，una cita = 一個預約。"],
-  "una cita":["一個預約","Neutral","名詞片語，hacer una cita = 預約。"],
-  "tiene":["（他/她）有 / 您有","Neutral","tener 的第三人稱，也用於正式 usted 稱呼，¿Tiene...? = 您有...嗎？"],
-  "¿tiene":["您有...嗎？","Neutral","tener 的第三人稱疑問式，正式 usted 稱呼常用。"],
-  "disponible":["有空的 / 可用的","Neutral","形容詞，¿A qué hora tiene disponible? = 您哪個時間方便？"],
-  "¿a qué hora tiene disponible":["您哪個時間方便？","Neutral","電話預約常用句型。"],
-  // --- Day 9 ---
-  "buenos":["好的（陽性複數）","Neutral","形容詞 bueno 的複數，buenos días = 早安。"],
-  "días":["天 / 日子（複數）","Neutral","día 的複數，buenos días = 早安。"],
-  "buenos días":["早安","Neutral","上午最常用的問候語。"],
-  "cambiar":["兌換 / 改變","Neutral","原形動詞，cambiar dólares a pesos = 把美金換成披索。"],
-  "dólares":["美金（複數）","Neutral","dólar 的複數，常見外幣。"],
-  "pesos":["披索（墨西哥貨幣，複數）","Neutral","peso 的複數，墨西哥官方貨幣單位。"],
-  "¿cuál":["哪一個","Neutral","疑問詞，用於在選項中詢問哪一個。"],
-  "cuál":["哪一個","Neutral","疑問詞，用於在選項中詢問哪一個。"],
-  "es":["（他/她/它）是","Neutral","ser 的第三人稱單數。"],
-  "tipo":["類型","Neutral","名詞，tipo de cambio = 匯率。"],
-  "cambio":["改變 / 兌換","Neutral","名詞，tipo de cambio = 匯率。"],
-  "tipo de cambio":["匯率","Neutral","出國前建議先查好匯率再兌換。"],
-  "¿hay":["有...嗎？","Neutral","haber 的非人稱疑問形式，用於詢問是否存在某物。"],
-  "hay":["有（非人稱）","Neutral","haber 的非人稱形式，表示『有』某物存在。"],
-  "cajero":["提款機 / 收銀員","Neutral","名詞，cajero automático = 自動提款機（ATM）。"],
-  "automático":["自動的","Neutral","形容詞，cajero automático = 自動提款機。"],
-  "cajero automático":["提款機（ATM）","Neutral","墨西哥城市裡到處都有，建議選銀行內的較安全。"],
-  "cerca":["附近 / 近","Neutral","副詞，¿Hay algo cerca? = 附近有什麼嗎？"],
-  // --- Day 10 ---
-  "siento":["我感覺","Neutral","sentirse 的第一人稱，me siento mal = 我覺得不舒服。"],
-  "mal":["不好 / 不舒服","Neutral","副詞/形容詞，描述狀態不佳。"],
-  "me duele":["我...痛","Neutral","doler 用法像 gustar，me duele + 身體部位 = 我...痛。"],
-  "duele":["（它）使...疼痛","Neutral","doler 的第三人稱，用法特殊，類似 gustar 結構。"],
-  "cabeza":["頭","Neutral","名詞，me duele la cabeza = 我頭痛。"],
-  "farmacia":["藥局","Neutral","墨西哥藥局普遍，許多藥不需處方箋即可購買。"],
-  "necesito":["我需要","Neutral","necesitar 的第一人稱。"],
-  "algo":["某個東西 / 一些","Neutral","不定代名詞，necesito algo = 我需要一些東西。"],
-  "dolor":["疼痛","Neutral","名詞，dolor de estómago = 胃痛。"],
-  "estómago":["胃","Neutral","名詞，dolor de estómago = 胃痛。"],
-  "dolor de estómago":["胃痛","Neutral","跟藥師描述症狀時常用的詞。"],
-  "me siento mal":["我覺得不舒服","Neutral","描述身體不適的常用句型。"],
-  // --- Day 11 ---
-  "calor":["熱","Neutral","名詞，hace calor = 天氣很熱。"],
-  "hace calor":["天氣很熱","Neutral","描述炎熱天氣的固定用法。"],
-  "lloviendo":["正在下雨","Neutral","llover 的現在進行式，está lloviendo = 正在下雨。"],
-  "está lloviendo":["正在下雨","Neutral","墨西哥雨季（5-10月）午後常有陣雨。"],
-  "trajiste":["你帶了","Neutral","traer 的第二人稱簡單過去式。"],
-  "¿trajiste":["你帶了...嗎？","Neutral","traer 過去式疑問句，詢問對方是否帶了某物。"],
-  "paraguas":["雨傘","Neutral","名詞，陽性但不隨複數變化（el paraguas / los paraguas）。"],
-  "un":["一（陽性）","Neutral","陽性單數不定冠詞。"],
-  "poco":["一點 / 少許","Neutral","副詞/形容詞，un poco = 一點點。"],
-  "un poco":["一點點","Neutral","常用於緩和語氣，un poco cansado = 有點累。"],
-  "cansado":["累的","Neutral","形容詞，estar cansado = 感到疲累。cansado/cansada。"],
-  "pero":["但是","Neutral","連接詞，表示轉折。"],
-  "contento":["開心的","Neutral","形容詞，estar contento = 感到開心。contento/contenta。"],
-  // --- Day 12 ---
-  "te":["你（受詞/反身）","Neutral","第二人稱受詞代名詞，te presento a... = 跟你介紹..."],
-  "presento":["我介紹","Neutral","presentar 的第一人稱，te presento a mi esposa = 跟你介紹我太太。"],
-  "te presento a":["跟你介紹...","Neutral","介紹某人給對方認識的標準句型。"],
-  "mi":["我的","Neutral","物主形容詞。"],
-  "esposa":["太太 / 妻子","Neutral","名詞，esposo/esposa。"],
-  "se":["自己（反身代詞）","Neutral","第三人稱反身代詞，se llama = 他/她叫。"],
-  "llama":["（他/她）叫","Neutral","llamarse 的第三人稱，se llama Ana = 她叫 Ana。"],
-  "¿tienes":["你有...嗎？","Neutral","tener 的第二人稱疑問式。"],
-  "tienes":["你有","Neutral","tener 的第二人稱。"],
-  "hermanos":["兄弟姊妹","Neutral","hermano 的複數，泛指兄弟姊妹。"],
-  "o":["或者","Neutral","連接詞，表示選擇。"],
-  "eres":["你是","Neutral","ser 的第二人稱。"],
-  "hijo":["兒子","Neutral","名詞，hijo único = 獨生子。"],
-  "único":["唯一的","Neutral","形容詞，hijo único/hija única = 獨生子/獨生女。"],
-  "hijo único":["獨生子","Neutral","墨西哥人聊家庭常問的問題。"],
-  "familia":["家庭 / 家人","Neutral","名詞，墨西哥人非常重視家庭觀念。"],
-  "vive":["（他/她）住","Neutral","vivir 的第三人稱。"],
-  "lejos":["遠","Neutral","副詞，vive lejos = 住得很遠。"],
-  "los":["他們（受詞）/ 那些（陽性複數）","Neutral","陽性複數定冠詞或直接受詞代名詞。"],
-  "extraño":["我想念","Neutral","extrañar 的第一人稱，比 echar de menos 更口語。"],
-  // --- Day 13 ---
-  "puedo":["我可以","Neutral","poder 的第一人稱。"],
-  "encontrar":["找到","Neutral","原形動詞。"],
-  "aceite":["油","Neutral","名詞，aceite de cocina = 食用油。"],
-  "cocina":["廚房 / 烹飪","Neutral","名詞，aceite de cocina = 食用油。"],
-  "aceite de cocina":["食用油","Neutral","超市常見分類，貨架標示清楚。"],
-  "oferta":["特價 / 促銷","Neutral","名詞，en oferta = 特價中。"],
-  "en oferta":["特價中","Neutral","墨西哥超市常有週間促銷活動。"],
-  "esta":["這個（陰性）","Neutral","陰性單數指示形容詞，esta semana = 這禮拜。"],
-  "bolsa":["袋子","Neutral","名詞，超市購物常用詞，部分州購物袋需另外收費。"],
-  // --- Day 14 ---
-  "¡ayuda":["救命！","Neutral","緊急狀況時最直接的求救喊聲。"],
-  "ayuda":["幫助 / 救命","Neutral","名詞/感嘆詞，¡Ayuda! = 救命！"],
-  "doctor":["醫生","Neutral","名詞，doctor/doctora。"],
-  "perdí":["我弄丟了 / 我輸了","Neutral","perder 的簡單過去式第一人稱。"],
-  "cartera":["錢包","Neutral","名詞，墨西哥也常說 billetera。"],
-  "hago":["我做","Neutral","hacer 的第一人稱，¿qué hago? = 我該怎麼辦？"],
-  "llamar":["打電話 / 呼叫","Neutral","原形動詞，llamar a la policía = 報警。"],
-  "policía":["警察","Neutral","名詞，墨西哥報警電話是911。"],
-  "llamar a la policía":["報警","Neutral","緊急時刻最重要的求助句型之一。"],
   
   // --- Common words across multiple days ---
   "me llamo":["我叫...","Neutral","自我介紹必用句型。"],
@@ -858,10 +489,6 @@ var FORM_MAP={
   "tengo":"tener",
   "da":"dar",
   "soy":"ser",
-  "llama":"llamar",
-  "tienes":"tener",
-  "eres":"ser",
-  "vive":"vivir",
 };
 
 // Build lookup from all words across sentences
@@ -962,72 +589,6 @@ var Q7_4={type:'fill',q:'請輸入「太酷了！」的墨西哥西班牙文（�
 var Q7_5={type:'listen',audio:'Nos vemos mañana. ¡Cuídate mucho!',q:'剛才你聽到的句子是什麼意思？',o:['你週末過得怎樣？','很高興見到你,謝謝','明天見,保重！','對不起,我趕時間'],a:2,x:'Nos vemos mañana. ¡Cuídate mucho! = 明天見,保重！Cuídate = 保重。'};
 
 
-// ============================================
-// Day 8
-// ============================================
-var S8=[{es:"Bueno, ¿quién habla?",zh:"喂，哪位？",no:"墨西哥人接電話說 Bueno，是其他西語系國家少見的用法，其他地方多說 Diga 或 Aló。"},{es:"Quisiera hacer una cita para mañana.",zh:"我想預約明天的時間。",no:"Quisiera 比 quiero 更委婉客氣，適合正式電話預約。"},{es:"¿A qué hora tiene disponible?",zh:"您哪個時間方便？",no:"disponible = 有空的/可用的，是詢問預約空檔的常用詞。"}];
-var K8=[{w:"Bueno",m:"喂（接電話用語）",f:"Coloquial"},{w:"Quisiera",m:"我想要（委婉）",f:"Formal"},{w:"Una cita",m:"一個預約",f:"Neutral"},{w:"Disponible",m:"有空的/可用的",f:"Neutral"}];
-var Q8_1={q:"在墨西哥接起電話最道地的說法是？",o:["Aló","Diga","Bueno","Hola, quién es"],a:2,x:"墨西哥獨特之處是接電話說「Bueno」，跟其他西語系國家（多說 Aló / Diga）不同。"};
-var Q8_2={q:"「Quisiera」比「quiero」的語氣更...？",o:["更直接","更禮貌委婉","更生氣","更隨便"],a:1,x:"Quisiera 是 querer 的條件式，比 quiero 更客氣委婉，常用於正式請求或預約。"};var Q8_3={q:"想問對方「您哪個時間方便？」，關鍵字用哪個？",o:["Caro","Disponible","Barato","Cansado"],a:1,x:"disponible = 有空的/可用的，¿A qué hora tiene disponible? = 您哪個時間方便？"};
-var Q8_4={type:'fill',q:'請輸入「我想預約」的西班牙文（不需要標點）',answer:'quisiera hacer una cita',alt:['quiero hacer una cita'],x:'Quisiera hacer una cita = 我想預約。quisiera 比 quiero 更委婉。'};
-var Q8_5={type:'listen',audio:'Quisiera hacer una cita para mañana.',q:'剛才你聽到的句子是什麼意思？',o:['喂,哪位？','我想預約明天的時間','您哪個時間方便？','謝謝,再見'],a:1,x:'Quisiera hacer una cita para mañana. = 我想預約明天的時間。'};
-
-
-// Day 9
-var S9=[{es:"Buenos días, quiero cambiar dólares a pesos.",zh:"早安，我想把美金換成披索。",no:"墨西哥官方貨幣是披索（pesos），大城市匯兌所（casa de cambio）很方便，通常比機場匯率好。"},{es:"¿Cuál es el tipo de cambio de hoy?",zh:"今天的匯率是多少？",no:"tipo de cambio = 匯率，出國前建議先查好匯率再兌換。"},{es:"¿Hay cajero automático cerca?",zh:"附近有提款機嗎？",no:"cajero automático = ATM，墨西哥城市裡到處都有，建議選銀行內的較安全。"}];
-var K9=[{w:"Cambiar",m:"兌換",f:"Neutral"},{w:"Tipo de cambio",m:"匯率",f:"Neutral"},{w:"Cajero automático",m:"提款機",f:"Neutral"},{w:"Pesos",m:"披索（墨西哥貨幣）",f:"Neutral"}];
-var Q9_1={q:"你想把美金換成披索，最自然的說法是？",o:["Quiero cambiar dólares a pesos.","Quiero comprar dólares para pesos.","Deseo dólares con pesos.","Necesito pesos de dólares."],a:0,x:"cambiar A a B = 把 A 換成 B，是換匯的標準句型。"};
-var Q9_2={q:"「tipo de cambio」的意思是？",o:["利率","匯率","稅率","物價"],a:1,x:"tipo de cambio = 匯率，出國前建議先查好再兌換。"};var Q9_3={q:"想問「附近有提款機嗎？」，用哪個詞？",o:["Cajero automático","Casa de cambio","Tarjeta de crédito","Banco central"],a:0,x:"cajero automático = 提款機（ATM），墨西哥城市裡到處都有。"};
-var Q9_4={type:'fill',q:'請輸入「今天的匯率是多少？」的西班牙文（不需要標點）',answer:'cuál es el tipo de cambio de hoy',alt:['cual es el tipo de cambio de hoy'],x:'¿Cuál es el tipo de cambio de hoy? = 今天的匯率是多少？'};
-var Q9_5={type:'listen',audio:'¿Hay cajero automático cerca?',q:'剛才你聽到的句子是什麼意思？',o:['今天的匯率是多少？','附近有提款機嗎？','我想把美金換成披索','這個多少錢？'],a:1,x:'¿Hay cajero automático cerca? = 附近有提款機嗎？'};
-
-
-// Day 10
-var S10=[{es:"Me siento mal, me duele la cabeza.",zh:"我覺得不舒服，我頭痛。",no:"doler 用法像 gustar，me duele + 身體部位 = 我...痛，是描述疼痛的標準句型。"},{es:"¿Hay una farmacia cerca de aquí?",zh:"這附近有藥局嗎？",no:"墨西哥藥局很普遍，很多藥不需處方箋就能買到，比如止痛藥。"},{es:"Necesito algo para el dolor de estómago.",zh:"我需要一些治療胃痛的藥。",no:"跟藥師描述症狀，藥師通常會直接推薦成藥。"}];
-var K10=[{w:"Me duele",m:"我...痛",f:"Neutral"},{w:"Farmacia",m:"藥局",f:"Neutral"},{w:"Dolor de estómago",m:"胃痛",f:"Neutral"},{w:"Me siento mal",m:"我覺得不舒服",f:"Neutral"}];
-var Q10_1={q:"想表達「我頭痛」，正確的說法是？",o:["Tengo cabeza mala.","Me duele la cabeza.","Estoy cabeza dolor.","Mi cabeza es mal."],a:1,x:"doler 用法像 gustar，me duele + 定冠詞 + 身體部位，是描述疼痛的標準句型。"};
-var Q10_2={q:"「farmacia」的意思是？",o:["診所","藥局","醫院","牙醫"],a:1,x:"farmacia = 藥局，墨西哥許多藥不需處方箋即可購買。"};var Q10_3={q:"想說「我需要治胃痛的藥」，怎麼說？",o:["Necesito algo para el dolor de estómago.","Quiero estómago médico.","Tengo dolor de farmacia.","Necesito estómago para dolor."],a:0,x:"Necesito algo para + 症狀，是跟藥師描述需求最自然的說法。"};
-var Q10_4={type:'fill',q:'請輸入「我頭痛」的西班牙文（不需要標點）',answer:'me duele la cabeza',x:'Me duele la cabeza = 我頭痛。doler 用法像 gustar。'};
-var Q10_5={type:'listen',audio:'¿Hay una farmacia cerca de aquí?',q:'剛才你聽到的句子是什麼意思？',o:['我頭痛','這附近有藥局嗎？','我需要治胃痛的藥','我覺得不舒服'],a:1,x:'¿Hay una farmacia cerca de aquí? = 這附近有藥局嗎？'};
-
-
-// Day 11
-var S11=[{es:"Hace mucho calor hoy, ¿no?",zh:"今天好熱對吧？",no:"描述天氣用 hacer 是固定搭配，如 hace calor/frío，墨西哥不同地區溫差很大。"},{es:"Está lloviendo, ¿trajiste paraguas?",zh:"在下雨耶，你有帶傘嗎？",no:"墨西哥雨季（5-10月）午後常有陣雨，出門記得帶傘。"},{es:"Me siento un poco cansado, pero contento.",zh:"我覺得有點累，但很開心。",no:"estar + 形容詞 用來描述暫時的情緒或狀態。"}];
-var K11=[{w:"Hace calor",m:"天氣很熱",f:"Neutral"},{w:"Está lloviendo",m:"正在下雨",f:"Neutral"},{w:"Cansado/a",m:"累的",f:"Neutral"},{w:"Contento/a",m:"開心的",f:"Neutral"}];
-var Q11_1={q:"想說「今天很熱」，怎麼說？",o:["Hace mucho calor hoy.","Es mucho calor hoy.","Está mucho caliente hoy.","Tengo calor mucho hoy."],a:0,x:"描述天氣用 hacer，如 hace calor/frío/viento，是固定搭配，不能用 estar 或 ser。"};
-var Q11_2={q:"「está lloviendo」的意思是？",o:["正在打雷","正在下雨","正在颳風","正在出太陽"],a:1,x:"está lloviendo = 正在下雨，llover 的現在進行式。"};var Q11_3={q:"想說「我覺得有點累」，怎麼說？",o:["Me siento un poco cansado.","Tengo un poco cansado.","Estoy cansado un poco.","Soy un poco cansado."],a:0,x:"Me siento + 形容詞 = 我覺得...，是描述感受最自然的句型。"};
-var Q11_4={type:'fill',q:'請輸入「今天好熱」的西班牙文（不需要標點）',answer:'hace mucho calor hoy',alt:['hace calor hoy'],x:'Hace mucho calor hoy = 今天好熱。hacer 用於描述天氣。'};
-var Q11_5={type:'listen',audio:'Está lloviendo, ¿trajiste paraguas?',q:'剛才你聽到的句子是什麼意思？',o:['今天好熱對吧？','在下雨耶,你有帶傘嗎？','我覺得有點累','太酷了！'],a:1,x:'Está lloviendo, ¿trajiste paraguas? = 在下雨耶,你有帶傘嗎？'};
-
-
-// Day 12
-var S12=[{es:"Te presento a mi esposa, se llama Ana.",zh:"跟你介紹我太太，她叫 Ana。",no:"Te presento a... 是介紹別人給朋友認識的標準句型。"},{es:"¿Tienes hermanos o eres hijo único?",zh:"你有兄弟姊妹嗎，還是獨生子？",no:"hijo único/hija única = 獨生子/女，是墨西哥人聊家庭常問的問題。"},{es:"Mi familia vive lejos, los extraño mucho.",zh:"我家人住得很遠，我很想他們。",no:"extrañar = 想念，在墨西哥很常用，比 echar de menos 更口語。"}];
-var K12=[{w:"Te presento a...",m:"跟你介紹...",f:"Neutral"},{w:"Hermanos",m:"兄弟姊妹",f:"Neutral"},{w:"Hijo único / Hija única",m:"獨生子/獨生女",f:"Neutral"},{w:"Extrañar",m:"想念",f:"Neutral"}];
-var Q12_1={q:"想跟朋友介紹你的太太，最自然的說法是？",o:["Te presento a mi esposa.","Ella es mi esposa, mira.","Aquí está mi esposa, hola.","Mi esposa se presento."],a:0,x:"Te presento a + 人 是介紹某人給對方認識的標準句型，自然又禮貌。"};
-var Q12_2={q:"「extrañar」的意思是？",o:["討厭","想念","害怕","擔心"],a:1,x:"extrañar = 想念，墨西哥人常用，比 echar de menos 更口語。"};var Q12_3={q:"想問「你有兄弟姊妹嗎？」，怎麼說？",o:["¿Tienes hermanos?","¿Eres hermano?","¿Cuántos hermanos tú?","¿Hermanos tienes tú?"],a:0,x:"¿Tienes hermanos? 是最自然直接的問法。"};
-var Q12_4={type:'fill',q:'請輸入「我很想他們」的西班牙文（不需要標點）',answer:'los extraño mucho',x:'Los extraño mucho = 我很想他們。extrañar = 想念。'};
-var Q12_5={type:'listen',audio:'Mi familia vive lejos, los extraño mucho.',q:'剛才你聽到的句子是什麼意思？',o:['我家人住得很遠,我很想他們','我家人在這裡,我很開心','我沒有家人','我家人住得很近'],a:0,x:'Mi familia vive lejos, los extraño mucho. = 我家人住得很遠,我很想他們。'};
-
-
-// Day 13
-var S13=[{es:"¿Dónde puedo encontrar el aceite de cocina?",zh:"我在哪裡可以找到食用油？",no:"大型超市如 Walmart、Soriana 在墨西哥非常普遍，貨架分類清楚。"},{es:"¿Tiene esto en oferta esta semana?",zh:"這個這禮拜有打折嗎？",no:"en oferta = 特價中，墨西哥超市常有週間促銷。"},{es:"Necesito una bolsa más, por favor.",zh:"我還需要一個袋子，麻煩你。",no:"墨西哥部分州環保法規定塑膠袋要另外收費，記得帶自己的袋子。"}];
-var K13=[{w:"Encontrar",m:"找到",f:"Neutral"},{w:"En oferta",m:"特價中",f:"Neutral"},{w:"Una bolsa",m:"一個袋子",f:"Neutral"},{w:"Aceite de cocina",m:"食用油",f:"Neutral"}];
-var Q13_1={q:"想問「這個有打折嗎？」，怎麼說？",o:["¿Tiene esto en oferta?","¿Esto es barato mucho?","¿Cuesta descuento esto?","¿Hay rebaja de esto aquí?"],a:0,x:"en oferta = 特價中，是超市/商店詢問折扣最自然的說法。"};
-var Q13_2={q:"「encontrar」的意思是？",o:["購買","找到","歸還","攜帶"],a:1,x:"encontrar = 找到，¿Dónde puedo encontrar...? = 我在哪裡可以找到...？"};var Q13_3={q:"想說「我還需要一個袋子」，怎麼說？",o:["Necesito una bolsa más.","Quiero bolsa otra.","Tengo una bolsa falta.","Me falta bolsa mucho."],a:0,x:"Necesito una bolsa más 是最自然的說法，más 放在名詞後面表示『再多一個』。"};
-var Q13_4={type:'fill',q:'請輸入「這個這禮拜有打折嗎？」的西班牙文（不需要標點）',answer:'tiene esto en oferta esta semana',x:'¿Tiene esto en oferta esta semana? = 這個這禮拜有打折嗎？'};
-var Q13_5={type:'listen',audio:'Necesito una bolsa más, por favor.',q:'剛才你聽到的句子是什麼意思？',o:['我在哪裡可以找到食用油？','這個有打折嗎？','我還需要一個袋子,麻煩你','這個多少錢？'],a:2,x:'Necesito una bolsa más, por favor. = 我還需要一個袋子,麻煩你。'};
-
-
-// Day 14
-var S14=[{es:"¡Ayuda, necesito un doctor!",zh:"救命，我需要醫生！",no:"緊急狀況時大聲喊 ¡Ayuda! 是求助的第一句話。"},{es:"Perdí mi cartera, ¿qué hago?",zh:"我的錢包弄丟了，我該怎麼辦？",no:"perder（丟失）是常見不規則動詞，perdí 是過去式第一人稱。"},{es:"¿Puede llamar a la policía, por favor?",zh:"可以請你幫我報警嗎？",no:"llamar a la policía = 報警，緊急時刻最重要的求助句型之一，墨西哥報警電話是911。"}];
-var K14=[{w:"¡Ayuda!",m:"救命！",f:"Neutral"},{w:"Perdí",m:"我弄丟了",f:"Neutral"},{w:"La policía",m:"警察",f:"Neutral"},{w:"Llamar a",m:"打電話給...",f:"Neutral"}];
-var Q14_1={q:"遇到緊急狀況大喊求救，最直接的說法是？",o:["¡Ayuda!","¡Cuidado!","¡Silencio!","¡Espera!"],a:0,x:"¡Ayuda! = 救命！是遇到緊急狀況時最直接有效的求救喊聲。"};
-var Q14_2={q:"「perdí」是哪個動詞的變化？",o:["Perder","Pedir","Poder","Pensar"],a:0,x:"perdí 是 perder（丟失/輸）的簡單過去式第一人稱。"};var Q14_3={q:"想請人幫忙報警，怎麼說？",o:["¿Puede llamar a la policía, por favor?","Quiero policía ahora.","La policía, ¡ven aquí!","Necesito ver policía."],a:0,x:"¿Puede llamar a la policía, por favor? 禮貌又清楚地請求對方幫忙報警。"};
-var Q14_4={type:'fill',q:'請輸入「我的錢包弄丟了」的西班牙文（不需要標點）',answer:'perdí mi cartera',x:'Perdí mi cartera = 我的錢包弄丟了。perder = 丟失。'};
-var Q14_5={type:'listen',audio:'¿Puede llamar a la policía, por favor?',q:'剛才你聽到的句子是什麼意思？',o:['救命,我需要醫生！','我的錢包弄丟了','可以請你幫我報警嗎？','今天好熱對吧？'],a:2,x:'¿Puede llamar a la policía, por favor? = 可以請你幫我報警嗎？'};
-
-
-
 var LESSONS=[
   {day:1,theme:"問候語",target:"學會各種場合的墨西哥式問候與回應",sentences:S1,keywords:K1,quiz:[Q1_1,Q1_2,Q1_3,Q1_4,Q1_5]},
   {day:2,theme:"自我介紹",target:"能清楚說出自己的名字、來自哪裡，並認識新朋友",sentences:S2,keywords:K2,quiz:[Q2_1,Q2_2,Q2_3,Q2_4,Q2_5]},
@@ -1035,14 +596,7 @@ var LESSONS=[
   {day:4,theme:"餐廳點餐",target:"能在墨西哥餐廳點餐、叫飲料、催餐與買單",sentences:S4,keywords:K4,quiz:[Q4_1,Q4_2,Q4_3,Q4_4,Q4_5]},
   {day:5,theme:"問路與交通",target:"能詢問地點方向，理解公車、地鐵基本用語",sentences:S5,keywords:K5,quiz:[Q5_1,Q5_2,Q5_3,Q5_4,Q5_5]},
   {day:6,theme:"工作場景",target:"能表達工作相關的基本需求，與同事互動",sentences:S6,keywords:K6,quiz:[Q6_1,Q6_2,Q6_3,Q6_4,Q6_5]},
-  {day:7,theme:"日常閒聊與道別",target:"能進行簡短閒聊，用各種方式跟朋友道別",sentences:S7,keywords:K7,quiz:[Q7_1,Q7_2,Q7_3,Q7_4,Q7_5]},
-  {day:8,theme:"打電話與預約",target:"能透過電話預約時間或詢問對方是否方便",sentences:S8,keywords:K8,quiz:[Q8_1,Q8_2,Q8_3,Q8_4,Q8_5]},
-  {day:9,theme:"銀行與換錢",target:"能在銀行或匯兌所換錢、詢問匯率與尋找提款機",sentences:S9,keywords:K9,quiz:[Q9_1,Q9_2,Q9_3,Q9_4,Q9_5]},
-  {day:10,theme:"看醫生與藥局",target:"能描述身體不適並在藥局尋求協助",sentences:S10,keywords:K10,quiz:[Q10_1,Q10_2,Q10_3,Q10_4,Q10_5]},
-  {day:11,theme:"天氣與心情",target:"能描述天氣狀況並表達自己的心情感受",sentences:S11,keywords:K11,quiz:[Q11_1,Q11_2,Q11_3,Q11_4,Q11_5]},
-  {day:12,theme:"家庭與朋友",target:"能介紹家人朋友，並聊聊家庭狀況",sentences:S12,keywords:K12,quiz:[Q12_1,Q12_2,Q12_3,Q12_4,Q12_5]},
-  {day:13,theme:"超市採購",target:"能在超市尋找商品、詢問折扣並完成購物",sentences:S13,keywords:K13,quiz:[Q13_1,Q13_2,Q13_3,Q13_4,Q13_5]},
-  {day:14,theme:"緊急求助",target:"能在緊急狀況下求救並清楚表達需求",sentences:S14,keywords:K14,quiz:[Q14_1,Q14_2,Q14_3,Q14_4,Q14_5]}
+  {day:7,theme:"日常閒聊與道別",target:"能進行簡短閒聊，用各種方式跟朋友道別",sentences:S7,keywords:K7,quiz:[Q7_1,Q7_2,Q7_3,Q7_4,Q7_5]}
 ];
 
 var STORAGE_KEY='mx_lesson_progress_v1';
@@ -1089,7 +643,7 @@ function init(optDay){
     else{addToVocab(currentDictWord,currentDictMeaning,currentDictNote);}
     showDict(currentDictWord,currentDictMeaning,currentDictNote);
   };
-  document.getElementById('btn-next').onclick=function(){if(currentDay<14)renderDay(currentDay+1)};
+  document.getElementById('btn-next').onclick=function(){if(currentDay<7)renderDay(currentDay+1)};
   document.getElementById('dict-overlay').onclick=closeDictPopup;
   document.getElementById('dict-close').onclick=closeDictPopup;
 }
@@ -1103,11 +657,8 @@ function renderDay(day){
   var prevCorrect=0;
   if(hasPrevQuiz){for(var i=0;i<prevQuiz.length;i++){if(prevQuiz[i].correct)prevCorrect++;}}
   currentDay=day;
-  var dayInWeek=(day<=7)?day:day-7;
-  var weekStartDay=(day<=7)?1:8;
-  var weekEndDay=(day<=7)?7:14;
-  document.getElementById('header-sub').textContent='Day '+dayInWeek+' · '+lesson.theme;
-  document.getElementById('day-badge').textContent='DAY '+dayInWeek+'/7';
+  document.getElementById('header-sub').textContent='Day '+day+' · '+lesson.theme;
+  document.getElementById('day-badge').textContent='DAY '+day+'/7';
   document.title='🇲🇽 墨西哥西語學習 Day '+day;
   document.getElementById('done-banner').classList.toggle('show',progress.completed.indexOf(day)>=0);
   document.getElementById('lesson-goal').textContent=lesson.target;
@@ -1174,8 +725,8 @@ function renderDay(day){
     renderQuiz(lesson);
   }
   updateDots();
-  document.getElementById('btn-prev').disabled=(day===weekStartDay);
-  document.getElementById('btn-next').disabled=(day===weekEndDay);
+  document.getElementById('btn-prev').disabled=(day===1);
+  document.getElementById('btn-next').disabled=(day===7);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1374,11 +925,10 @@ function closeDictPopup(){
 }
 
 function updateDots(){
-  var base=(currentDay<=7)?0:7;
   document.querySelectorAll('.dot').forEach(function(d,i){
     d.classList.remove('active','done');
-    if(i+1+base===currentDay)d.classList.add('active');
-    if(progress.completed.indexOf(i+1+base)>=0)d.classList.add('done');
+    if(i+1===currentDay)d.classList.add('active');
+    if(progress.completed.indexOf(i+1)>=0)d.classList.add('done');
   });
 }
 function esc(str){if(!str)return'';return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');}

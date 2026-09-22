@@ -117,7 +117,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 .day-row-idx.failed{background:#FDE8E5}
 .day-row-idx.failed .day-check{background:var(--danger);color:#fff}
 .week-status-idx.failed{background:var(--danger)}
-#fill-input:focus{outline:none;border-color:var(--accent)}
+
 
 /* ========== Pronunciation Module ========== */
 .pronunciation-view{display:none}
@@ -158,8 +158,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 .pronunciation-tab:active{transform:scale(.95)}
 .pronunciation-tab-content{display:none}
 .pronunciation-tab-content.active{display:block}
-
-
 </style>
 </head>
 <body>
@@ -211,21 +209,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
   </div>
 
 
-<div class="week-card-idx" data-week="2">
+<div class="week-card-idx locked">
     <div class="week-header-idx">
       <div class="week-title-idx">第二週</div>
-      <div class="week-status-idx" id="week2-status">尚未開始</div>
+      <div class="week-status-idx">即將推出</div>
     </div>
     <div class="week-days-idx">
-      <a href="#" onclick="showWeek1(8);return false;"><div class="day-row-idx pending" id="home-day-8"><span class="day-num">Day 1</span><span class="day-theme">打電話與預約</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(9);return false;"><div class="day-row-idx pending" id="home-day-9"><span class="day-num">Day 2</span><span class="day-theme">銀行與換錢</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(10);return false;"><div class="day-row-idx pending" id="home-day-10"><span class="day-num">Day 3</span><span class="day-theme">看醫生與藥局</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(11);return false;"><div class="day-row-idx pending" id="home-day-11"><span class="day-num">Day 4</span><span class="day-theme">天氣與心情</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(12);return false;"><div class="day-row-idx pending" id="home-day-12"><span class="day-num">Day 5</span><span class="day-theme">家庭與朋友</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(13);return false;"><div class="day-row-idx pending" id="home-day-13"><span class="day-num">Day 6</span><span class="day-theme">超市採購</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(14);return false;"><div class="day-row-idx pending" id="home-day-14"><span class="day-num">Day 7</span><span class="day-theme">緊急求助</span><span class="day-check"></span></div></a>
+      <div class="day-row-idx pending"><span class="day-num">Day 1</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 2</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 3</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 4</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 5</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 6</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 7</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
     </div>
-    <div class="progress-bar-idx"><div class="progress-fill-idx" id="week2-progress" style="width:0%"></div></div>
+    <div class="progress-bar-idx"><div class="progress-fill-idx" style="width:0%"></div></div>
   </div>
 
   <div class="week-card-idx locked">
@@ -246,7 +244,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
   </div>
 </div>
 
-<div class="footer-idx">墨西哥語學習 App · v0.8.0 · 離線可用</div>
+<div class="footer-idx">墨西哥語學習 App · v0.6.0 · 離線可用</div>
 </div>
 
 <div id="week1-view" style="display:none">
@@ -269,7 +267,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 <div class="card"><div class="card-label">今日學什麼</div><div class="lesson-goal" id="lesson-goal">學會各種場合的墨西哥式問候與回應</div><div id="sentences-container"></div></div>
 <div class="card"><div class="card-label">關鍵單字</div><div class="keywords-grid" id="keywords-grid"></div></div>
 <div class="quiz-section"><div class="quiz-label">小測驗</div><div class="quiz-question" id="quiz-question">載入中...</div><div class="quiz-options" id="quiz-options"></div><div id="quiz-feedback"></div></div>
-<div class="footer">墨西哥語學習 App · v0.8.0 · 離線可用</div>
+<div class="footer">墨西哥語學習 App · v0.6.0 · 離線可用</div>
 
 <div class="dict-popup-overlay" id="dict-overlay"></div>
 <div class="dict-popup" id="dict-popup">
@@ -281,6 +279,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
   <button class="dict-popup-close" id="dict-close">關閉</button>
 </div>
 </div>
+
 
 <!-- ========== Pronunciation View ========== -->
 <div id="pronunciation-view" style="display:none">
@@ -343,7 +342,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 
 <div class="footer">墨西哥語學習 App · 基礎發音</div>
 </div>
-
 <div id="vocab-view" style="display:none">
 <div class="header">
   <div style="padding:8px 20px 0;">
@@ -359,6 +357,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 </div>
 
 <script>
+
 
 /* ========== Pronunciation Module ========== */
 function showPronunciation(){
@@ -414,7 +413,7 @@ function renderAlphabet(){
   var g=document.getElementById('alphabet-grid');
   if(!g||g.children.length>0)return;
   g.innerHTML=ALPHABET.map(function(a){
-    var e=a.example.replace(/'/g,"\\'");
+    var e=a.example.replace(/'/g,"\'");
     return '<div class="letter-card" onclick="speakAlphabet(\''+a.letter.toLowerCase()+'\',\''+a.name+'\',\''+e+'\')">'+
       '<div class="letter-char">'+a.letter+'</div>'+
       '<div class="letter-name">'+a.name+'</div>'+
@@ -455,7 +454,7 @@ function renderVowels(){
   var g=document.getElementById('vowels-grid');
   if(!g||g.children.length>0)return;
   g.innerHTML=VOWELS.map(function(v){
-    var e=v.example.replace(/'/g,"\\'");
+    var e=v.example.replace(/'/g,"\'");
     return '<div class="vowel-card" onclick="speak(\''+e+'\')">'+
       '<div class="vowel-char">'+v.vowel+'</div>'+
       '<div class="vowel-desc">'+v.desc+'</div>'+
@@ -467,7 +466,7 @@ function renderDiphthongs(){
   var g=document.getElementById('diphthongs-grid');
   if(!g||g.children.length>0)return;
   g.innerHTML='<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">'+DIPH_THONGS.map(function(d){
-    var e=d.example.replace(/'/g,"\\'");
+    var e=d.example.replace(/'/g,"\'");
     return '<div class="sound-ex-card" onclick="speak(\''+e+'\')">'+
       '<div class="sound-ex-word">'+d.pair+'</div>'+
       '<div class="sound-ex-zh">'+d.sound+'</div>'+
@@ -488,7 +487,7 @@ function renderConsonantRules(){
   if(!c||c.children.length>0)return;
   c.innerHTML=CONSONANT_RULES.map(function(rule){
     var exHtml=rule.examples.map(function(ex){
-      var e=ex.es.replace(/'/g,"\\'");
+      var e=ex.es.replace(/'/g,"\'");
       return '<div class="sound-ex-card" onclick="speak(\''+e+'\')"><div class="sound-ex-word">'+ex.es+'</div><div class="sound-ex-zh">'+ex.zh+'</div></div>';
     }).join('');
     return '<div class="sound-rule"><div class="sound-rule-title">'+rule.title+'</div><div class="sound-rule-desc">'+rule.desc+'</div><div class="sound-examples">'+exHtml+'</div></div>';
@@ -512,8 +511,6 @@ function renderAccentRules(){
 /* ========== SPA Navigation ========== */
 function showWeek1(day){
   document.getElementById('home-view').style.display='none';
-  document.getElementById('pronunciation-view').style.display='none';
-  document.getElementById('vocab-view').style.display='none';
   document.getElementById('week1-view').style.display='block';
   window.scrollTo(0,0);
   init(day);
@@ -539,9 +536,9 @@ function showVocab(){
   renderVocab();
 }
 
-function updateWeekProgress(startDay,statusId,progressId){
+function updateHomeProgress(){
   var doneCount=0,failedCount=0;
-  for(var i=startDay;i<=startDay+6;i++){
+  for(var i=1;i<=7;i++){
     var row=document.getElementById('home-day-'+i);
     if(!row)continue;
     row.classList.remove('done','failed','pending');
@@ -559,8 +556,8 @@ function updateWeekProgress(startDay,statusId,progressId){
     }
   }
   var total=doneCount+failedCount;
-  var statusEl=document.getElementById(statusId);
-  var progEl=document.getElementById(progressId);
+  var statusEl=document.getElementById('week1-status');
+  var progEl=document.getElementById('week1-progress');
   if(statusEl){
     if(doneCount===7){statusEl.textContent='已完成';statusEl.classList.add('done');statusEl.classList.remove('progress','failed');}
     else if(total>0){statusEl.textContent=doneCount+'/7 完成';statusEl.classList.add('progress');statusEl.classList.remove('done','failed');}
@@ -570,10 +567,6 @@ function updateWeekProgress(startDay,statusId,progressId){
     var pct=Math.round((doneCount/7)*100);
     progEl.style.width=pct+'%';
   }
-}
-function updateHomeProgress(){
-  updateWeekProgress(1,'week1-status','week1-progress');
-  updateWeekProgress(8,'week2-status','week2-progress');
 }
 
 /* ==================================== */
@@ -724,106 +717,6 @@ var DICT={
   "¡cuídate":["保重","Neutral","關心對方的道別語，比 adiós 更溫暖。"],
   "cuídate":["保重","Neutral","cuídate 原形是 cuidar（照顧），命令式表示『保重』。"],
   "mucho":["很 / 非常","Neutral","副詞，cuídate mucho = 保重（非常照顧自己）。"],
-  // --- Day 8 ---
-  "bueno":["喂（接電話用語）/ 好的","Coloquial","墨西哥人接電話時說 Bueno，是其他西語系國家少見的用法。"],
-  "¿quién":["誰","Neutral","疑問詞，用於詢問身份。"],
-  "quién":["誰","Neutral","疑問詞，用於詢問身份。"],
-  "habla":["（他/她）說話","Neutral","hablar 的第三人稱，¿Quién habla? = 哪位？（電話用語）。"],
-  "quisiera":["我想要（委婉）","Formal","querer 的條件式，比 quiero 更客氣委婉，常用於正式請求或預約。"],
-  "hacer":["做","Neutral","原形動詞，hacer una cita = 預約。"],
-  "cita":["預約 / 約會","Neutral","名詞，una cita = 一個預約。"],
-  "una cita":["一個預約","Neutral","名詞片語，hacer una cita = 預約。"],
-  "tiene":["（他/她）有 / 您有","Neutral","tener 的第三人稱，也用於正式 usted 稱呼，¿Tiene...? = 您有...嗎？"],
-  "¿tiene":["您有...嗎？","Neutral","tener 的第三人稱疑問式，正式 usted 稱呼常用。"],
-  "disponible":["有空的 / 可用的","Neutral","形容詞，¿A qué hora tiene disponible? = 您哪個時間方便？"],
-  "¿a qué hora tiene disponible":["您哪個時間方便？","Neutral","電話預約常用句型。"],
-  // --- Day 9 ---
-  "buenos":["好的（陽性複數）","Neutral","形容詞 bueno 的複數，buenos días = 早安。"],
-  "días":["天 / 日子（複數）","Neutral","día 的複數，buenos días = 早安。"],
-  "buenos días":["早安","Neutral","上午最常用的問候語。"],
-  "cambiar":["兌換 / 改變","Neutral","原形動詞，cambiar dólares a pesos = 把美金換成披索。"],
-  "dólares":["美金（複數）","Neutral","dólar 的複數，常見外幣。"],
-  "pesos":["披索（墨西哥貨幣，複數）","Neutral","peso 的複數，墨西哥官方貨幣單位。"],
-  "¿cuál":["哪一個","Neutral","疑問詞，用於在選項中詢問哪一個。"],
-  "cuál":["哪一個","Neutral","疑問詞，用於在選項中詢問哪一個。"],
-  "es":["（他/她/它）是","Neutral","ser 的第三人稱單數。"],
-  "tipo":["類型","Neutral","名詞，tipo de cambio = 匯率。"],
-  "cambio":["改變 / 兌換","Neutral","名詞，tipo de cambio = 匯率。"],
-  "tipo de cambio":["匯率","Neutral","出國前建議先查好匯率再兌換。"],
-  "¿hay":["有...嗎？","Neutral","haber 的非人稱疑問形式，用於詢問是否存在某物。"],
-  "hay":["有（非人稱）","Neutral","haber 的非人稱形式，表示『有』某物存在。"],
-  "cajero":["提款機 / 收銀員","Neutral","名詞，cajero automático = 自動提款機（ATM）。"],
-  "automático":["自動的","Neutral","形容詞，cajero automático = 自動提款機。"],
-  "cajero automático":["提款機（ATM）","Neutral","墨西哥城市裡到處都有，建議選銀行內的較安全。"],
-  "cerca":["附近 / 近","Neutral","副詞，¿Hay algo cerca? = 附近有什麼嗎？"],
-  // --- Day 10 ---
-  "siento":["我感覺","Neutral","sentirse 的第一人稱，me siento mal = 我覺得不舒服。"],
-  "mal":["不好 / 不舒服","Neutral","副詞/形容詞，描述狀態不佳。"],
-  "me duele":["我...痛","Neutral","doler 用法像 gustar，me duele + 身體部位 = 我...痛。"],
-  "duele":["（它）使...疼痛","Neutral","doler 的第三人稱，用法特殊，類似 gustar 結構。"],
-  "cabeza":["頭","Neutral","名詞，me duele la cabeza = 我頭痛。"],
-  "farmacia":["藥局","Neutral","墨西哥藥局普遍，許多藥不需處方箋即可購買。"],
-  "necesito":["我需要","Neutral","necesitar 的第一人稱。"],
-  "algo":["某個東西 / 一些","Neutral","不定代名詞，necesito algo = 我需要一些東西。"],
-  "dolor":["疼痛","Neutral","名詞，dolor de estómago = 胃痛。"],
-  "estómago":["胃","Neutral","名詞，dolor de estómago = 胃痛。"],
-  "dolor de estómago":["胃痛","Neutral","跟藥師描述症狀時常用的詞。"],
-  "me siento mal":["我覺得不舒服","Neutral","描述身體不適的常用句型。"],
-  // --- Day 11 ---
-  "calor":["熱","Neutral","名詞，hace calor = 天氣很熱。"],
-  "hace calor":["天氣很熱","Neutral","描述炎熱天氣的固定用法。"],
-  "lloviendo":["正在下雨","Neutral","llover 的現在進行式，está lloviendo = 正在下雨。"],
-  "está lloviendo":["正在下雨","Neutral","墨西哥雨季（5-10月）午後常有陣雨。"],
-  "trajiste":["你帶了","Neutral","traer 的第二人稱簡單過去式。"],
-  "¿trajiste":["你帶了...嗎？","Neutral","traer 過去式疑問句，詢問對方是否帶了某物。"],
-  "paraguas":["雨傘","Neutral","名詞，陽性但不隨複數變化（el paraguas / los paraguas）。"],
-  "un":["一（陽性）","Neutral","陽性單數不定冠詞。"],
-  "poco":["一點 / 少許","Neutral","副詞/形容詞，un poco = 一點點。"],
-  "un poco":["一點點","Neutral","常用於緩和語氣，un poco cansado = 有點累。"],
-  "cansado":["累的","Neutral","形容詞，estar cansado = 感到疲累。cansado/cansada。"],
-  "pero":["但是","Neutral","連接詞，表示轉折。"],
-  "contento":["開心的","Neutral","形容詞，estar contento = 感到開心。contento/contenta。"],
-  // --- Day 12 ---
-  "te":["你（受詞/反身）","Neutral","第二人稱受詞代名詞，te presento a... = 跟你介紹..."],
-  "presento":["我介紹","Neutral","presentar 的第一人稱，te presento a mi esposa = 跟你介紹我太太。"],
-  "te presento a":["跟你介紹...","Neutral","介紹某人給對方認識的標準句型。"],
-  "mi":["我的","Neutral","物主形容詞。"],
-  "esposa":["太太 / 妻子","Neutral","名詞，esposo/esposa。"],
-  "se":["自己（反身代詞）","Neutral","第三人稱反身代詞，se llama = 他/她叫。"],
-  "llama":["（他/她）叫","Neutral","llamarse 的第三人稱，se llama Ana = 她叫 Ana。"],
-  "¿tienes":["你有...嗎？","Neutral","tener 的第二人稱疑問式。"],
-  "tienes":["你有","Neutral","tener 的第二人稱。"],
-  "hermanos":["兄弟姊妹","Neutral","hermano 的複數，泛指兄弟姊妹。"],
-  "o":["或者","Neutral","連接詞，表示選擇。"],
-  "eres":["你是","Neutral","ser 的第二人稱。"],
-  "hijo":["兒子","Neutral","名詞，hijo único = 獨生子。"],
-  "único":["唯一的","Neutral","形容詞，hijo único/hija única = 獨生子/獨生女。"],
-  "hijo único":["獨生子","Neutral","墨西哥人聊家庭常問的問題。"],
-  "familia":["家庭 / 家人","Neutral","名詞，墨西哥人非常重視家庭觀念。"],
-  "vive":["（他/她）住","Neutral","vivir 的第三人稱。"],
-  "lejos":["遠","Neutral","副詞，vive lejos = 住得很遠。"],
-  "los":["他們（受詞）/ 那些（陽性複數）","Neutral","陽性複數定冠詞或直接受詞代名詞。"],
-  "extraño":["我想念","Neutral","extrañar 的第一人稱，比 echar de menos 更口語。"],
-  // --- Day 13 ---
-  "puedo":["我可以","Neutral","poder 的第一人稱。"],
-  "encontrar":["找到","Neutral","原形動詞。"],
-  "aceite":["油","Neutral","名詞，aceite de cocina = 食用油。"],
-  "cocina":["廚房 / 烹飪","Neutral","名詞，aceite de cocina = 食用油。"],
-  "aceite de cocina":["食用油","Neutral","超市常見分類，貨架標示清楚。"],
-  "oferta":["特價 / 促銷","Neutral","名詞，en oferta = 特價中。"],
-  "en oferta":["特價中","Neutral","墨西哥超市常有週間促銷活動。"],
-  "esta":["這個（陰性）","Neutral","陰性單數指示形容詞，esta semana = 這禮拜。"],
-  "bolsa":["袋子","Neutral","名詞，超市購物常用詞，部分州購物袋需另外收費。"],
-  // --- Day 14 ---
-  "¡ayuda":["救命！","Neutral","緊急狀況時最直接的求救喊聲。"],
-  "ayuda":["幫助 / 救命","Neutral","名詞/感嘆詞，¡Ayuda! = 救命！"],
-  "doctor":["醫生","Neutral","名詞，doctor/doctora。"],
-  "perdí":["我弄丟了 / 我輸了","Neutral","perder 的簡單過去式第一人稱。"],
-  "cartera":["錢包","Neutral","名詞，墨西哥也常說 billetera。"],
-  "hago":["我做","Neutral","hacer 的第一人稱，¿qué hago? = 我該怎麼辦？"],
-  "llamar":["打電話 / 呼叫","Neutral","原形動詞，llamar a la policía = 報警。"],
-  "policía":["警察","Neutral","名詞，墨西哥報警電話是911。"],
-  "llamar a la policía":["報警","Neutral","緊急時刻最重要的求助句型之一。"],
   
   // --- Common words across multiple days ---
   "me llamo":["我叫...","Neutral","自我介紹必用句型。"],
@@ -858,10 +751,6 @@ var FORM_MAP={
   "tengo":"tener",
   "da":"dar",
   "soy":"ser",
-  "llama":"llamar",
-  "tienes":"tener",
-  "eres":"ser",
-  "vive":"vivir",
 };
 
 // Build lookup from all words across sentences
@@ -904,8 +793,6 @@ var S1=[{es:"Hola, ¿qué onda?",zh:"哈囉，最近怎麼樣？",no:"¿Qué ond
 var K1=[{w:"¿Qué onda?",m:"最近怎麼樣？（口語）",f:"Coloquial"},{w:"Hola",m:"哈囉 / 你好",f:"Neutral"},{w:"Estoy bien",m:"我很好",f:"Neutral"},{w:"Gracias",m:"謝謝",f:"Neutral"}];
 var Q1_1={q:"當你很久沒見到墨西哥朋友，想說『最近怎麼樣？』，最道地的說法是？",o:["¿Qué tal?","¿Qué onda?","¿Cómo está usted?","¿Buenos días?"],a:1,x:"¿Qué onda? 是墨西哥最道地的口語問候，比 ¿Qué tal? 更本土，此句本身並非粗話，是朋友間的日常用語。"};
 var Q1_2={q:"墨西哥朋友見面最常說的口語問候是？",o:["¿Qué tal?","¿Qué onda?","Hola, buenos días","¿Cómo está usted?"],a:1,x:"¿Qué onda? 是墨西哥年輕人/朋友間最道地的問候，比 ¿Qué tal? 更本土。"};var Q1_3={q:"¿Qué onda? 的正確回應是？",o:["No sé.","Todo bien. ¿Y tú?","Adiós.","Hasta mañana."],a:1,x:"回答 ¿Qué onda? 最自然的方式是 Todo bien.（還不錯），然後回問對方 ¿Y tú?"};
-var Q1_4={type:'fill',q:'請輸入「最近怎麼樣？」的墨西哥西班牙文（不需要大小寫與標點）',answer:'qué onda',alt:['que onda'],x:'¿Qué onda? = 最近怎麼樣？墨西哥朋友間最道地的問候。'};
-var Q1_5={type:'listen',audio:'Hola, ¿qué onda?',q:'剛才你聽到的句子是什麼意思？',o:['晚安,我要走了','哈囉,最近怎麼樣？','謝謝,明天見','對不起,我很忙'],a:1,x:'Hola, ¿qué onda? = 哈囉,最近怎麼樣？'};
 
 
 // Day 2
@@ -913,8 +800,6 @@ var S2=[{es:"Me llamo Nelson. Soy de Taiwán.",zh:"我叫 Nelson。我來自台�
 var K2=[{w:"Me llamo",m:"我叫...",f:"Neutral"},{w:"Soy de",m:"我來自...",f:"Neutral"},{w:"Mucho gusto",m:"很高興認識你",f:"Formal"},{w:"¿Cómo te llamas?",m:"你叫什麼名字？",f:"Neutral"}];
 var Q2_1={q:"你想告訴墨西哥同事『我叫 Nelson，我來自台灣，我是工程師』，正確的組合是？",o:["Soy Nelson, me de Taiwán, vivo ingeniero.","Me llamo Nelson, soy de Taiwán, soy ingeniero.","Estoy Nelson, vengo Taiwán, trabajo en ingeniero.","Mi nombre es Nelson, de Taiwán, mi trabajo es ingeniero."],a:1,x:"正確組合：Me llamo（我叫）+ soy de（我來自）+ soy ingeniero（我是工程師）。在西班牙語中，職業直接用 ser 動詞，不用 trabajar en。"};
 var Q2_2={q:"在墨西哥自我介紹時，『我來自台灣』怎麼說？",o:["Soy de Taiwán.","Vivo en Taiwán.","Nací en Taiwán.","Trabajo en Taiwán."],a:0,x:"Soy de + 地點 = 我來自...，這是最簡潔的表達方式。"};var Q2_3={q:"¿Cómo te llamas? 中的 te 是什麼意思？",o:["你（主格）","你（受格/反身）","他","我"],a:1,x:"te 是非正式的第二人稱反身代詞，llamarse 是反身動詞（稱呼自己），所以 te llamas = 你叫什麼名字。"};
-var Q2_4={type:'fill',q:'請輸入「我叫 Nelson」的西班牙文（不需要標點）',answer:'me llamo nelson',alt:['me llamo Nelson','Me llamo Nelson'],x:'Me llamo Nelson = 我叫 Nelson。llamarse 是反身動詞。'};
-var Q2_5={type:'listen',audio:'Me llamo Nelson. Soy de Taiwán.',q:'剛才你聽到的句子是什麼意思？',o:['我叫 Nelson,我來自台灣','我住在 Nelson,我去台灣','我喜歡 Nelson,我討厭台灣','我認識 Nelson,我離開台灣'],a:0,x:'Me llamo Nelson. Soy de Taiwán. = 我叫 Nelson,我來自台灣。'};
 
 
 // Day 3
@@ -922,8 +807,6 @@ var S3=[{es:"Buenas tardes. ¿Cuánto cuesta esto?",zh:"午安。這個多少錢
 var K3=[{w:"¿Cuánto cuesta?",m:"多少錢？",f:"Neutral"},{w:"Está caro",m:"這很貴",f:"Neutral"},{w:"Me lo llevo",m:"我買了（帶走）",f:"Neutral"},{w:"¿Aceptan tarjeta?",m:"可以刷卡嗎？",f:"Neutral"}];
 var Q3_1={q:"你在墨西哥市場想殺價，想知道『這個多少錢？』並說『太貴了，能便宜一點嗎？』最道地的方式是？",o:["¿Cuánto cuesta? Está caro, ¿puedes bajar el precio?","¿Cuánto es? Está caro, ¿puedes rebajar?","¿Cuánto cuesta esto? Está caro, ¿me lo dejas más barato?","¿Cuesta cuánto? Es feo, quiero menos precio."],a:2,x:"¿Cuánto cuesta esto? 最自然；¿Me lo dejas más barato? 是墨西哥人實際會說的殺價句，dejar 有『便宜讓給你』的含義。"};
 var Q3_2={q:"覺得東西太貴了，想殺價時怎麼說？",o:["¡Qué chido!","Está muy caro.","Lo quiero todo.","No me gusta."],a:1,x:"Está muy caro（這太貴了）是殺價的必備句型，說完後可以接 ¿Me lo dejas en...?（能不能算我...？）"};var Q3_3={q:"決定要買了，最簡單的說法是？",o:["Me lo llevo.","No me interesa.","Está caro.","Lo devuelvo."],a:0,x:"Me lo llevo（我帶走這個）是決定購買時最自然的表達，比 quiero comprar 更口語、更道地。"};
-var Q3_4={type:'fill',q:'請輸入「這個多少錢？」的西班牙文（不需要標點）',answer:'cuánto cuesta esto',alt:['cuanto cuesta esto','cuánto cuesta'],x:'¿Cuánto cuesta esto? = 這個多少錢？墨西哥購物必備金句。'};
-var Q3_5={type:'listen',audio:'Está caro, ¿me lo dejas en cincuenta?',q:'剛才你聽到的句子是什麼意思？',o:['這很便宜,我買五十個','這有點貴,五十塊賣我嗎？','我喜歡這個,給我五十個','這不用錢,謝謝'],a:1,x:'Está caro, ¿me lo dejas en cincuenta? = 這有點貴,五十塊賣我嗎？dejar 有「便宜讓給你」的意思。'};
 
 
 // Day 4
@@ -931,8 +814,6 @@ var S4=[{es:"Buenas noches. Una mesa para dos, por favor.",zh:"晚安。一張�
 var K4=[{w:"Una mesa para...",m:"一張...人桌",f:"Neutral"},{w:"Quiero...",m:"我要...（點餐）",f:"Neutral"},{w:"La cuenta",m:"帳單",f:"Neutral"},{w:"Disculpe",m:"不好意思 / 借過",f:"Formal"}];
 var Q4_1={q:"你吃完墨西哥塔可準備離開，想請服務生結帳，最道地的說法是？",o:["Quiero pagar, dame el dinero.","Necesito irme, tráeme la cuenta rápido.","La cuenta, por favor.","¿Dónde pago? Yo ya me voy."],a:2,x:"La cuenta, por favor 是墨西哥餐廳最標準的結帳請求。禮貌、簡潔，加上 por favor 是最得體的。其他選項過於急促或無禮。"};
 var Q4_2={q:"在墨西哥餐廳想點一杯水，怎麼說？",o:["Una cerveza, por favor.","Un agua, por favor.","Un café, por favor.","Una soda, por favor."],a:1,x:"Un agua, por favor（一杯水，謝謝）是最基本的點飲料句型。"};var Q4_3={q:"吃飽了想買單，墨西哥最道地的說法是？",o:["La cuenta, por favor.","Dame dinero.","Está malo.","No como."],a:0,x:"La cuenta, por favor（帳單，謝謝）是全西班牙語世界通用的買單句型，墨西哥也不例外。"};
-var Q4_4={type:'fill',q:'請輸入「帳單,謝謝」的西班牙文（不需要標點）',answer:'la cuenta por favor',alt:['La cuenta, por favor','la cuenta, por favor'],x:'La cuenta, por favor = 帳單,謝謝。全西班牙語世界通用的買單句型。'};
-var Q4_5={type:'listen',audio:'Quiero unos tacos de pastor con cebolla y cilantro.',q:'剛才你聽到的句子是什麼意思？',o:['我要一張雙人桌','我要一份 pastor 口味的塔可,加洋蔥和香菜','我想去教堂禱告','我要水和飲料'],a:1,x:'Quiero unos tacos de pastor con cebolla y cilantro. = 我要一份 pastor 口味的塔可,加洋蔥和香菜。'};
 
 
 // Day 5
@@ -940,8 +821,6 @@ var S5=[{es:"Disculpe, ¿dónde está el metro más cercano?",zh:"不好意思�
 var K5=[{w:"¿Dónde está...?",m:"...在哪裡？",f:"Neutral"},{w:"¿Cómo llego a...?",m:"怎麼去...？",f:"Neutral"},{w:"El metro",m:"地鐵",f:"Neutral"},{w:"El camión",m:"公車（俚語）",f:"Coloquial"}];
 var Q5_1={q:"你在墨西哥城街頭迷路了，想知道最近的 Metro 怎麼走，最得體的問法是？",o:["¡Ayuda! Estoy perdido. ¿Dónde está el metro?","Disculpe, ¿dónde está el metro más cercano?","Oye, ¿cómo voy al metro? Rápido.","Metro, metro, metros. ¿Cuál metro?"],a:1,x:"Disculpe, ¿dónde está el metro más cercano? 禮貌地以 disculpe 開頭，用 más cercano（最近的）明確你的需求，是標準又得體的問路方式。"};
 var Q5_2={q:"聽到『Está cerca』表示目的地離你？",o:["很遠","很近","很貴","很好吃"],a:1,x:"cerca = 近，lejos = 遠。這兩個字是最常用的問路回答。"};var Q5_3={q:"想問『這裡有公車站嗎？』怎麼說？",o:["¿Hay una parada de camión cerca?","¿Dónde está el tren?","¿Cuánto cuesta el taxi?","¿Puedo caminar?"],a:0,x:"¿Hay...? = 有...嗎？parada de camión = 公車站（墨西哥口語）。"};
-var Q5_4={type:'fill',q:'請輸入「最近的 Metro 在哪裡？」的西班牙文（不需要標點）',answer:'dónde está el metro más cercano',alt:['donde está el metro más cercano','dónde está el metro mas cercano','donde esta el metro mas cercano'],x:'¿Dónde está el metro más cercano? = 最近的 Metro 在哪裡？más cercano = 最近的。'};
-var Q5_5={type:'listen',audio:'¿Cómo llego a la calle Madero?',q:'剛才你聽到的句子是什麼意思？',o:['最近的公車在哪裡？','去市中心的公車幾點來？','請問怎麼去 Madero 街？','這裡有公車站嗎？'],a:2,x:'¿Cómo llego a la calle Madero? = 請問怎麼去 Madero 街？llegar = 到達。'};
 
 
 // Day 6
@@ -949,8 +828,6 @@ var S6=[{es:"¿A qué hora empieza la junta?",zh:"會議幾點開始？",no:"在
 var K6=[{w:"La chamba",m:"工作（口語）",f:"Coloquial"},{w:"La junta",m:"會議",f:"Neutral"},{w:"Jefe / Jefa",m:"老闆（親暱稱呼）",f:"Coloquial"},{w:"Tengo una duda",m:"我有個疑問",f:"Neutral"}];
 var Q6_1={q:"你想跟墨西哥同事抱怨『今天工作很累』，最道地的說法是？",o:["Mi trabajo es muy difícil hoy.","Estoy cansado del trabajo.","La chamba está pesada hoy, ¿no?","Hoy trabajo muy grande y pesado."],a:2,x:"La chamba está pesada hoy, ¿no? 最道地。Chamba 是墨西哥人日常的工作代名詞，加上 ¿no? 語尾是墨西哥式確認對方的習慣。"};
 var Q6_2={q:"reuniones 的意思是？",o:["休息","會議（複數）","午餐","下班"],a:1,x:"reunión = 會議，複數 reuniones。在墨西哥公司幾乎每天都會聽到這個字。"};var Q6_3={q:"想跟同事說『我們一起吃午餐吧』，怎麼說？",o:["Vamos a comer juntos.","No tengo hambre.","Estoy ocupado.","Trabajo solo."],a:0,x:"Vamos a + 動詞原形 = 我們去...吧。這是邀請同事最自然的句型。"};
-var Q6_4={type:'fill',q:'請輸入「今天工作很累」的墨西哥口語（不需要標點）',answer:'la chamba está pesada hoy',alt:['La chamba está pesada hoy'],x:'La chamba está pesada hoy = 今天工作很累。chamba 是墨西哥人說「工作」的口語詞。'};
-var Q6_5={type:'listen',audio:'Jefe, tengo una duda sobre el reporte.',q:'剛才你聽到的句子是什麼意思？',o:['老闆,我對這份報告有個疑問','同事,我們去吃午餐吧','會議結束了,再見','今天工作很多,我很累'],a:0,x:'Jefe, tengo una duda sobre el reporte. = 老闆,我對這份報告有個疑問。duda = 疑問。'};
 
 
 // Day 7
@@ -958,97 +835,22 @@ var S7=[{es:"¿Qué tal tu fin de semana?",zh:"你週末過得怎樣？",no:"墨
 var K7=[{w:"Chido",m:"酷 / 讚（萬用）",f:"Coloquial"},{w:"Me da gusto",m:"我很高興...",f:"Neutral"},{w:"Nos vemos",m:"再見 / 回頭見",f:"Neutral"},{w:"Cuídate",m:"保重",f:"Neutral"}];
 var Q7_1={q:"你想對墨西哥朋友說『太酷了！』，最道地的說法是？",o:["¡Qué genial!","¡Qué chido!","¡Qué bonito!","¡Qué bueno!"],a:1,x:"¡Qué chido! 是墨西哥最道地的『太酷了！』，chido 是這裡的萬用讚美詞，比 genial / bonito / bueno 更本地化、更自然。"};
 var Q7_2={q:"跟朋友道別想說『回頭見』，怎麼說？",o:["Adiós.","Hasta luego.","Nos vemos.","¡Qué onda!"],a:2,x:"Nos vemos（我們見面）是墨西哥朋友間最自然的『回頭見 / 再見』，比 Hasta luego / Adiós 更口語。"};var Q7_3={q:"『Todo chido, gracias por preguntar』的意思是？",o:["一切順利，謝謝你關心","我不明白","再見","我很忙"],a:0,x:"Todo chido = 一切都好 / 沒問題，gracias por preguntar = 謝謝你關心。這是墨西哥式閒聊的典型回應。"};
-var Q7_4={type:'fill',q:'請輸入「太酷了！」的墨西哥西班牙文（不需要標點）',answer:'qué chido',alt:['que chido','Qué chido','Que chido'],x:'¡Qué chido! = 太酷了！墨西哥萬用讚美詞。'};
-var Q7_5={type:'listen',audio:'Nos vemos mañana. ¡Cuídate mucho!',q:'剛才你聽到的句子是什麼意思？',o:['你週末過得怎樣？','很高興見到你,謝謝','明天見,保重！','對不起,我趕時間'],a:2,x:'Nos vemos mañana. ¡Cuídate mucho! = 明天見,保重！Cuídate = 保重。'};
-
-
-// ============================================
-// Day 8
-// ============================================
-var S8=[{es:"Bueno, ¿quién habla?",zh:"喂，哪位？",no:"墨西哥人接電話說 Bueno，是其他西語系國家少見的用法，其他地方多說 Diga 或 Aló。"},{es:"Quisiera hacer una cita para mañana.",zh:"我想預約明天的時間。",no:"Quisiera 比 quiero 更委婉客氣，適合正式電話預約。"},{es:"¿A qué hora tiene disponible?",zh:"您哪個時間方便？",no:"disponible = 有空的/可用的，是詢問預約空檔的常用詞。"}];
-var K8=[{w:"Bueno",m:"喂（接電話用語）",f:"Coloquial"},{w:"Quisiera",m:"我想要（委婉）",f:"Formal"},{w:"Una cita",m:"一個預約",f:"Neutral"},{w:"Disponible",m:"有空的/可用的",f:"Neutral"}];
-var Q8_1={q:"在墨西哥接起電話最道地的說法是？",o:["Aló","Diga","Bueno","Hola, quién es"],a:2,x:"墨西哥獨特之處是接電話說「Bueno」，跟其他西語系國家（多說 Aló / Diga）不同。"};
-var Q8_2={q:"「Quisiera」比「quiero」的語氣更...？",o:["更直接","更禮貌委婉","更生氣","更隨便"],a:1,x:"Quisiera 是 querer 的條件式，比 quiero 更客氣委婉，常用於正式請求或預約。"};var Q8_3={q:"想問對方「您哪個時間方便？」，關鍵字用哪個？",o:["Caro","Disponible","Barato","Cansado"],a:1,x:"disponible = 有空的/可用的，¿A qué hora tiene disponible? = 您哪個時間方便？"};
-var Q8_4={type:'fill',q:'請輸入「我想預約」的西班牙文（不需要標點）',answer:'quisiera hacer una cita',alt:['quiero hacer una cita'],x:'Quisiera hacer una cita = 我想預約。quisiera 比 quiero 更委婉。'};
-var Q8_5={type:'listen',audio:'Quisiera hacer una cita para mañana.',q:'剛才你聽到的句子是什麼意思？',o:['喂,哪位？','我想預約明天的時間','您哪個時間方便？','謝謝,再見'],a:1,x:'Quisiera hacer una cita para mañana. = 我想預約明天的時間。'};
-
-
-// Day 9
-var S9=[{es:"Buenos días, quiero cambiar dólares a pesos.",zh:"早安，我想把美金換成披索。",no:"墨西哥官方貨幣是披索（pesos），大城市匯兌所（casa de cambio）很方便，通常比機場匯率好。"},{es:"¿Cuál es el tipo de cambio de hoy?",zh:"今天的匯率是多少？",no:"tipo de cambio = 匯率，出國前建議先查好匯率再兌換。"},{es:"¿Hay cajero automático cerca?",zh:"附近有提款機嗎？",no:"cajero automático = ATM，墨西哥城市裡到處都有，建議選銀行內的較安全。"}];
-var K9=[{w:"Cambiar",m:"兌換",f:"Neutral"},{w:"Tipo de cambio",m:"匯率",f:"Neutral"},{w:"Cajero automático",m:"提款機",f:"Neutral"},{w:"Pesos",m:"披索（墨西哥貨幣）",f:"Neutral"}];
-var Q9_1={q:"你想把美金換成披索，最自然的說法是？",o:["Quiero cambiar dólares a pesos.","Quiero comprar dólares para pesos.","Deseo dólares con pesos.","Necesito pesos de dólares."],a:0,x:"cambiar A a B = 把 A 換成 B，是換匯的標準句型。"};
-var Q9_2={q:"「tipo de cambio」的意思是？",o:["利率","匯率","稅率","物價"],a:1,x:"tipo de cambio = 匯率，出國前建議先查好再兌換。"};var Q9_3={q:"想問「附近有提款機嗎？」，用哪個詞？",o:["Cajero automático","Casa de cambio","Tarjeta de crédito","Banco central"],a:0,x:"cajero automático = 提款機（ATM），墨西哥城市裡到處都有。"};
-var Q9_4={type:'fill',q:'請輸入「今天的匯率是多少？」的西班牙文（不需要標點）',answer:'cuál es el tipo de cambio de hoy',alt:['cual es el tipo de cambio de hoy'],x:'¿Cuál es el tipo de cambio de hoy? = 今天的匯率是多少？'};
-var Q9_5={type:'listen',audio:'¿Hay cajero automático cerca?',q:'剛才你聽到的句子是什麼意思？',o:['今天的匯率是多少？','附近有提款機嗎？','我想把美金換成披索','這個多少錢？'],a:1,x:'¿Hay cajero automático cerca? = 附近有提款機嗎？'};
-
-
-// Day 10
-var S10=[{es:"Me siento mal, me duele la cabeza.",zh:"我覺得不舒服，我頭痛。",no:"doler 用法像 gustar，me duele + 身體部位 = 我...痛，是描述疼痛的標準句型。"},{es:"¿Hay una farmacia cerca de aquí?",zh:"這附近有藥局嗎？",no:"墨西哥藥局很普遍，很多藥不需處方箋就能買到，比如止痛藥。"},{es:"Necesito algo para el dolor de estómago.",zh:"我需要一些治療胃痛的藥。",no:"跟藥師描述症狀，藥師通常會直接推薦成藥。"}];
-var K10=[{w:"Me duele",m:"我...痛",f:"Neutral"},{w:"Farmacia",m:"藥局",f:"Neutral"},{w:"Dolor de estómago",m:"胃痛",f:"Neutral"},{w:"Me siento mal",m:"我覺得不舒服",f:"Neutral"}];
-var Q10_1={q:"想表達「我頭痛」，正確的說法是？",o:["Tengo cabeza mala.","Me duele la cabeza.","Estoy cabeza dolor.","Mi cabeza es mal."],a:1,x:"doler 用法像 gustar，me duele + 定冠詞 + 身體部位，是描述疼痛的標準句型。"};
-var Q10_2={q:"「farmacia」的意思是？",o:["診所","藥局","醫院","牙醫"],a:1,x:"farmacia = 藥局，墨西哥許多藥不需處方箋即可購買。"};var Q10_3={q:"想說「我需要治胃痛的藥」，怎麼說？",o:["Necesito algo para el dolor de estómago.","Quiero estómago médico.","Tengo dolor de farmacia.","Necesito estómago para dolor."],a:0,x:"Necesito algo para + 症狀，是跟藥師描述需求最自然的說法。"};
-var Q10_4={type:'fill',q:'請輸入「我頭痛」的西班牙文（不需要標點）',answer:'me duele la cabeza',x:'Me duele la cabeza = 我頭痛。doler 用法像 gustar。'};
-var Q10_5={type:'listen',audio:'¿Hay una farmacia cerca de aquí?',q:'剛才你聽到的句子是什麼意思？',o:['我頭痛','這附近有藥局嗎？','我需要治胃痛的藥','我覺得不舒服'],a:1,x:'¿Hay una farmacia cerca de aquí? = 這附近有藥局嗎？'};
-
-
-// Day 11
-var S11=[{es:"Hace mucho calor hoy, ¿no?",zh:"今天好熱對吧？",no:"描述天氣用 hacer 是固定搭配，如 hace calor/frío，墨西哥不同地區溫差很大。"},{es:"Está lloviendo, ¿trajiste paraguas?",zh:"在下雨耶，你有帶傘嗎？",no:"墨西哥雨季（5-10月）午後常有陣雨，出門記得帶傘。"},{es:"Me siento un poco cansado, pero contento.",zh:"我覺得有點累，但很開心。",no:"estar + 形容詞 用來描述暫時的情緒或狀態。"}];
-var K11=[{w:"Hace calor",m:"天氣很熱",f:"Neutral"},{w:"Está lloviendo",m:"正在下雨",f:"Neutral"},{w:"Cansado/a",m:"累的",f:"Neutral"},{w:"Contento/a",m:"開心的",f:"Neutral"}];
-var Q11_1={q:"想說「今天很熱」，怎麼說？",o:["Hace mucho calor hoy.","Es mucho calor hoy.","Está mucho caliente hoy.","Tengo calor mucho hoy."],a:0,x:"描述天氣用 hacer，如 hace calor/frío/viento，是固定搭配，不能用 estar 或 ser。"};
-var Q11_2={q:"「está lloviendo」的意思是？",o:["正在打雷","正在下雨","正在颳風","正在出太陽"],a:1,x:"está lloviendo = 正在下雨，llover 的現在進行式。"};var Q11_3={q:"想說「我覺得有點累」，怎麼說？",o:["Me siento un poco cansado.","Tengo un poco cansado.","Estoy cansado un poco.","Soy un poco cansado."],a:0,x:"Me siento + 形容詞 = 我覺得...，是描述感受最自然的句型。"};
-var Q11_4={type:'fill',q:'請輸入「今天好熱」的西班牙文（不需要標點）',answer:'hace mucho calor hoy',alt:['hace calor hoy'],x:'Hace mucho calor hoy = 今天好熱。hacer 用於描述天氣。'};
-var Q11_5={type:'listen',audio:'Está lloviendo, ¿trajiste paraguas?',q:'剛才你聽到的句子是什麼意思？',o:['今天好熱對吧？','在下雨耶,你有帶傘嗎？','我覺得有點累','太酷了！'],a:1,x:'Está lloviendo, ¿trajiste paraguas? = 在下雨耶,你有帶傘嗎？'};
-
-
-// Day 12
-var S12=[{es:"Te presento a mi esposa, se llama Ana.",zh:"跟你介紹我太太，她叫 Ana。",no:"Te presento a... 是介紹別人給朋友認識的標準句型。"},{es:"¿Tienes hermanos o eres hijo único?",zh:"你有兄弟姊妹嗎，還是獨生子？",no:"hijo único/hija única = 獨生子/女，是墨西哥人聊家庭常問的問題。"},{es:"Mi familia vive lejos, los extraño mucho.",zh:"我家人住得很遠，我很想他們。",no:"extrañar = 想念，在墨西哥很常用，比 echar de menos 更口語。"}];
-var K12=[{w:"Te presento a...",m:"跟你介紹...",f:"Neutral"},{w:"Hermanos",m:"兄弟姊妹",f:"Neutral"},{w:"Hijo único / Hija única",m:"獨生子/獨生女",f:"Neutral"},{w:"Extrañar",m:"想念",f:"Neutral"}];
-var Q12_1={q:"想跟朋友介紹你的太太，最自然的說法是？",o:["Te presento a mi esposa.","Ella es mi esposa, mira.","Aquí está mi esposa, hola.","Mi esposa se presento."],a:0,x:"Te presento a + 人 是介紹某人給對方認識的標準句型，自然又禮貌。"};
-var Q12_2={q:"「extrañar」的意思是？",o:["討厭","想念","害怕","擔心"],a:1,x:"extrañar = 想念，墨西哥人常用，比 echar de menos 更口語。"};var Q12_3={q:"想問「你有兄弟姊妹嗎？」，怎麼說？",o:["¿Tienes hermanos?","¿Eres hermano?","¿Cuántos hermanos tú?","¿Hermanos tienes tú?"],a:0,x:"¿Tienes hermanos? 是最自然直接的問法。"};
-var Q12_4={type:'fill',q:'請輸入「我很想他們」的西班牙文（不需要標點）',answer:'los extraño mucho',x:'Los extraño mucho = 我很想他們。extrañar = 想念。'};
-var Q12_5={type:'listen',audio:'Mi familia vive lejos, los extraño mucho.',q:'剛才你聽到的句子是什麼意思？',o:['我家人住得很遠,我很想他們','我家人在這裡,我很開心','我沒有家人','我家人住得很近'],a:0,x:'Mi familia vive lejos, los extraño mucho. = 我家人住得很遠,我很想他們。'};
-
-
-// Day 13
-var S13=[{es:"¿Dónde puedo encontrar el aceite de cocina?",zh:"我在哪裡可以找到食用油？",no:"大型超市如 Walmart、Soriana 在墨西哥非常普遍，貨架分類清楚。"},{es:"¿Tiene esto en oferta esta semana?",zh:"這個這禮拜有打折嗎？",no:"en oferta = 特價中，墨西哥超市常有週間促銷。"},{es:"Necesito una bolsa más, por favor.",zh:"我還需要一個袋子，麻煩你。",no:"墨西哥部分州環保法規定塑膠袋要另外收費，記得帶自己的袋子。"}];
-var K13=[{w:"Encontrar",m:"找到",f:"Neutral"},{w:"En oferta",m:"特價中",f:"Neutral"},{w:"Una bolsa",m:"一個袋子",f:"Neutral"},{w:"Aceite de cocina",m:"食用油",f:"Neutral"}];
-var Q13_1={q:"想問「這個有打折嗎？」，怎麼說？",o:["¿Tiene esto en oferta?","¿Esto es barato mucho?","¿Cuesta descuento esto?","¿Hay rebaja de esto aquí?"],a:0,x:"en oferta = 特價中，是超市/商店詢問折扣最自然的說法。"};
-var Q13_2={q:"「encontrar」的意思是？",o:["購買","找到","歸還","攜帶"],a:1,x:"encontrar = 找到，¿Dónde puedo encontrar...? = 我在哪裡可以找到...？"};var Q13_3={q:"想說「我還需要一個袋子」，怎麼說？",o:["Necesito una bolsa más.","Quiero bolsa otra.","Tengo una bolsa falta.","Me falta bolsa mucho."],a:0,x:"Necesito una bolsa más 是最自然的說法，más 放在名詞後面表示『再多一個』。"};
-var Q13_4={type:'fill',q:'請輸入「這個這禮拜有打折嗎？」的西班牙文（不需要標點）',answer:'tiene esto en oferta esta semana',x:'¿Tiene esto en oferta esta semana? = 這個這禮拜有打折嗎？'};
-var Q13_5={type:'listen',audio:'Necesito una bolsa más, por favor.',q:'剛才你聽到的句子是什麼意思？',o:['我在哪裡可以找到食用油？','這個有打折嗎？','我還需要一個袋子,麻煩你','這個多少錢？'],a:2,x:'Necesito una bolsa más, por favor. = 我還需要一個袋子,麻煩你。'};
-
-
-// Day 14
-var S14=[{es:"¡Ayuda, necesito un doctor!",zh:"救命，我需要醫生！",no:"緊急狀況時大聲喊 ¡Ayuda! 是求助的第一句話。"},{es:"Perdí mi cartera, ¿qué hago?",zh:"我的錢包弄丟了，我該怎麼辦？",no:"perder（丟失）是常見不規則動詞，perdí 是過去式第一人稱。"},{es:"¿Puede llamar a la policía, por favor?",zh:"可以請你幫我報警嗎？",no:"llamar a la policía = 報警，緊急時刻最重要的求助句型之一，墨西哥報警電話是911。"}];
-var K14=[{w:"¡Ayuda!",m:"救命！",f:"Neutral"},{w:"Perdí",m:"我弄丟了",f:"Neutral"},{w:"La policía",m:"警察",f:"Neutral"},{w:"Llamar a",m:"打電話給...",f:"Neutral"}];
-var Q14_1={q:"遇到緊急狀況大喊求救，最直接的說法是？",o:["¡Ayuda!","¡Cuidado!","¡Silencio!","¡Espera!"],a:0,x:"¡Ayuda! = 救命！是遇到緊急狀況時最直接有效的求救喊聲。"};
-var Q14_2={q:"「perdí」是哪個動詞的變化？",o:["Perder","Pedir","Poder","Pensar"],a:0,x:"perdí 是 perder（丟失/輸）的簡單過去式第一人稱。"};var Q14_3={q:"想請人幫忙報警，怎麼說？",o:["¿Puede llamar a la policía, por favor?","Quiero policía ahora.","La policía, ¡ven aquí!","Necesito ver policía."],a:0,x:"¿Puede llamar a la policía, por favor? 禮貌又清楚地請求對方幫忙報警。"};
-var Q14_4={type:'fill',q:'請輸入「我的錢包弄丟了」的西班牙文（不需要標點）',answer:'perdí mi cartera',x:'Perdí mi cartera = 我的錢包弄丟了。perder = 丟失。'};
-var Q14_5={type:'listen',audio:'¿Puede llamar a la policía, por favor?',q:'剛才你聽到的句子是什麼意思？',o:['救命,我需要醫生！','我的錢包弄丟了','可以請你幫我報警嗎？','今天好熱對吧？'],a:2,x:'¿Puede llamar a la policía, por favor? = 可以請你幫我報警嗎？'};
-
 
 
 var LESSONS=[
-  {day:1,theme:"問候語",target:"學會各種場合的墨西哥式問候與回應",sentences:S1,keywords:K1,quiz:[Q1_1,Q1_2,Q1_3,Q1_4,Q1_5]},
-  {day:2,theme:"自我介紹",target:"能清楚說出自己的名字、來自哪裡，並認識新朋友",sentences:S2,keywords:K2,quiz:[Q2_1,Q2_2,Q2_3,Q2_4,Q2_5]},
-  {day:3,theme:"購物問價",target:"在墨西哥市場或商店能詢問價格、表達太貴或決定購買",sentences:S3,keywords:K3,quiz:[Q3_1,Q3_2,Q3_3,Q3_4,Q3_5]},
-  {day:4,theme:"餐廳點餐",target:"能在墨西哥餐廳點餐、叫飲料、催餐與買單",sentences:S4,keywords:K4,quiz:[Q4_1,Q4_2,Q4_3,Q4_4,Q4_5]},
-  {day:5,theme:"問路與交通",target:"能詢問地點方向，理解公車、地鐵基本用語",sentences:S5,keywords:K5,quiz:[Q5_1,Q5_2,Q5_3,Q5_4,Q5_5]},
-  {day:6,theme:"工作場景",target:"能表達工作相關的基本需求，與同事互動",sentences:S6,keywords:K6,quiz:[Q6_1,Q6_2,Q6_3,Q6_4,Q6_5]},
-  {day:7,theme:"日常閒聊與道別",target:"能進行簡短閒聊，用各種方式跟朋友道別",sentences:S7,keywords:K7,quiz:[Q7_1,Q7_2,Q7_3,Q7_4,Q7_5]},
-  {day:8,theme:"打電話與預約",target:"能透過電話預約時間或詢問對方是否方便",sentences:S8,keywords:K8,quiz:[Q8_1,Q8_2,Q8_3,Q8_4,Q8_5]},
-  {day:9,theme:"銀行與換錢",target:"能在銀行或匯兌所換錢、詢問匯率與尋找提款機",sentences:S9,keywords:K9,quiz:[Q9_1,Q9_2,Q9_3,Q9_4,Q9_5]},
-  {day:10,theme:"看醫生與藥局",target:"能描述身體不適並在藥局尋求協助",sentences:S10,keywords:K10,quiz:[Q10_1,Q10_2,Q10_3,Q10_4,Q10_5]},
-  {day:11,theme:"天氣與心情",target:"能描述天氣狀況並表達自己的心情感受",sentences:S11,keywords:K11,quiz:[Q11_1,Q11_2,Q11_3,Q11_4,Q11_5]},
-  {day:12,theme:"家庭與朋友",target:"能介紹家人朋友，並聊聊家庭狀況",sentences:S12,keywords:K12,quiz:[Q12_1,Q12_2,Q12_3,Q12_4,Q12_5]},
-  {day:13,theme:"超市採購",target:"能在超市尋找商品、詢問折扣並完成購物",sentences:S13,keywords:K13,quiz:[Q13_1,Q13_2,Q13_3,Q13_4,Q13_5]},
-  {day:14,theme:"緊急求助",target:"能在緊急狀況下求救並清楚表達需求",sentences:S14,keywords:K14,quiz:[Q14_1,Q14_2,Q14_3,Q14_4,Q14_5]}
+  {day:1,theme:"問候語",target:"學會各種場合的墨西哥式問候與回應",sentences:S1,keywords:K1,quiz:[Q1_1,Q1_2,Q1_3]},
+  {day:2,theme:"自我介紹",target:"能清楚說出自己的名字、來自哪裡，並認識新朋友",sentences:S2,keywords:K2,quiz:[Q2_1,Q2_2,Q2_3]},
+  {day:3,theme:"購物問價",target:"在墨西哥市場或商店能詢問價格、表達太貴或決定購買",sentences:S3,keywords:K3,quiz:[Q3_1,Q3_2,Q3_3]},
+  {day:4,theme:"餐廳點餐",target:"能在墨西哥餐廳點餐、叫飲料、催餐與買單",sentences:S4,keywords:K4,quiz:[Q4_1,Q4_2,Q4_3]},
+  {day:5,theme:"問路與交通",target:"能詢問地點方向，理解公車、地鐵基本用語",sentences:S5,keywords:K5,quiz:[Q5_1,Q5_2,Q5_3]},
+  {day:6,theme:"工作場景",target:"能表達工作相關的基本需求，與同事互動",sentences:S6,keywords:K6,quiz:[Q6_1,Q6_2,Q6_3]},
+  {day:7,theme:"日常閒聊與道別",target:"能進行簡短閒聊，用各種方式跟朋友道別",sentences:S7,keywords:K7,quiz:[Q7_1,Q7_2,Q7_3]}
 ];
 
 var STORAGE_KEY='mx_lesson_progress_v1';
 var currentDay=1;
 var progress={completed:[],quizResults:{}};
-var quizIndex=0;var quizResults=[];
+var quizIndex=0;var quizResults=[];var answering=false;
 
 
 var VOCAB_KEY='mx_vocab_notebook_v1';
@@ -1089,7 +891,7 @@ function init(optDay){
     else{addToVocab(currentDictWord,currentDictMeaning,currentDictNote);}
     showDict(currentDictWord,currentDictMeaning,currentDictNote);
   };
-  document.getElementById('btn-next').onclick=function(){if(currentDay<14)renderDay(currentDay+1)};
+  document.getElementById('btn-next').onclick=function(){if(currentDay<7)renderDay(currentDay+1)};
   document.getElementById('dict-overlay').onclick=closeDictPopup;
   document.getElementById('dict-close').onclick=closeDictPopup;
 }
@@ -1103,11 +905,8 @@ function renderDay(day){
   var prevCorrect=0;
   if(hasPrevQuiz){for(var i=0;i<prevQuiz.length;i++){if(prevQuiz[i].correct)prevCorrect++;}}
   currentDay=day;
-  var dayInWeek=(day<=7)?day:day-7;
-  var weekStartDay=(day<=7)?1:8;
-  var weekEndDay=(day<=7)?7:14;
-  document.getElementById('header-sub').textContent='Day '+dayInWeek+' · '+lesson.theme;
-  document.getElementById('day-badge').textContent='DAY '+dayInWeek+'/7';
+  document.getElementById('header-sub').textContent='Day '+day+' · '+lesson.theme;
+  document.getElementById('day-badge').textContent='DAY '+day+'/7';
   document.title='🇲🇽 墨西哥西語學習 Day '+day;
   document.getElementById('done-banner').classList.toggle('show',progress.completed.indexOf(day)>=0);
   document.getElementById('lesson-goal').textContent=lesson.target;
@@ -1160,7 +959,7 @@ function renderDay(day){
     document.getElementById('quiz-options').innerHTML='';
     var summary=document.createElement('div');
     summary.style='padding:14px;border-radius:12px;background:#E8F8EF;color:var(--success);text-align:center;margin-top:10px;';
-    summary.innerHTML='你之前已經完美通過這天的測驗！5/5 全對。<br><button onclick="restartQuiz('+day+')" style="margin-top:10px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;-webkit-appearance:none;">重新測驗</button>';
+    summary.innerHTML='你之前已經完美通過這天的測驗！3/3 全對。<br><button onclick="restartQuiz('+day+')" style="margin-top:10px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;-webkit-appearance:none;">重新測驗</button>';
     document.getElementById('quiz-feedback').innerHTML='';document.getElementById('quiz-feedback').appendChild(summary);
     document.getElementById('done-banner').classList.add('show');
   }else if(hasPrevQuiz){
@@ -1168,14 +967,14 @@ function renderDay(day){
     document.getElementById('quiz-options').innerHTML='';
     var summary=document.createElement('div');
     summary.style='padding:14px;border-radius:12px;background:#FDE8E5;color:var(--danger);text-align:center;margin-top:10px;';
-    summary.innerHTML='上次成績：'+prevCorrect+'/5 答對。<br><button onclick="restartQuiz('+day+')" style="margin-top:10px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;-webkit-appearance:none;">重新測驗</button>';
+    summary.innerHTML='上次成績：'+prevCorrect+'/3 答對。<br><button onclick="restartQuiz('+day+')" style="margin-top:10px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;-webkit-appearance:none;">重新測驗</button>';
     document.getElementById('quiz-feedback').innerHTML='';document.getElementById('quiz-feedback').appendChild(summary);
   }else{
     renderQuiz(lesson);
   }
   updateDots();
-  document.getElementById('btn-prev').disabled=(day===weekStartDay);
-  document.getElementById('btn-next').disabled=(day===weekEndDay);
+  document.getElementById('btn-prev').disabled=(day===1);
+  document.getElementById('btn-next').disabled=(day===7);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1217,78 +1016,45 @@ function speak(text){
 function renderQuiz(lesson){
   answering=false;
   var q=lesson.quiz[quizIndex];
-  var qType=q.type||'select';
-  document.getElementById('quiz-question').innerHTML='<span style="color:var(--accent);font-size:13px;font-weight:700;">第 '+(quizIndex+1)+'/5 題</span><br>'+esc(q.q);
-  var optsHtml='';
-  if(qType==='fill'){
-    optsHtml='<div style="padding:12px 0;">'+
-      '<input type="text" id="fill-input" placeholder="輸入西班牙文..." '+
-        'style="width:100%;padding:14px;border:2px solid var(--border);border-radius:12px;font-size:16px;box-sizing:border-box;">'+
-      '<button id="fill-submit" class="quiz-option" style="width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;cursor:pointer;" '+
-        'onclick="ansFill()">確認答案 &#10003;</button>'+
-    '</div>';
-  }else if(qType==='listen'){
-    optsHtml='<button class="quiz-option" id="listen-btn" style="background:var(--mx-yellow);border-color:var(--mx-orange);">'+
-      '<span class="opt-letter">&#128266;</span><span>播放句子 &#128266;</span>'+
+  document.getElementById('quiz-question').innerHTML='<span style="color:var(--accent);font-size:13px;font-weight:700;">第 '+(quizIndex+1)+'/3 題</span><br>'+esc(q.q);
+  document.getElementById('quiz-options').innerHTML=q.o.map(function(opt,i){
+    return '<button class="quiz-option" id="quiz-opt-'+i+'" onclick="ans('+i+')">'+
+      '<span class="opt-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(opt)+'</span>'+
     '</button>';
-    optsHtml+=q.o.map(function(opt,i){
-      return '<button class="quiz-option" id="quiz-opt-'+i+'" onclick="ans('+i+')">'+
-        '<span class="opt-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(opt)+'</span>'+
-      '</button>';
-    }).join('');
-  }else{
-    optsHtml=q.o.map(function(opt,i){
-      return '<button class="quiz-option" id="quiz-opt-'+i+'" onclick="ans('+i+')">'+
-        '<span class="opt-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(opt)+'</span>'+
-      '</button>';
-    }).join('');
-  }
-  document.getElementById('quiz-options').innerHTML=optsHtml;
-  if(qType==='listen'){
-    var lb=document.getElementById('listen-btn');
-    if(lb)lb.onclick=function(){speak(q.audio);};
-  }
+  }).join('');
   document.getElementById('quiz-feedback').innerHTML='';
-  if(qType==='fill'){
-    setTimeout(function(){var el=document.getElementById('fill-input');if(el)el.focus();},100);
-  }
 }
-
-function ansFill(){
+function ans(idx){
   if(answering)return;
-  var inputEl=document.getElementById('fill-input');
-  if(!inputEl)return;
-  var input=inputEl.value.trim();
-  if(!input){alert('請輸入答案');inputEl.focus();return;}
   answering=true;
-  var lesson=LESSONS[currentDay-1],q=lesson.quiz[quizIndex];
-  var norm=function(s){return s.toLowerCase().replace(/[^a-z\u00e1\u00e9\u00ed\u00f3\u00fa\u00f1\s]/gi,'').replace(/\s+/g,' ').trim();};
-  var userAns=norm(input);
-  var correctAns=norm(q.answer);
-  var isCorrect=(userAns===correctAns);
-  if(!isCorrect && q.alt){
-    for(var i=0;i<q.alt.length;i++){
-      if(userAns===norm(q.alt[i])){isCorrect=true;break;}
-    }
-  }
+  var lesson=LESSONS[currentDay-1],q=lesson.quiz[quizIndex],correct=q.a,isCorrect=(idx===correct);
+
+  var opts=document.querySelectorAll('.quiz-option');
+  opts.forEach(function(btn,i){
+    btn.disabled=true;
+    btn.style.pointerEvents='none';
+    if(i===correct)btn.classList.add('correct');
+    else if(i===idx)btn.classList.add('wrong');
+    if(i===idx)btn.classList.add('selected');
+  });
+
   var feedback=document.getElementById('quiz-feedback');
-  document.getElementById('fill-input').disabled=true;
-  document.getElementById('fill-submit').disabled=true;
-  document.getElementById('fill-submit').style.opacity='0.6';
   if(isCorrect){
-    quizResults.push({q:quizIndex,ans:input,correct:true});
-    feedback.innerHTML='<div class="quiz-result correct">&#9989; 答對了！</div><div class="quiz-explanation">正確答案：'+esc(q.answer)+'。'+esc(q.x)+'</div>';
+    // 答對：記錄分數，進入下一題
+    quizResults.push({q:quizIndex,ans:idx,correct:true});
+    feedback.innerHTML='<div class="quiz-result correct">✅ 答對了！</div><div class="quiz-explanation">'+esc(q.x)+'</div>';
     quizIndex++;
     if(quizIndex<lesson.quiz.length){
       var nextBtn=document.createElement('button');
-      nextBtn.textContent='下一題';
+      nextBtn.textContent='下一題 →';
       nextBtn.style='margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;width:100%;-webkit-appearance:none;';
       nextBtn.onclick=function(){renderQuiz(lesson);};
       feedback.appendChild(nextBtn);
     }else{
+      // 全部答對
       var summary=document.createElement('div');
       summary.style='margin-top:14px;padding:14px;border-radius:12px;font-size:15px;text-align:center;background:#E8F8EF;color:var(--success);';
-      summary.innerHTML='今日測驗完成！ 5/5 全對';
+      summary.innerHTML='今日測驗完成！ 3/3 全對';
       feedback.appendChild(summary);
       if(progress.completed.indexOf(currentDay)<0){progress.completed.push(currentDay);save();}
       progress.quizResults[currentDay]=quizResults;
@@ -1297,59 +1063,30 @@ function ansFill(){
       updateDots();
     }
   }else{
-    quizResults.push({q:quizIndex,ans:input,correct:false});
+    // 答錯：顯示錯誤 + 再試一次按鈕
+    quizResults.push({q:quizIndex,ans:idx,correct:false});
+    // 儲存錯誤進度（靜態儲存，避免刷新後遺失）
     progress.quizResults[currentDay]=quizResults;
     save();
-    feedback.innerHTML='<div class="quiz-result wrong">&#10060; 答錯了</div><div class="quiz-explanation">正確答案是：'+esc(q.answer)+'。'+esc(q.x)+'</div>';
+    feedback.innerHTML='<div class="quiz-result wrong">❌ 答錯了</div><div class="quiz-explanation">'+esc(q.x)+'</div>';
     var retryBtn=document.createElement('button');
-    retryBtn.textContent='再試一次';
+    retryBtn.textContent='再試一次 ↻';
     retryBtn.style='margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;width:100%;-webkit-appearance:none;';
     retryBtn.onclick=function(){
+      // 移除最後一筆錯誤記錄，重置選項樣式，重新作答
       quizResults.pop();
       progress.quizResults[currentDay]=quizResults;
       save();
       answering=false;
-      document.getElementById('fill-input').disabled=false;
-      document.getElementById('fill-input').focus();
-      document.getElementById('fill-submit').disabled=false;
-      document.getElementById('fill-submit').style.opacity='1';
+      opts.forEach(function(btn,i){
+        btn.disabled=false;
+        btn.style.pointerEvents='auto';
+        btn.classList.remove('correct','wrong','selected');
+        btn.querySelector('.opt-letter').textContent=String.fromCharCode(65+i);
+      });
       feedback.innerHTML='';
     };
     feedback.appendChild(retryBtn);
-  }
-}
-
-function ans(idx){
-  var lesson=LESSONS[currentDay-1],q=lesson.quiz[quizIndex],correct=q.a,isCorrect=(idx===correct);
-  quizResults.push({q:quizIndex,ans:idx,correct:isCorrect});
-  var opts=document.querySelectorAll('.quiz-option');
-  opts.forEach(function(btn,i){
-    if(i===correct)btn.classList.add('correct');
-    else if(i===idx)btn.classList.add('wrong');
-    if(i===idx)btn.classList.add('selected');
-  });
-  var feedback=document.getElementById('quiz-feedback');
-  feedback.innerHTML='<div class="quiz-result '+(isCorrect?'correct':'wrong')+'">'+(isCorrect?'\u2705 \u7b54\u5c0d\u4e86\uff01':'\u274c \u7b54\u932f\u4e86')+'</div><div class="quiz-explanation">'+esc(q.x)+'</div>';
-  quizIndex++;
-  if(quizIndex<lesson.quiz.length){
-    var nextBtn=document.createElement('button');
-    nextBtn.textContent='\u4e0b\u4e00\u984c \u2192';
-    nextBtn.style='margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer;width:100%;-webkit-appearance:none;';
-    nextBtn.onclick=function(){renderQuiz(lesson);};
-    feedback.appendChild(nextBtn);
-  }else{
-    var correctCount=0;
-    for(var i=0;i<quizResults.length;i++){if(quizResults[i].correct)correctCount++;}
-    var allCorrect=(correctCount===quizResults.length);
-    var summary=document.createElement('div');
-    summary.style='margin-top:14px;padding:14px;border-radius:12px;font-size:15px;text-align:center;'+(allCorrect?'background:#E8F8EF;color:var(--success);':'background:#FDE8E5;color:var(--danger);');
-    summary.innerHTML=(allCorrect?'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 5/5 \u5168\u5c0d':'\u4eca\u65e5\u6e2c\u9a57\u5b8c\u6210\uff01 '+correctCount+'/5 \u7b54\u5c0d')+(allCorrect?'':'<br><span style="font-size:13px;opacity:.8;">\u53ef\u4ee5\u56de\u982d\u518d\u7df4\u7fd2\u4e00\u6b21\u5594\uff01</span>');
-    feedback.appendChild(summary);
-    if(allCorrect && progress.completed.indexOf(currentDay)<0){progress.completed.push(currentDay);save();}
-    progress.quizResults[currentDay]=quizResults;
-    save();
-    document.getElementById('done-banner').classList.add('show');
-    updateDots();
   }
 }
 var currentDictWord=null,currentDictMeaning=null,currentDictNote=null;
@@ -1374,11 +1111,10 @@ function closeDictPopup(){
 }
 
 function updateDots(){
-  var base=(currentDay<=7)?0:7;
   document.querySelectorAll('.dot').forEach(function(d,i){
     d.classList.remove('active','done');
-    if(i+1+base===currentDay)d.classList.add('active');
-    if(progress.completed.indexOf(i+1+base)>=0)d.classList.add('done');
+    if(i+1===currentDay)d.classList.add('active');
+    if(progress.completed.indexOf(i+1)>=0)d.classList.add('done');
   });
 }
 function esc(str){if(!str)return'';return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');}
