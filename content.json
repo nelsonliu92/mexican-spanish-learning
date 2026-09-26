@@ -1,0 +1,275 @@
+[
+  {
+    "day": 1,
+    "theme": "問候語",
+    "target": "學會各種場合的墨西哥式問候與回應",
+    "sentences": [
+      {
+        "spanish": "Hola, ¿qué onda?",
+        "chinese": "哈囉，最近怎麼樣？",
+        "note": "¿Qué onda? 是墨西哥道地的打招呼方式，比 ¿Qué tal? 更口語更酷，朋友間必用。"
+      },
+      {
+        "spanish": "¿Cómo estás?",
+        "chinese": "你好嗎？",
+        "note": "在墨西哥日常幾乎全用 tú，除非對長輩或第一次見面才用 usted。"
+      },
+      {
+        "spanish": "Estoy bien, gracias. ¿Y tú?",
+        "chinese": "我很好，謝謝。你呢？",
+        "note": "¿Y tú? 回問對方是最基本禮貌。"
+      }
+    ],
+    "keywords": [
+      {"word": "¿Qué onda?", "meaning": "最近怎麼樣？（口語）", "formality": "Coloquial"},
+      {"word": "Hola", "meaning": "哈囉 / 你好", "formality": "Neutral"},
+      {"word": "Estoy bien", "meaning": "我很好", "formality": "Neutral"},
+      {"word": "Gracias", "meaning": "謝謝", "formality": "Neutral"}
+    ],
+    "quiz": {
+      "question": "當你很久沒見到墨西哥朋友，想說『最近怎麼樣？』，最道地的說法是？",
+      "options": [
+        "¿Qué tal?",
+        "¿Qué onda?",
+        "¿Cómo está usted?",
+        "¿Buenos días?"
+      ],
+      "answer": 1,
+      "explanation": "¿Qué onda? 是墨西哥最道地的口語問候，比 ¿Qué tal? 更本土，此句本身並非粗話，是朋友間的日常用語。"
+    }
+  },
+  {
+    "day": 2,
+    "theme": "自我介紹",
+    "target": "能清楚說出自己的名字、來自哪裡，並認識新朋友",
+    "sentences": [
+      {
+        "spanish": "Me llamo Nelson. Soy de Taiwán.",
+        "chinese": "我叫 Nelson。我來自台灣。",
+        "note": "墨西哥聽到 Taiwán 通常會知道是亞洲，可以接著說 Estoy aquí para trabajar（我來這邊工作）。"
+      },
+      {
+        "spanish": "Mucho gusto, ¿cómo te llamas?",
+        "chinese": "很高興認識你，你叫什麼名字？",
+        "note": "初次見面說 Mucho gusto 是最安全、最禮貌的開場。"
+      },
+      {
+        "spanish": "Soy ingeniero. Vivo aquí desde hace dos meses.",
+        "chinese": "我是工程師。我在這裡住了兩個月了。",
+        "note": "Desde hace + 時間 是墨西哥人常用的表達，表示『從...開始到現在』。"
+      }
+    ],
+    "keywords": [
+      {"word": "Me llamo", "meaning": "我叫...", "formality": "Neutral"},
+      {"word": "Soy de", "meaning": "我來自...", "formality": "Neutral"},
+      {"word": "Mucho gusto", "meaning": "很高興認識你", "formality": "Formal"},
+      {"word": "¿Cómo te llamas?", "meaning": "你叫什麼名字？", "formality": "Neutral"}
+    ],
+    "quiz": {
+      "question": "你想告訴墨西哥同事『我叫 Nelson，我來自台灣，我是工程師』，正確的組合是？",
+      "options": [
+        "Soy Nelson, me de Taiwán, vivo ingeniero.",
+        "Me llamo Nelson, soy de Taiwán, soy ingeniero.",
+        "Estoy Nelson, vengo Taiwán, trabajo en ingeniero.",
+        "Mi nombre es Nelson, de Taiwán, mi trabajo es ingeniero."
+      ],
+      "answer": 1,
+      "explanation": "正確組合：Me llamo（我叫）+ soy de（我來自）+ soy ingeniero（我是工程師）。在西班牙語中，職業直接用 ser 動詞，不用 trabajar en。"
+    }
+  },
+  {
+    "day": 3,
+    "theme": "購物問價",
+    "target": "在墨西哥市場或商店能詢問價格、表達太貴或決定購買",
+    "sentences": [
+      {
+        "spanish": "Buenas tardes. ¿Cuánto cuesta esto?",
+        "chinese": "午安。這個多少錢？",
+        "note": "¿Cuánto cuesta? 是購物的核心金句。注意：墨西哥市場常能殺價！"
+      },
+      {
+        "spanish": "Está caro, ¿me lo dejas en cincuenta?",
+        "chinese": "這有點貴，五十塊賣我嗎？",
+        "note": "¿Me lo dejas en + 價格? 是非常墨西哥式的殺價說法，dejar 在這裡有『算你便宜』的意思。"
+      },
+      {
+        "spanish": "Sí, me lo llevo. ¿Aceptan tarjeta?",
+        "chinese": "好，我買了。可以刷卡嗎？",
+        "note": "墨西哥小攤販常只收現金，記得問 ¿Solo efectivo?（只收現金嗎？）。"
+      }
+    ],
+    "keywords": [
+      {"word": "¿Cuánto cuesta?", "meaning": "多少錢？", "formality": "Neutral"},
+      {"word": "Está caro", "meaning": "這很貴", "formality": "Neutral"},
+      {"word": "Me lo llevo", "meaning": "我買了（帶走）", "formality": "Neutral"},
+      {"word": "¿Aceptan tarjeta?", "meaning": "可以刷卡嗎？", "formality": "Neutral"}
+    ],
+    "quiz": {
+      "question": "你在墨西哥市場想殺價，想知道『這個多少錢？』並說『太貴了，能便宜一點嗎？』最道地的方式是？",
+      "options": [
+        "¿Cuánto cuesta? Está caro, ¿puedes bajar el precio?",
+        "¿Cuánto es? Está caro, ¿puedes rebajar?",
+        "¿Cuánto cuesta esto? Está caro, ¿me lo dejas más barato?",
+        "¿Cuesta cuánto? Es feo, quiero menos precio."
+      ],
+      "answer": 2,
+      "explanation": "¿Cuánto cuesta esto? 最自然；¿Me lo dejas más barato? 是墨西哥人實際會說的殺價句，dejar 有『便宜讓給你』的含義。"
+    }
+  },
+  {
+    "day": 4,
+    "theme": "餐廳點餐",
+    "target": "能在墨西哥餐廳點餐、叫飲料、催餐與買單",
+    "sentences": [
+      {
+        "spanish": "Buenas noches. Una mesa para dos, por favor.",
+        "chinese": "晚安。一張兩人桌，麻煩你。",
+        "note": "墨西哥餐廳常說 Buenas noches 下午6點起就通用。"
+      },
+      {
+        "spanish": "Quiero unos tacos de pastor con cebolla y cilantro.",
+        "chinese": "我要一份 pastor 口味的塔可，加洋蔥和香菜。",
+        "note": "Tacos al pastor 是墨西哥國民美食，調味豬肉配鳳梨。必加 cebolla 和 cilantro 才是道地吃法。"
+      },
+      {
+        "spanish": "Disculpe, ¿nos puede traer la cuenta?",
+        "chinese": "不好意思，可以幫我們結帳嗎？",
+        "note": "在墨西哥，服務生不會自動來結帳，必須主動要求 La cuenta, por favor。"
+      }
+    ],
+    "keywords": [
+      {"word": "Una mesa para...", "meaning": "一張...人桌", "formality": "Neutral"},
+      {"word": "Quiero...", "meaning": "我要...（點餐）", "formality": "Neutral"},
+      {"word": "La cuenta", "meaning": "帳單", "formality": "Neutral"},
+      {"word": "Disculpe", "meaning": "不好意思 / 借過", "formality": "Formal"}
+    ],
+    "quiz": {
+      "question": "你吃完墨西哥塔可準備離開，想請服務生結帳，最道地的說法是？",
+      "options": [
+        "Quiero pagar, dame el dinero.",
+        "Necesito irme, tráeme la cuenta rápido.",
+        "La cuenta, por favor.",
+        "¿Dónde pago? Yo ya me voy."
+      ],
+      "answer": 2,
+      "explanation": "La cuenta, por favor 是墨西哥餐廳最標準的結帳請求。禮貌、簡潔，加上 por favor 是最得體的。其他選項過於急促或無禮。"
+    }
+  },
+  {
+    "day": 5,
+    "theme": "問路與交通",
+    "target": "能詢問地點方向，理解公車、地鐵基本用語",
+    "sentences": [
+      {
+        "spanish": "Disculpe, ¿dónde está el metro más cercano?",
+        "chinese": "不好意思，最近的 Metro 在哪裡？",
+        "note": "Metro 是墨西哥城最重要的交通工具，注意尖峰時段非常擠。"
+      },
+      {
+        "spanish": "¿Cómo llego a la calle Madero?",
+        "chinese": "請問怎麼去 Madero 街？",
+        "note": "¿Cómo llego a...? 是最常用的問路句型。墨西哥人通常很熱心指路。"
+      },
+      {
+        "spanish": "¿A qué hora pasa el camión para el centro?",
+        "chinese": "去市中心的公車幾點來？",
+        "note": "在墨西哥很多地方說 camión 指公車（尤其在北部），墨西哥城則常說 pesero 或 micro。"
+      }
+    ],
+    "keywords": [
+      {"word": "¿Dónde está...?", "meaning": "...在哪裡？", "formality": "Neutral"},
+      {"word": "¿Cómo llego a...?", "meaning": "怎麼去...？", "formality": "Neutral"},
+      {"word": "El metro", "meaning": "地鐵", "formality": "Neutral"},
+      {"word": "El camión", "meaning": "公車（俚語）", "formality": "Coloquial"}
+    ],
+    "quiz": {
+      "question": "你在墨西哥城街頭迷路了，想知道最近的 Metro 怎麼走，最得體的問法是？",
+      "options": [
+        "¡Ayuda! Estoy perdido. ¿Dónde está el metro?",
+        "Disculpe, ¿dónde está el metro más cercano?",
+        "Oye, ¿cómo voy al metro? Rápido.",
+        "Metro, metro, metros. ¿Cuál metro?"
+      ],
+      "answer": 1,
+      "explanation": "Disculpe, ¿dónde está el metro más cercano? 禮貌地以 disculpe 開頭，用 más cercano（最近的）明確你的需求，是標準又得體的問路方式。"
+    }
+  },
+  {
+    "day": 6,
+    "theme": "工作場景",
+    "target": "能表達工作相關的基本需求，與同事互動",
+    "sentences": [
+      {
+        "spanish": "¿A qué hora empieza la junta?",
+        "chinese": "會議幾點開始？",
+        "note": "在墨西哥職場，juntas（會議）非常常見，常說 ¿A qué hora...? 來詢問時間。"
+      },
+      {
+        "spanish": "La chamba está pesada hoy, ¿no?",
+        "chinese": "今天工作蠻累的吧？",
+        "note": "Chamba 是墨西哥人說『工作』的口語詞，比 trabajo 更親切。跟熟同事抱怨時用。"
+      },
+      {
+        "spanish": "Jefe, tengo una duda sobre el reporte.",
+        "chinese": "老闆，我對這份報告有個疑問。",
+        "note": "在墨西哥職場，對主管可以用 Jefe / Jefa 稱呼，帶有親暱又尊重的感覺。"
+      }
+    ],
+    "keywords": [
+      {"word": "La chamba", "meaning": "工作（口語）", "formality": "Coloquial"},
+      {"word": "La junta", "meaning": "會議", "formality": "Neutral"},
+      {"word": "Jefe / Jefa", "meaning": "老闆（親暱稱呼）", "formality": "Coloquial"},
+      {"word": "Tengo una duda", "meaning": "我有個疑問", "formality": "Neutral"}
+    ],
+    "quiz": {
+      "question": "你想跟墨西哥同事抱怨『今天工作很累』，最道地的說法是？",
+      "options": [
+        "Mi trabajo es muy difícil hoy.",
+        "Estoy cansado del trabajo.",
+        "La chamba está pesada hoy, ¿no?",
+        "Hoy trabajo muy grande y pesado."
+      ],
+      "answer": 2,
+      "explanation": "La chamba está pesada hoy, ¿no? 最道地。Chamba 是墨西哥人日常的工作代名詞，加上 ¿no? 語尾是墨西哥式確認對方的習慣。"
+    }
+  },
+  {
+    "day": 7,
+    "theme": "日常閒聊與道別",
+    "target": "能進行簡短閒聊，用各種方式跟朋友道別",
+    "sentences": [
+      {
+        "spanish": "¿Qué tal tu fin de semana?",
+        "chinese": "你週末過得怎樣？",
+        "note": "墨西哥人非常在意人非常在意關係，週一見面常問週末過得如何，記得簡短回答就好。"
+      },
+      {
+        "spanish": "¡Qué chido! Me da gusto verte.",
+        "chinese": "太酷了！很高興見到你。",
+        "note": "Chido 是墨西哥萬用讚美詞，相當於『酷、讚、好棒』，朋友間幾乎天天用。"
+      },
+      {
+        "spanish": "Nos vemos mañana. ¡Cuídate mucho!",
+        "chinese": "明天見。保重！",
+        "note": "¡Cuídate mucho! 是非常溫暖的道別，比單純 adiós 更有人情味。"
+      }
+    ],
+    "keywords": [
+      {"word": "Chido", "meaning": "酷 / 讚（萬用）", "formality": "Coloquial"},
+      {"word": "Me da gusto", "meaning": "我很高興...", "formality": "Neutral"},
+      {"word": "Nos vemos", "meaning": "再見 / 回頭見", "formality": "Neutral"},
+      {"word": "Cuídate", "meaning": "保重", "formality": "Neutral"}
+    ],
+    "quiz": {
+      "question": "你想對墨西哥朋友說『太酷了！』，最道地的說法是？",
+      "options": [
+        "¡Qué genial!",
+        "¡Qué chido!",
+        "¡Qué bonito!",
+        "¡Qué bueno!"
+      ],
+      "answer": 1,
+      "explanation": "¡Qué chido! 是墨西哥最道地的『太酷了！』，chido 是這裡的萬用讚美詞，比 genial / bonito / bueno 更本地化、更自然。"
+    }
+  }
+]

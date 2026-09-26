@@ -1,0 +1,4 @@
+.orion/
+.playwright-cli/
+ORION_WORKSPACE/
+*.log
