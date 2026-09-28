@@ -228,25 +228,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
     <div class="progress-bar-idx"><div class="progress-fill-idx" id="week2-progress" style="width:0%"></div></div>
   </div>
 
-  <div class="week-card-idx" data-week="3">
+  <div class="week-card-idx locked">
     <div class="week-header-idx">
       <div class="week-title-idx">第三週</div>
-      <div class="week-status-idx" id="week3-status">尚未開始</div>
+      <div class="week-status-idx">即將推出</div>
     </div>
     <div class="week-days-idx">
-      <a href="#" onclick="showWeek1(15);return false;"><div class="day-row-idx pending" id="home-day-15"><span class="day-num">Day 1</span><span class="day-theme">叫車與搭計程車</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(16);return false;"><div class="day-row-idx pending" id="home-day-16"><span class="day-num">Day 2</span><span class="day-theme">辦手機門號與網路</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(17);return false;"><div class="day-row-idx pending" id="home-day-17"><span class="day-num">Day 3</span><span class="day-theme">找房子與租屋</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(18);return false;"><div class="day-row-idx pending" id="home-day-18"><span class="day-num">Day 4</span><span class="day-theme">郵局寄件與包裹</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(19);return false;"><div class="day-row-idx pending" id="home-day-19"><span class="day-num">Day 5</span><span class="day-theme">看電影與休閒娛樂</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(20);return false;"><div class="day-row-idx pending" id="home-day-20"><span class="day-num">Day 6</span><span class="day-theme">節慶與生日派對</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(21);return false;"><div class="day-row-idx pending" id="home-day-21"><span class="day-num">Day 7</span><span class="day-theme">機場報到與出入境</span><span class="day-check"></span></div></a>
+      <div class="day-row-idx pending"><span class="day-num">Day 1</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 2</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 3</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 4</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 5</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 6</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
+      <div class="day-row-idx pending"><span class="day-num">Day 7</span><span class="day-theme">即將推出</span><span class="day-check"></span></div>
     </div>
-    <div class="progress-bar-idx"><div class="progress-fill-idx" id="week3-progress" style="width:0%"></div></div>
+    <div class="progress-bar-idx"><div class="progress-fill-idx" style="width:0%"></div></div>
   </div>
 </div>
 
-<div class="footer-idx">墨西哥語學習 App · v0.9.0 · 離線可用</div>
+<div class="footer-idx">墨西哥語學習 App · v0.8.2 · 離線可用</div>
 </div>
 
 <div id="week1-view" style="display:none">
@@ -269,7 +269,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 <div class="card"><div class="card-label">今日學什麼</div><div class="lesson-goal" id="lesson-goal">學會各種場合的墨西哥式問候與回應</div><div id="sentences-container"></div></div>
 <div class="card"><div class="card-label">關鍵單字</div><div class="keywords-grid" id="keywords-grid"></div></div>
 <div class="quiz-section"><div class="quiz-label">小測驗</div><div class="quiz-question" id="quiz-question">載入中...</div><div class="quiz-options" id="quiz-options"></div><div id="quiz-feedback"></div></div>
-<div class="footer">墨西哥語學習 App · v0.9.0 · 離線可用</div>
+<div class="footer">墨西哥語學習 App · v0.8.2 · 離線可用</div>
 
 <div class="dict-popup-overlay" id="dict-overlay"></div>
 <div class="dict-popup" id="dict-popup">
@@ -574,7 +574,6 @@ function updateWeekProgress(startDay,statusId,progressId){
 function updateHomeProgress(){
   updateWeekProgress(1,'week1-status','week1-progress');
   updateWeekProgress(8,'week2-status','week2-progress');
-  updateWeekProgress(15,'week3-status','week3-progress');
 }
 
 /* ==================================== */
@@ -825,116 +824,7 @@ var DICT={
   "llamar":["打電話 / 呼叫","Neutral","原形動詞，llamar a la policía = 報警。"],
   "policía":["警察","Neutral","名詞，墨西哥報警電話是911。"],
   "llamar a la policía":["報警","Neutral","緊急時刻最重要的求助句型之一。"],
-  // --- Day 15 ---
-  "voy":["我去 / 我要去","Neutral","ir 的第一人稱，voy a + 動詞 = 我要去做某事。"],
-  "pedir":["請求 / 叫（車、餐點）","Neutral","原形動詞，pedir un Uber = 叫一台Uber。"],
-  "uber":["Uber（叫車App）","Neutral","墨西哥各大城市普遍使用的叫車App，比路邊招車更安全。"],
-  "pedir un uber":["叫一台Uber","Neutral","墨西哥城市裡最常見的叫車方式。"],
-  "ya":["已經 / 快要","Neutral","副詞，ya casi = 快要...了。"],
-  "casi":["幾乎 / 快要","Neutral","副詞，ya casi llega = 快到了。"],
-  "llega":["（他/她/它）到達","Neutral","llegar 的第三人稱。"],
-  "tarda":["（他/她/它）花費時間","Neutral","tardar 的第三人稱，tardar en + 動詞 = 花多少時間做某事。"],
-  "chofer":["司機","Neutral","搭Uber或計程車時常用來稱呼司機。"],
-  "el chofer":["司機","Neutral","搭Uber或計程車時常用的稱呼。"],
-  "llegar":["到達","Neutral","原形動詞，en llegar = 到達（的時間）。"],
-  "esquina":["街角","Neutral","名詞，dejar en la esquina = 在街角讓人下車。"],
-  "la esquina":["街角","Neutral","常用於請司機在此下車。"],
-  "me puede dejar en":["可以讓我在...下車嗎？","Neutral","搭計程車或Uber時常用的請求句型。"],
-  // --- Day 16 ---
-  "chip":["SIM卡","Neutral","名詞，chip prepago = 預付卡SIM卡。"],
-  "prepago":["預付的","Neutral","形容詞，chip prepago = 預付卡。"],
-  "chip prepago":["預付卡SIM卡","Neutral","墨西哥電信商在便利商店、機場都能買到。"],
-  "celular":["手機","Neutral","墨西哥常用celular而非móvil。"],
-  "cuántos":["多少（可數）","Neutral","疑問詞，用於可數名詞，cuántos gigas = 多少GB。"],
-  "gigas":["GB（數據流量）","Neutral","名詞，gigas de datos = GB數據流量。"],
-  "datos":["數據 / 資料","Neutral","名詞，datos móviles = 行動數據。"],
-  "gigas de datos":["GB數據流量","Neutral","購買手機資費方案時的核心詞彙。"],
-  "incluye":["（它）包含","Neutral","incluir 的第三人稱，¿incluye...? = 有包含...嗎？"],
-  "este":["這個（陽性）","Neutral","指示形容詞，este paquete = 這個方案。"],
-  "paquete":["方案 / 包裹","Neutral","名詞，可指資費方案或郵寄包裹，依語境判斷。"],
-  "el paquete":["這個方案","Neutral","手機資費情境中指方案。"],
-  "señal":["訊號","Neutral","名詞，no tengo señal = 我沒訊號。"],
-  "sin señal":["沒訊號","Neutral","常見於地下鐵或偏遠地區。"],
-  // --- Day 17 ---
-  "buscando":["正在尋找","Neutral","buscar 的現在分詞，estoy buscando = 我正在找。"],
-  "departamento":["公寓","Neutral","墨西哥常用departamento而非piso。"],
-  "un departamento":["一間公寓","Neutral","租屋常用詞彙。"],
-  "amueblado":["附家具的","Neutral","形容詞，對外派人士租屋很方便。"],
-  "rentar":["租（房子）","Neutral","原形動詞，墨西哥常用rentar而非alquilar。"],
-  "renta":["租金","Neutral","名詞，la renta = 租金。"],
-  "la renta":["租金","Neutral","租房時最核心的詞彙之一。"],
-  "agua":["水","Neutral","名詞，租房費用常見項目之一。"],
-  "luz":["電（口語）","Neutral","字面『光』，口語上等同於electricidad(電費)。"],
-  "e":["和（用於i/hi開頭前）","Neutral","連接詞y在下個字以i或hi開頭時改用e，如agua e internet。"],
-  "internet":["網路","Neutral","名詞，租房常見必問項目。"],
-  "depósito":["押金","Neutral","名詞，通常是一個月房租。"],
-  "el depósito":["押金","Neutral","簽約前務必問清楚金額。"],
-  "contrato":["合約","Neutral","名詞，租房合約通常最短半年或一年。"],
-  "el contrato":["合約","Neutral","租房時務必確認合約期限。"],
-  // --- Day 18 ---
-  "enviar":["寄送","Neutral","原形動詞，enviar un paquete = 寄送包裹。"],
-  "enviar un paquete":["寄送一個包裹","Neutral","郵局辦理國際包裹最基本的句型。"],
-  "envío":["運送 / 郵資","Neutral","名詞，¿Cuánto cuesta el envío? = 運費多少？"],
-  "el envío":["運送 / 郵資","Neutral","郵局常用詞彙。"],
-  "kilo":["公斤","Neutral","名詞，por kilo = 每公斤計價。"],
-  "por kilo":["每公斤","Neutral","國際包裹常以重量計費。"],
-  "dar":["給","Neutral","原形動詞，me puede dar = 可以給我...嗎？"],
-  "número":["號碼","Neutral","名詞，número de rastreo = 追蹤號碼。"],
-  "rastreo":["追蹤","Neutral","名詞，número de rastreo = 追蹤號碼。"],
-  "número de rastreo":["追蹤號碼","Neutral","寄件後務必索取以便線上查詢包裹狀態。"],
-  // --- Day 19 ---
-  "quieres":["你想要","Neutral","querer 的第二人稱，¿Quieres...? = 你想要...嗎？"],
-  "ir":["去","Neutral","原形動詞，ir al cine = 去看電影。"],
-  "al":["到那個（a+el的縮寫）","Neutral","介系詞a與陽性定冠詞el的縮寫。"],
-  "cine":["電影院 / 電影","Neutral","名詞，ir al cine = 去看電影。"],
-  "ir al cine":["去看電影","Neutral","墨西哥年輕人最常見的週末休閒活動之一。"],
-  "boletos":["票（複數）","Neutral","boleto的複數，墨西哥用法(西班牙多說entrada)。"],
-  "un boleto":["一張票","Neutral","boleto = 票，墨西哥常用說法。"],
-  "función":["場次","Neutral","名詞，la función de las ocho = 八點場。"],
-  "la función":["場次","Neutral","電影院用語，指放映場次。"],
-  "ocho":["八","Neutral","基礎數字，las ocho = 八點。"],
-  "echamos":["我們來（口語邀約）","Coloquial","echar 的第一人稱複數，nos echamos unas chelas = 我們去喝幾杯。"],
-  "chelas":["啤酒（複數，口語）","Coloquial","chela的複數，墨西哥朋友間形容啤酒的道地口語詞。"],
-  "chela":["啤酒（口語）","Coloquial","墨西哥朋友間常用的『啤酒』口語詞。"],
-  "después":["之後","Neutral","副詞，después de + 名詞 = ...之後。"],
-  "peli":["電影（口語縮寫）","Coloquial","película(電影)的口語縮寫，朋友間常用。"],
-  // --- Day 20 ---
-  "feliz":["快樂的","Neutral","形容詞，feliz cumpleaños = 生日快樂。"],
-  "cumpleaños":["生日","Neutral","名詞，單複數同形。"],
-  "feliz cumpleaños":["生日快樂","Neutral","慶生最基本的祝福語。"],
-  "cumplan":["（願）實現","Neutral","cumplirse的虛擬式第三人稱複數，que se cumplan tus deseos = 祝你心想事成。"],
-  "deseos":["願望（複數）","Neutral","deseo的複數，tus deseos = 你的願望。"],
-  "vamos":["我們去 / 我們來","Neutral","ir 的第一人稱複數，vamos a + 動詞 = 我們去做...。"],
-  "romper":["打破","Neutral","原形動詞，romper la piñata = 打破皮納塔。"],
-  "piñata":["皮納塔（糖果人偶）","Neutral","墨西哥慶生節慶必備的紙糊人偶，裡面裝滿糖果。"],
-  "la piñata":["皮納塔","Neutral","打破後大家搶糖果，是重要的儀式感。"],
-  "antes":["之前","Neutral","副詞，antes de + 名詞 = ...之前。"],
-  "pastel":["蛋糕","Neutral","名詞，慶生必備。"],
-  "el pastel":["蛋糕","Neutral","墨西哥生日派對的重頭戲之一。"],
-  "muertos":["死者（複數）","Neutral","muerto的複數，Día de Muertos = 亡靈節。"],
-  "día de muertos":["亡靈節","Neutral","墨西哥最具代表性的節日(11/1-11/2)，氣氛溫馨而非哀傷。"],
-  "triste":["悲傷的","Neutral","形容詞，no es triste = 並不悲傷。"],
-  "celebración":["慶祝","Neutral","名詞，una celebración de la vida = 對生命的慶祝。"],
-  "vida":["生命 / 人生","Neutral","名詞，celebración de la vida = 慶祝生命。"],
-  // --- Day 21 ---
-  "check-in":["報到手續","Neutral","機場常用詞彙，直接借用英文。"],
-  "el check-in":["報到手續","Neutral","hacer el check-in = 辦理報到。"],
-  "vuelo":["班機","Neutral","名詞，mi vuelo = 我的班機。"],
-  "el vuelo":["班機","Neutral","機場常用詞彙。"],
-  "cuántas":["多少（可數，陰性）","Neutral","疑問詞，cuántas maletas = 多少件行李。"],
-  "maletas":["行李（複數）","Neutral","maleta的複數，托運行李常用詞。"],
-  "facturar":["托運（行李）","Neutral","原形動詞，facturar equipaje = 托運行李。"],
-  "facturar equipaje":["托運行李","Neutral","機場報到時常聽到的用語。"],
-  "equipaje":["行李","Neutral","名詞，統稱行李。"],
-  "sin":["沒有","Neutral","介系詞，表示缺少。"],
-  "costo":["費用","Neutral","名詞，sin costo extra = 沒有額外費用。"],
-  "extra":["額外的","Neutral","形容詞，costo extra = 額外費用。"],
-  "sin costo extra":["沒有額外費用","Neutral","詢問免費行李額度時常用。"],
-  "motivo":["目的 / 原因","Neutral","名詞，el motivo del viaje = 旅行目的。"],
-  "el motivo del viaje":["旅行目的","Neutral","入境海關常見問句核心詞彙。"],
-  "su":["您的 / 他的/她的","Formal","物主形容詞，正式場合用於usted。"],
-  "viaje":["旅行","Neutral","名詞，motivo de viaje = 旅行目的。"],
-
+  
   // --- Common words across multiple days ---
   "me llamo":["我叫...","Neutral","自我介紹必用句型。"],
   "soy de":["我來自...","Neutral","描述來源地點。"],
@@ -1137,71 +1027,6 @@ var Q14_4={type:'fill',q:'請輸入「我的錢包弄丟了」的西班牙文（
 var Q14_5={type:'listen',audio:'¿Puede llamar a la policía, por favor?',q:'剛才你聽到的句子是什麼意思？',o:['救命,我需要醫生！','我的錢包弄丟了','可以請你幫我報警嗎？','今天好熱對吧？'],a:2,x:'¿Puede llamar a la policía, por favor? = 可以請你幫我報警嗎？'};
 
 
-// ============================================
-// Day 15
-// ============================================
-var S15=[{es:"Voy a pedir un Uber, ya casi llega.",zh:"我要叫Uber，快到了。",no:"Uber在墨西哥各大城市很普遍，比路邊招手攔的計程車（taxi de sitio）更安全，尤其是晚上。"},{es:"¿Cuánto tarda el chofer en llegar?",zh:"司機大概多久會到？",no:"tardar en + 動詞 = 花多少時間做某事，等車時很常問。"},{es:"Disculpe, ¿me puede dejar en la esquina, por favor?",zh:"不好意思，可以讓我在街角下車嗎？",no:"dejar en + 地點，用來請司機在某處讓你下車，esquina = 街角。"}];
-var K15=[{w:"Pedir un Uber",m:"叫一台Uber",f:"Neutral"},{w:"El chofer",m:"司機",f:"Neutral"},{w:"¿Me puede dejar en...?",m:"可以讓我在...下車嗎？",f:"Neutral"},{w:"La esquina",m:"街角",f:"Neutral"}];
-var Q15_1={q:"你想叫車去機場,最自然的說法是？",o:["Voy a pedir un Uber.","Voy a comprar un Uber.","Tengo un Uber para el aeropuerto.","Soy un Uber."],a:0,x:"pedir un Uber = 叫一台Uber,是墨西哥城市裡最常見的叫車方式。"};
-var Q15_2={q:"「el chofer」的意思是？",o:["乘客","司機","車票","路線"],a:1,x:"chofer = 司機,搭Uber或計程車時常會用到這個字。"};var Q15_3={q:"想請司機在某個地點讓你下車,用哪個動詞最自然？",o:["Dejar","Comprar","Vender","Perder"],a:0,x:"dejar en + 地點 = 讓某人在某處下車,¿Me puede dejar en...? 是常用請求句型。"};
-var Q15_4={type:'fill',q:'請輸入「司機大概多久會到？」的西班牙文（不需要標點）',answer:'cuánto tarda el chofer en llegar',alt:['cuanto tarda el chofer en llegar'],x:'¿Cuánto tarda el chofer en llegar? = 司機大概多久會到？tardar en = 花費時間做某事。'};
-var Q15_5={type:'listen',audio:'Voy a pedir un Uber, ya casi llega.',q:'剛才你聽到的句子是什麼意思？',o:['我要叫Uber,快到了','我要走路去,已經到了','司機大概多久會到？','可以讓我在街角下車嗎？'],a:0,x:'Voy a pedir un Uber, ya casi llega. = 我要叫Uber,快到了。'};
-
-
-// Day 16
-var S16=[{es:"Quiero un chip prepago para mi celular.",zh:"我想要一張手機預付卡。",no:"墨西哥電信商如Telcel、AT&T、Movistar都有販售prepago（預付）SIM卡，機場、便利商店（OXXO）都能買到。"},{es:"¿Cuántos gigas de datos incluye este paquete?",zh:"這個方案包含多少GB的數據流量？",no:"gigas de datos = GB數據流量,paquete = 資費方案,買預付卡時務必先問清楚。"},{es:"No tengo señal aquí, ¿tú sí tienes?",zh:"我這裡沒訊號,你有嗎？",no:"señal = 訊號,在地下鐵或偏遠地區常會遇到沒訊號的狀況。"}];
-var K16=[{w:"Chip prepago",m:"預付卡SIM卡",f:"Neutral"},{w:"Gigas de datos",m:"GB數據流量",f:"Neutral"},{w:"El paquete",m:"資費方案",f:"Neutral"},{w:"Sin señal",m:"沒訊號",f:"Neutral"}];
-var Q16_1={q:"你想在OXXO便利商店買一張手機預付卡,最自然的說法是？",o:["Quiero un chip prepago para mi celular.","Quiero comprar un celular nuevo.","Necesito arreglar mi celular.","Quiero vender mi celular."],a:0,x:"chip prepago = 預付卡SIM卡,在墨西哥便利商店、電信門市都能買到。"};
-var Q16_2={q:"「gigas de datos」的意思是？",o:["通話分鐘數","GB數據流量","簡訊則數","月租費"],a:1,x:"gigas de datos = GB數據流量,買資費方案前務必問清楚有多少。"};var Q16_3={q:"想表達「我這裡沒訊號」,怎麼說？",o:["No tengo señal aquí.","No tengo celular aquí.","No tengo chip aquí.","No tengo datos aquí."],a:0,x:"No tengo señal = 我沒訊號,señal（訊號）是手機通訊必備詞彙。"};
-var Q16_4={type:'fill',q:'請輸入「這個方案包含多少GB的數據流量？」的西班牙文（不需要標點）',answer:'cuántos gigas de datos incluye este paquete',alt:['cuantos gigas de datos incluye este paquete'],x:'¿Cuántos gigas de datos incluye este paquete? = 這個方案包含多少GB的數據流量？'};
-var Q16_5={type:'listen',audio:'No tengo señal aquí, ¿tú sí tienes?',q:'剛才你聽到的句子是什麼意思？',o:['我想要一張預付卡','這個方案多少錢？','我這裡沒訊號,你有嗎？','這裡的網路很快'],a:2,x:'No tengo señal aquí, ¿tú sí tienes? = 我這裡沒訊號,你有嗎？'};
-
-
-// Day 17
-var S17=[{es:"Estoy buscando un departamento amueblado para rentar.",zh:"我在找一間附家具可以租的公寓。",no:"墨西哥常說departamento而非piso,amueblado = 附家具的,對外派人士很方便。"},{es:"¿La renta incluye agua, luz e internet?",zh:"租金有包含水、電和網路嗎？",no:"luz口語上等同於electricidad(電),租房時務必問清楚哪些費用已包含。"},{es:"¿Cuánto es el depósito y a cuántos meses es el contrato?",zh:"押金多少？合約簽幾個月？",no:"depósito(押金)常是一個月房租,contrato(合約)在墨西哥通常最短簽半年或一年。"}];
-var K17=[{w:"Un departamento",m:"一間公寓",f:"Neutral"},{w:"Amueblado",m:"附家具的",f:"Neutral"},{w:"La renta",m:"租金",f:"Neutral"},{w:"El depósito",m:"押金",f:"Neutral"}];
-var Q17_1={q:"你想告訴房仲『我在找一間附家具的公寓』,最自然的說法是？",o:["Estoy buscando un departamento amueblado.","Estoy vendiendo un departamento amueblado.","Tengo un departamento amueblado.","Quiero comprar un departamento amueblado."],a:0,x:"buscar = 尋找,amueblado = 附家具的,是租屋時最常用的形容詞。"};
-var Q17_2={q:"「la renta」的意思是？",o:["押金","租金","合約","仲介費"],a:1,x:"la renta = 租金,是租房時最核心的詞彙之一。"};var Q17_3={q:"想問押金多少,關鍵字是？",o:["El depósito","El contrato","La renta","La luz"],a:0,x:"depósito = 押金,通常是一個月租金,簽約前一定要問清楚。"};
-var Q17_4={type:'fill',q:'請輸入「租金有包含水、電和網路嗎？」的西班牙文（不需要標點）',answer:'la renta incluye agua luz e internet',x:'¿La renta incluye agua, luz e internet? = 租金有包含水、電和網路嗎？'};
-var Q17_5={type:'listen',audio:'¿Cuánto es el depósito y a cuántos meses es el contrato?',q:'剛才你聽到的句子是什麼意思？',o:['押金多少？合約簽幾個月？','這間公寓附家具嗎？','租金有包含水電嗎？','我在找公寓'],a:0,x:'¿Cuánto es el depósito y a cuántos meses es el contrato? = 押金多少？合約簽幾個月？'};
-
-
-// Day 18
-var S18=[{es:"Quiero enviar este paquete a Taiwán, ¿cuánto tarda?",zh:"我想把這個包裹寄到台灣,大概要多久？",no:"enviar = 寄送,墨西哥郵局是Correos de México,國際包裹通常需要數週。"},{es:"¿Cuánto cuesta el envío por kilo?",zh:"每公斤的運費多少？",no:"envío = 運送/郵資,por kilo = 每公斤計費,國際包裹常以重量計價。"},{es:"¿Me puede dar el número de rastreo, por favor?",zh:"可以給我追蹤號碼嗎？",no:"número de rastreo = 追蹤號碼,寄件後務必索取以便線上查詢包裹狀態。"}];
-var K18=[{w:"Enviar un paquete",m:"寄送一個包裹",f:"Neutral"},{w:"El envío",m:"運送/郵資",f:"Neutral"},{w:"Por kilo",m:"每公斤",f:"Neutral"},{w:"Número de rastreo",m:"追蹤號碼",f:"Neutral"}];
-var Q18_1={q:"你想在郵局說『我想把這個包裹寄到台灣』,最自然的說法是？",o:["Quiero enviar este paquete a Taiwán.","Quiero comprar este paquete de Taiwán.","Tengo un paquete de Taiwán.","Quiero perder este paquete en Taiwán."],a:0,x:"enviar = 寄送,是郵局寄件最基本的動詞。"};
-var Q18_2={q:"「el envío」的意思是？",o:["包裹本身","運送/郵資","追蹤號碼","收件人"],a:1,x:"envío = 運送/郵資,¿Cuánto cuesta el envío? = 運費多少？"};var Q18_3={q:"想索取包裹的追蹤號碼,關鍵詞是？",o:["Número de rastreo","Número de teléfono","Código postal","Número de cuenta"],a:0,x:"número de rastreo = 追蹤號碼,寄件後可用來線上查詢包裹進度。"};
-var Q18_4={type:'fill',q:'請輸入「每公斤的運費多少？」的西班牙文（不需要標點）',answer:'cuánto cuesta el envío por kilo',alt:['cuanto cuesta el envio por kilo'],x:'¿Cuánto cuesta el envío por kilo? = 每公斤的運費多少？'};
-var Q18_5={type:'listen',audio:'¿Me puede dar el número de rastreo, por favor?',q:'剛才你聽到的句子是什麼意思？',o:['我想寄包裹到台灣','每公斤運費多少？','可以給我追蹤號碼嗎？','包裹大概要多久？'],a:2,x:'¿Me puede dar el número de rastreo, por favor? = 可以給我追蹤號碼嗎？'};
-
-
-// Day 19
-var S19=[{es:"¿Quieres ir al cine el fin de semana?",zh:"你這週末想去看電影嗎？",no:"ir al cine = 去看電影,是墨西哥年輕人最常見的週末休閒活動之一。"},{es:"Dos boletos para la función de las ocho, por favor.",zh:"請給我兩張八點場的票。",no:"boleto = 票(墨西哥用法,西班牙多說entrada),función = 場次。"},{es:"¿Nos echamos unas chelas después de la peli?",zh:"看完電影後我們去喝幾杯啤酒吧？",no:"chela是墨西哥口語的『啤酒』,peli是película(電影)的口語縮寫,朋友間非常常用。"}];
-var K19=[{w:"Ir al cine",m:"去看電影",f:"Neutral"},{w:"Un boleto",m:"一張票",f:"Neutral"},{w:"La función",m:"場次",f:"Neutral"},{w:"Chela",m:"啤酒（口語）",f:"Coloquial"}];
-var Q19_1={q:"你想約朋友『這週末去看電影』,最自然的說法是？",o:["¿Quieres ir al cine el fin de semana?","¿Quieres comprar un cine el fin de semana?","¿Quieres ver un boleto el fin de semana?","¿Quieres vender el cine el fin de semana?"],a:0,x:"ir al cine = 去看電影,是最直接自然的邀約說法。"};
-var Q19_2={q:"「boleto」在墨西哥的意思是？",o:["護照","票","收據","菜單"],a:1,x:"boleto = 票,墨西哥用法(西班牙多說entrada)。"};var Q19_3={q:"「chela」是墨西哥口語中的？",o:["咖啡","啤酒","果汁","龍舌蘭"],a:1,x:"chela是墨西哥朋友間形容『啤酒』的道地口語詞。"};
-var Q19_4={type:'fill',q:'請輸入「請給我兩張八點場的票」的西班牙文（不需要標點）',answer:'dos boletos para la función de las ocho por favor',x:'Dos boletos para la función de las ocho, por favor. = 請給我兩張八點場的票。'};
-var Q19_5={type:'listen',audio:'¿Nos echamos unas chelas después de la peli?',q:'剛才你聽到的句子是什麼意思？',o:['你這週末想去看電影嗎？','請給我兩張票','看完電影後我們去喝幾杯啤酒吧？','電影幾點開始？'],a:2,x:'¿Nos echamos unas chelas después de la peli? = 看完電影後我們去喝幾杯啤酒吧？'};
-
-
-// Day 20
-var S20=[{es:"¡Feliz cumpleaños! Que se cumplan todos tus deseos.",zh:"生日快樂！祝你心想事成。",no:"墨西哥慶生常有『mañanitas』晨曲傳統,朋友會在生日當天一早唱歌祝賀。"},{es:"Vamos a romper la piñata antes del pastel.",zh:"我們先打破皮納塔再吃蛋糕。",no:"piñata是墨西哥慶生和節慶必備的紙糊人偶裝糖果,打破後大家搶糖果,是重要的儀式感。"},{es:"El Día de Muertos no es triste, es una celebración de la vida.",zh:"亡靈節並不悲傷,而是一種對生命的慶祝。",no:"Día de Muertos(11/1-11/2)是墨西哥最具代表性的節日,家人擺放ofrenda(祭壇)紀念過世親人,氣氛溫馨而非哀傷。"}];
-var K20=[{w:"Feliz cumpleaños",m:"生日快樂",f:"Neutral"},{w:"La piñata",m:"皮納塔(糖果人偶)",f:"Neutral"},{w:"El pastel",m:"蛋糕",f:"Neutral"},{w:"Día de Muertos",m:"亡靈節",f:"Neutral"}];
-var Q20_1={q:"你想對墨西哥朋友說『生日快樂！』,怎麼說？",o:["¡Feliz cumpleaños!","¡Feliz Navidad!","¡Feliz año!","¡Feliz viaje!"],a:0,x:"¡Feliz cumpleaños! = 生日快樂,是慶生最基本的祝福語。"};
-var Q20_2={q:"「la piñata」是什麼？",o:["一種傳統音樂","裝滿糖果的紙糊人偶","一種墨西哥料理","一種舞蹈"],a:1,x:"piñata是墨西哥慶生與節慶必備的紙糊人偶,裡面裝滿糖果,打破後大家搶糖果。"};var Q20_3={q:"「Día de Muertos」在墨西哥文化中被視為？",o:["悲傷的哀悼日","對生命的慶祝","不能出門的禁忌日","純粹的宗教儀式"],a:1,x:"Día de Muertos氣氛溫馨歡樂,家人擺設ofrenda紀念過世親人,是慶祝生命而非哀傷的節日。"};
-var Q20_4={type:'fill',q:'請輸入「生日快樂！」的西班牙文（不需要標點）',answer:'feliz cumpleaños',alt:['feliz cumpleanos'],x:'¡Feliz cumpleaños! = 生日快樂！'};
-var Q20_5={type:'listen',audio:'Vamos a romper la piñata antes del pastel.',q:'剛才你聽到的句子是什麼意思？',o:['生日快樂,祝你心想事成','我們先打破皮納塔再吃蛋糕','亡靈節是慶祝生命','蛋糕在哪裡？'],a:1,x:'Vamos a romper la piñata antes del pastel. = 我們先打破皮納塔再吃蛋糕。'};
-
-
-// Day 21
-var S21=[{es:"Quiero hacer el check-in para mi vuelo a Taiwán.",zh:"我想辦理飛往台灣的班機報到。",no:"vuelo = 班機,check-in在墨西哥機場也常直接用英文借詞。"},{es:"¿Cuántas maletas puedo facturar sin costo extra?",zh:"我可以免費托運幾件行李？",no:"facturar equipaje = 托運行李,搭機前務必確認免費行李額度。"},{es:"¿Cuál es el motivo de su viaje?",zh:"您這趟旅行的目的是什麼？",no:"入境海關常見問句,常見回答有turismo(觀光)、trabajo(工作)或negocios(商務)。"}];
-var K21=[{w:"El check-in",m:"報到手續",f:"Neutral"},{w:"El vuelo",m:"班機",f:"Neutral"},{w:"Facturar equipaje",m:"托運行李",f:"Neutral"},{w:"El motivo del viaje",m:"旅行目的",f:"Neutral"}];
-var Q21_1={q:"你到機場想辦理報到,最自然的說法是？",o:["Quiero hacer el check-in para mi vuelo.","Quiero comprar el check-in de mi vuelo.","Tengo el check-in en mi vuelo.","Quiero vender mi vuelo."],a:0,x:"hacer el check-in = 辦理報到,是機場最基本的動作用語。"};
-var Q21_2={q:"「facturar equipaje」的意思是？",o:["購買機票","托運行李","安檢","登機"],a:1,x:"facturar equipaje = 托運行李,是機場報到時常聽到的用語。"};var Q21_3={q:"入境海關問「¿Cuál es el motivo de su viaje?」是想知道？",o:["你要住哪裡","你的旅行目的","你帶了多少現金","你的班機號碼"],a:1,x:"motivo del viaje = 旅行目的,常見回答有turismo(觀光)、trabajo(工作)、negocios(商務)。"};
-var Q21_4={type:'fill',q:'請輸入「我可以免費托運幾件行李？」的西班牙文（不需要標點）',answer:'cuántas maletas puedo facturar sin costo extra',alt:['cuantas maletas puedo facturar sin costo extra'],x:'¿Cuántas maletas puedo facturar sin costo extra? = 我可以免費托運幾件行李？'};
-var Q21_5={type:'listen',audio:'¿Cuál es el motivo de su viaje?',q:'剛才你聽到的句子是什麼意思？',o:['我想辦理報到','我可以托運幾件行李？','您這趟旅行的目的是什麼？','班機幾點起飛？'],a:2,x:'¿Cuál es el motivo de su viaje? = 您這趟旅行的目的是什麼？'};
-
-
 
 var LESSONS=[
   {day:1,theme:"問候語",target:"學會各種場合的墨西哥式問候與回應",sentences:S1,keywords:K1,quiz:[Q1_1,Q1_2,Q1_3,Q1_4,Q1_5]},
@@ -1217,14 +1042,7 @@ var LESSONS=[
   {day:11,theme:"天氣與心情",target:"能描述天氣狀況並表達自己的心情感受",sentences:S11,keywords:K11,quiz:[Q11_1,Q11_2,Q11_3,Q11_4,Q11_5]},
   {day:12,theme:"家庭與朋友",target:"能介紹家人朋友，並聊聊家庭狀況",sentences:S12,keywords:K12,quiz:[Q12_1,Q12_2,Q12_3,Q12_4,Q12_5]},
   {day:13,theme:"超市採購",target:"能在超市尋找商品、詢問折扣並完成購物",sentences:S13,keywords:K13,quiz:[Q13_1,Q13_2,Q13_3,Q13_4,Q13_5]},
-  {day:14,theme:"緊急求助",target:"能在緊急狀況下求救並清楚表達需求",sentences:S14,keywords:K14,quiz:[Q14_1,Q14_2,Q14_3,Q14_4,Q14_5]},
-  {day:15,theme:"叫車與搭計程車",target:"能叫車、與司機溝通並確認下車地點",sentences:S15,keywords:K15,quiz:[Q15_1,Q15_2,Q15_3,Q15_4,Q15_5]},
-  {day:16,theme:"辦手機門號與網路",target:"能購買預付卡、詢問網路方案並解決訊號問題",sentences:S16,keywords:K16,quiz:[Q16_1,Q16_2,Q16_3,Q16_4,Q16_5]},
-  {day:17,theme:"找房子與租屋",target:"能詢問租屋條件、水電網路費用並確認合約細節",sentences:S17,keywords:K17,quiz:[Q17_1,Q17_2,Q17_3,Q17_4,Q17_5]},
-  {day:18,theme:"郵局寄件與包裹",target:"能到郵局寄送包裹、詢問運費與追蹤包裹",sentences:S18,keywords:K18,quiz:[Q18_1,Q18_2,Q18_3,Q18_4,Q18_5]},
-  {day:19,theme:"看電影與休閒娛樂",target:"能買電影票、約朋友看電影並討論休閒活動",sentences:S19,keywords:K19,quiz:[Q19_1,Q19_2,Q19_3,Q19_4,Q19_5]},
-  {day:20,theme:"節慶與生日派對",target:"能參與墨西哥節慶活動、祝賀生日並理解慶祝文化",sentences:S20,keywords:K20,quiz:[Q20_1,Q20_2,Q20_3,Q20_4,Q20_5]},
-  {day:21,theme:"機場報到與出入境",target:"能完成機場報到、行李托運與入境問答",sentences:S21,keywords:K21,quiz:[Q21_1,Q21_2,Q21_3,Q21_4,Q21_5]}
+  {day:14,theme:"緊急求助",target:"能在緊急狀況下求救並清楚表達需求",sentences:S14,keywords:K14,quiz:[Q14_1,Q14_2,Q14_3,Q14_4,Q14_5]}
 ];
 
 var STORAGE_KEY='mx_lesson_progress_v1';
@@ -1255,7 +1073,7 @@ function init(optDay){
   loadVocab();
   try{var d=localStorage.getItem(STORAGE_KEY);if(d)progress=JSON.parse(d)}catch(e){}
   if(typeof browser!=='undefined'){window.addEventListener('beforeunload',function(){browser.close();});}
-  if(optDay&&optDay>=1&&optDay<=21){currentDay=optDay;}
+  if(optDay&&optDay>=1&&optDay<=14){currentDay=optDay;}
   else{
     try{var d=localStorage.getItem(STORAGE_KEY);if(d){var pr=JSON.parse(d);currentDay=(pr.currentDay)||1;}}catch(e){currentDay=1;}
   }
@@ -1271,7 +1089,7 @@ function init(optDay){
     else{addToVocab(currentDictWord,currentDictMeaning,currentDictNote);}
     showDict(currentDictWord,currentDictMeaning,currentDictNote);
   };
-  document.getElementById('btn-next').onclick=function(){if(currentDay<21)renderDay(currentDay+1)};
+  document.getElementById('btn-next').onclick=function(){if(currentDay<14)renderDay(currentDay+1)};
   document.getElementById('dict-overlay').onclick=closeDictPopup;
   document.getElementById('dict-close').onclick=closeDictPopup;
 }
@@ -1285,10 +1103,9 @@ function renderDay(day){
   var prevCorrect=0;
   if(hasPrevQuiz){for(var i=0;i<prevQuiz.length;i++){if(prevQuiz[i].correct)prevCorrect++;}}
   currentDay=day;
-  var weekIdx=Math.ceil(day/7);
-  var dayInWeek=day-(weekIdx-1)*7;
-  var weekStartDay=(weekIdx-1)*7+1;
-  var weekEndDay=weekIdx*7;
+  var dayInWeek=(day<=7)?day:day-7;
+  var weekStartDay=(day<=7)?1:8;
+  var weekEndDay=(day<=7)?7:14;
   document.getElementById('header-sub').textContent='Day '+dayInWeek+' · '+lesson.theme;
   document.getElementById('day-badge').textContent='DAY '+dayInWeek+'/7';
   document.title='🇲🇽 墨西哥西語學習 Day '+day;
@@ -1557,7 +1374,7 @@ function closeDictPopup(){
 }
 
 function updateDots(){
-  var base=(Math.ceil(currentDay/7)-1)*7;
+  var base=(currentDay<=7)?0:7;
   document.querySelectorAll('.dot').forEach(function(d,i){
     d.classList.remove('active','done');
     if(i+1+base===currentDay)d.classList.add('active');
