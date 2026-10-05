@@ -244,26 +244,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
     </div>
     <div class="progress-bar-idx"><div class="progress-fill-idx" id="week3-progress" style="width:0%"></div></div>
   </div>
-
-  <div class="week-card-idx" data-week="4">
-    <div class="week-header-idx">
-      <div class="week-title-idx">第四週</div>
-      <div class="week-status-idx" id="week4-status">尚未開始</div>
-    </div>
-    <div class="week-days-idx">
-      <a href="#" onclick="showWeek1(22);return false;"><div class="day-row-idx pending" id="home-day-22"><span class="day-num">Day 1</span><span class="day-theme">理髮與美容沙龍</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(23);return false;"><div class="day-row-idx pending" id="home-day-23"><span class="day-num">Day 2</span><span class="day-theme">家中維修與水電問題</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(24);return false;"><div class="day-row-idx pending" id="home-day-24"><span class="day-num">Day 3</span><span class="day-theme">健身房與運動</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(25);return false;"><div class="day-row-idx pending" id="home-day-25"><span class="day-num">Day 4</span><span class="day-theme">咖啡店與麵包店</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(26);return false;"><div class="day-row-idx pending" id="home-day-26"><span class="day-num">Day 5</span><span class="day-theme">受邀到墨西哥人家作客</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(27);return false;"><div class="day-row-idx pending" id="home-day-27"><span class="day-num">Day 6</span><span class="day-theme">訂飯店與搭長途巴士</span><span class="day-check"></span></div></a>
-      <a href="#" onclick="showWeek1(28);return false;"><div class="day-row-idx pending" id="home-day-28"><span class="day-num">Day 7</span><span class="day-theme">時間與約定（Ahorita 文化）</span><span class="day-check"></span></div></a>
-    </div>
-    <div class="progress-bar-idx"><div class="progress-fill-idx" id="week4-progress" style="width:0%"></div></div>
-  </div>
 </div>
 
-<div class="footer-idx">墨西哥語學習 App · v0.10.0 · 離線可用</div>
+<div class="footer-idx">墨西哥語學習 App · v0.9.0 · 離線可用</div>
 </div>
 
 <div id="week1-view" style="display:none">
@@ -286,7 +269,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans T
 <div class="card"><div class="card-label">今日學什麼</div><div class="lesson-goal" id="lesson-goal">學會各種場合的墨西哥式問候與回應</div><div id="sentences-container"></div></div>
 <div class="card"><div class="card-label">關鍵單字</div><div class="keywords-grid" id="keywords-grid"></div></div>
 <div class="quiz-section"><div class="quiz-label">小測驗</div><div class="quiz-question" id="quiz-question">載入中...</div><div class="quiz-options" id="quiz-options"></div><div id="quiz-feedback"></div></div>
-<div class="footer">墨西哥語學習 App · v0.10.0 · 離線可用</div>
+<div class="footer">墨西哥語學習 App · v0.9.0 · 離線可用</div>
 
 <div class="dict-popup-overlay" id="dict-overlay"></div>
 <div class="dict-popup" id="dict-popup">
@@ -592,7 +575,6 @@ function updateHomeProgress(){
   updateWeekProgress(1,'week1-status','week1-progress');
   updateWeekProgress(8,'week2-status','week2-progress');
   updateWeekProgress(15,'week3-status','week3-progress');
-  updateWeekProgress(22,'week4-status','week4-progress');
 }
 
 /* ==================================== */
@@ -953,44 +935,6 @@ var DICT={
   "su":["您的 / 他的/她的","Formal","物主形容詞，正式場合用於usted。"],
   "viaje":["旅行","Neutral","名詞，motivo de viaje = 旅行目的。"],
 
-  // --- Day 22 ---
-  "solo":["只 / 僅","Neutral","副詞，solo las puntas = 只修髮尾。"],
-  "lados":["兩側 / 邊","Neutral","lado 的複數，剪髮時指頭髮的兩側。"],
-  "los lados":["兩側","Neutral","理髮時指頭髮兩側，如 más corto de los lados。"],
-  "le":["（對）您 / 他 / 她","Formal","間接受詞代名詞，¿Cuánto le debo? 裡的 le 指對方（您）。"],
-  "debo":["我欠 / 我應該","Neutral","deber 的第一人稱，¿Cuánto le debo? = 我該付您多少錢？"],
-  // --- Day 23 ---
-  "no":["不 / 沒有","Neutral","否定詞，放在動詞前面，如 no tengo = 我沒有。"],
-  "baño":["浴室 / 廁所","Neutral","名詞，墨西哥也用來指廁所，¿Dónde está el baño? = 廁所在哪裡？"],
-  "venir":["來","Neutral","原形動詞，¿puede venir...? = 可以來…嗎？"],
-  "y":["和 / 而且","Neutral","連接詞，連接兩個詞或句子。"],
-  "sé":["我知道","Neutral","saber 的第一人稱，no sé = 我不知道。"],
-  "qué":["什麼","Neutral","疑問詞，por qué = 為什麼。"],
-  "por qué":["為什麼","Neutral","詢問原因，no sé por qué = 我不知道為什麼。"],
-  // --- Day 24 ---
-  "gimnasio":["健身房","Neutral","名詞，墨西哥口語也常說 gym。"],
-  "cierra":["（它）關門","Neutral","cerrar 的第三人稱，¿a qué hora cierra? = 幾點關門？"],
-  "domingos":["星期天（複數）","Neutral","los domingos = 每個星期天。"],
-  "los domingos":["每個星期天","Neutral","los + 星期幾（複數）表示『每個星期幾』。"],
-  "mis":["我的（複數）","Neutral","物主形容詞，後面接複數名詞，如 mis compañeros。"],
-  "compañeros":["同事 / 夥伴（複數）","Neutral","compañero 的複數，可指同事、同學或隊友。"],
-  // --- Day 25 ---
-  "tomar":["喝 / 拿","Neutral","原形動詞，para tomar aquí = 在這裡喝（內用）。"],
-  "prepara":["（您）準備 / 調製","Neutral","preparar 的第三人稱，¿Me lo prepara? = 可以幫我做嗎？"],
-  // --- Day 26 ---
-  "traje":["我帶來了","Neutral","traer 的過去式第一人稱，traje unos postres = 我帶了一些甜點。"],
-  "postres":["甜點（複數）","Neutral","postre 的複數，作客時帶甜點是常見的心意。"],
-  // --- Day 27 ---
-  "sale":["（它）出發 / 離開","Neutral","salir 的第三人稱，¿A qué hora sale...? = 幾點出發？"],
-  "guadalajara":["瓜達拉哈拉（城市）","Neutral","墨西哥第二大城，位於哈利斯科州，龍舌蘭酒與墨西哥流浪樂隊的故鄉。"],
-  // --- Day 28 ---
-  "nada":["什麼都沒有 / 只","Neutral","nada más = 只要、僅僅。"],
-  "nada más":["只要…就…","Coloquial","墨西哥口語，nada más termino esto = 我一做完這個就…"],
-  "termino":["我結束 / 我完成","Neutral","terminar 的第一人稱，nada más termino = 我一做完就…"],
-  "las":["那些 / （時間）…點","Neutral","陰性複數冠詞，說時間時用 las，如 a las diez = 十點。"],
-  "diez":["十","Neutral","數字 10，a las diez = 十點。"],
-  "tardo":["我花（時間）/ 我耽擱","Neutral","tardar 的第一人稱，no tardo = 我不會太久。"],
-
   // --- Common words across multiple days ---
   "me llamo":["我叫...","Neutral","自我介紹必用句型。"],
   "soy de":["我來自...","Neutral","描述來源地點。"],
@@ -1258,71 +1202,6 @@ var Q21_4={type:'fill',q:'請輸入「我可以免費托運幾件行李？」的
 var Q21_5={type:'listen',audio:'¿Cuál es el motivo de su viaje?',q:'剛才你聽到的句子是什麼意思？',o:['我想辦理報到','我可以托運幾件行李？','您這趟旅行的目的是什麼？','班機幾點起飛？'],a:2,x:'¿Cuál es el motivo de su viaje? = 您這趟旅行的目的是什麼？'};
 
 
-// ============================================
-// Day 22
-// ============================================
-var S22=[{es:"Quiero un corte, pero solo las puntas, por favor.",zh:"我想剪頭髮，但只修髮尾，麻煩你。",no:"las puntas = 髮尾，只想稍微修剪時就這樣說；墨西哥社區裡到處都有 peluquería（理髮店／美髮院）。"},{es:"¿Me lo puede dejar más corto de los lados?",zh:"兩側可以幫我剪短一點嗎？",no:"los lados = 兩側；這裡的 lo 指頭髮（el pelo），más corto = 更短一點。"},{es:"¿Cuánto le debo? Aquí tiene, quédese con el cambio.",zh:"我該付您多少錢？給您，零錢不用找了。",no:"在墨西哥美髮師習慣收一點小費（propina），quédese con el cambio = 零錢不用找了。"}];
-var K22=[{w:"Un corte",m:"剪髮",f:"Neutral"},{w:"Las puntas",m:"髮尾",f:"Neutral"},{w:"Más corto",m:"更短一點",f:"Neutral"},{w:"Quédese con el cambio",m:"零錢不用找了",f:"Formal"}];
-var Q22_1={q:"你想告訴理髮師『我想剪頭髮，只修髮尾』，怎麼說？",o:["Quiero un corte, pero solo las puntas.","Quiero cortar todo mi pelo y las puntas.","Quiero comprar un corte de puntas.","Tengo un corte en las puntas."],a:0,x:"un corte = 剪髮，solo las puntas = 只修髮尾，是請理髮師輕修頭髮的標準說法。"};
-var Q22_2={q:"「las puntas」在理髮店指的是？",o:["瀏海","髮尾","髮色","鬍子"],a:1,x:"las puntas = 髮尾，solo las puntas = 只修髮尾。"};var Q22_3={q:"想請理髮師把兩側剪『短』一點，『短』是哪個字？",o:["Largo","Corto","Grande","Alto"],a:1,x:"corto = 短的，más corto = 更短一點；largo = 長的。"};
-var Q22_4={type:'fill',q:'請輸入「兩側可以幫我剪短一點嗎？」的西班牙文（不需要標點）',answer:'me lo puede dejar más corto de los lados',alt:['me lo puede dejar mas corto de los lados'],x:'¿Me lo puede dejar más corto de los lados? = 兩側可以幫我剪短一點嗎？'};
-var Q22_5={type:'listen',audio:'Quiero un corte, pero solo las puntas, por favor.',q:'剛才你聽到的句子是什麼意思？',o:['兩側可以幫我剪短一點嗎？','我該付您多少錢？','我想剪頭髮，但只修髮尾，麻煩你','零錢不用找了'],a:2,x:'Quiero un corte, pero solo las puntas, por favor. = 我想剪頭髮，但只修髮尾，麻煩你。'};
-
-
-// Day 23
-var S23=[{es:"No hay agua caliente en mi departamento.",zh:"我的公寓沒有熱水。",no:"agua caliente = 熱水；墨西哥家庭常用瓦斯熱水器（boiler），沒熱水時先通知房東或管理員。"},{es:"Hay una fuga en el baño, ¿puede venir un plomero?",zh:"浴室漏水了，可以請水管工來嗎？",no:"fuga = 漏（水／氣），plomero = 水管工（電工是 electricista）；緊急時可加一句 es urgente。"},{es:"Se fue la luz y no sé por qué.",zh:"停電了，我不知道為什麼。",no:"se fue la luz = 停電了（字面是『電走了』），是墨西哥人最常用的說法；也可以說 no hay luz。"}];
-var K23=[{w:"Agua caliente",m:"熱水",f:"Neutral"},{w:"Una fuga",m:"漏水／漏氣",f:"Neutral"},{w:"Un plomero",m:"水管工",f:"Neutral"},{w:"Se fue la luz",m:"停電了",f:"Neutral"}];
-var Q23_1={q:"想告訴房東『我的公寓沒有熱水』，怎麼說？",o:["No hay agua caliente en mi departamento.","No tengo agua fría en mi casa.","El agua no me gusta caliente.","Hay mucha agua en mi departamento."],a:0,x:"No hay + 名詞 = 沒有…，agua caliente = 熱水，是報修最基本的句型。"};
-var Q23_2={q:"「plomero」是做什麼工作的人？",o:["電工","水管工","木匠","清潔工"],a:1,x:"plomero = 水管工；電工是 electricista。"};var Q23_3={q:"墨西哥人說「Se fue la luz」是什麼意思？",o:["燈壞了","停電了","天黑了","電費很貴"],a:1,x:"se fue la luz = 停電了，字面是『電走了』。"};
-var Q23_4={type:'fill',q:'請輸入「浴室漏水了」的西班牙文（不需要標點）',answer:'hay una fuga en el baño',alt:['hay una fuga en el bano'],x:'Hay una fuga en el baño = 浴室漏水了。fuga = 漏（水／氣）。'};
-var Q23_5={type:'listen',audio:'No hay agua caliente en mi departamento.',q:'剛才你聽到的句子是什麼意思？',o:['停電了，我不知道為什麼','浴室漏水了，可以請水管工來嗎？','我的公寓沒有熱水','我想租一間公寓'],a:2,x:'No hay agua caliente en mi departamento. = 我的公寓沒有熱水。'};
-
-
-// Day 24
-var S24=[{es:"Quiero inscribirme al gimnasio, ¿cuánto cuesta la mensualidad?",zh:"我想加入健身房，月費多少？",no:"inscribirse = 報名加入，mensualidad = 月費；墨西哥健身房常要求簽約，簽之前先問清楚合約期限。"},{es:"¿A qué hora abre y a qué hora cierra?",zh:"幾點開門、幾點關門？",no:"abrir = 開，cerrar = 關，問任何場所的營業時間都能用這句。"},{es:"Los domingos juego fútbol con mis compañeros.",zh:"星期天我都會跟同事踢足球。",no:"los + 星期幾（複數）= 每個星期幾；fútbol 是墨西哥最受歡迎的運動，週末一起踢球是融入團隊的好機會。"}];
-var K24=[{w:"Inscribirme",m:"報名加入",f:"Neutral"},{w:"La mensualidad",m:"月費",f:"Neutral"},{w:"Abre",m:"（它）開門",f:"Neutral"},{w:"Juego fútbol",m:"我踢足球",f:"Neutral"}];
-var Q24_1={q:"你想問健身房『月費多少？』，最自然的說法是？",o:["¿Cuánto cuesta la mensualidad?","¿Cuántos meses tiene el gimnasio?","¿Cuándo es el mes del precio?","¿Cuál es la hora mensual?"],a:0,x:"mensualidad = 月費，¿Cuánto cuesta la mensualidad? = 月費多少？"};
-var Q24_2={q:"「abre」和「cierra」分別是什麼意思？",o:["進入／離開","開門／關門","買／賣","早上／晚上"],a:1,x:"abrir = 開，cerrar = 關，abre / cierra 是它們的第三人稱，用來問營業時間。"};var Q24_3={q:"「los domingos」在句子裡的意思是？",o:["下個星期天","只有今天","每個星期天","去年星期天"],a:2,x:"los + 星期幾（複數）= 每個星期幾，los domingos = 每個星期天。"};
-var Q24_4={type:'fill',q:'請輸入「幾點開門、幾點關門？」的西班牙文（不需要標點）',answer:'a qué hora abre y a qué hora cierra',alt:['a que hora abre y a que hora cierra'],x:'¿A qué hora abre y a qué hora cierra? = 幾點開門、幾點關門？'};
-var Q24_5={type:'listen',audio:'Los domingos juego fútbol con mis compañeros.',q:'剛才你聽到的句子是什麼意思？',o:['我想加入健身房','幾點開門、幾點關門？','健身房月費多少？','星期天我都會跟同事踢足球'],a:3,x:'Los domingos juego fútbol con mis compañeros. = 星期天我都會跟同事踢足球。'};
-
-
-// Day 25
-var S25=[{es:"Un café americano y una concha, por favor.",zh:"一杯美式咖啡和一個貝殼麵包，麻煩你。",no:"concha 是墨西哥最經典的甜麵包（pan dulce），表面有貝殼紋路，早餐常搭咖啡或熱巧克力。"},{es:"¿Es para llevar o para tomar aquí?",zh:"外帶還是內用？",no:"para llevar = 外帶，para tomar aquí = 在這裡喝（內用）；點餐時店員幾乎一定會問這句。"},{es:"¿Me lo prepara con leche deslactosada, por favor?",zh:"可以幫我用無乳糖牛奶做嗎？",no:"leche deslactosada = 無乳糖牛奶，在墨西哥超市和咖啡店都很常見。"}];
-var K25=[{w:"Café americano",m:"美式咖啡",f:"Neutral"},{w:"Una concha",m:"貝殼麵包（甜麵包）",f:"Neutral"},{w:"Para llevar",m:"外帶",f:"Neutral"},{w:"Leche deslactosada",m:"無乳糖牛奶",f:"Neutral"}];
-var Q25_1={q:"你想點『一杯美式咖啡和一個貝殼麵包』，怎麼說？",o:["Un café americano y una concha, por favor.","Quiero comer un café y beber una concha.","Una concha americano y café por favor.","Tengo un café y una concha aquí."],a:0,x:"點餐用 Un/Una + 品項, por favor 最自然；concha 是陰性名詞，所以用 una。"};
-var Q25_2={q:"店員問「¿Es para llevar o para tomar aquí?」是想知道？",o:["你要付現還是刷卡","你要外帶還是內用","你要大杯還是小杯","你要熱的還是冰的"],a:1,x:"para llevar = 外帶，para tomar aquí = 內用。"};var Q25_3={q:"「concha」在墨西哥麵包店通常是指？",o:["一種海鮮","一種咖啡","一種辣醬","一種甜麵包"],a:3,x:"concha 是墨西哥最經典的甜麵包（pan dulce），表面有貝殼狀紋路。"};
-var Q25_4={type:'fill',q:'請輸入「外帶還是內用？」的西班牙文（不需要標點）',answer:'es para llevar o para tomar aquí',alt:['es para llevar o para tomar aqui'],x:'¿Es para llevar o para tomar aquí? = 外帶還是內用？'};
-var Q25_5={type:'listen',audio:'¿Me lo prepara con leche deslactosada, por favor?',q:'剛才你聽到的句子是什麼意思？',o:['一杯美式咖啡和一個貝殼麵包','外帶還是內用？','我要冰的','可以幫我用無乳糖牛奶做嗎？'],a:3,x:'¿Me lo prepara con leche deslactosada, por favor? = 可以幫我用無乳糖牛奶做嗎？'};
-
-
-// Day 26
-var S26=[{es:"Pásale, estás en tu casa.",zh:"請進，就當自己家。",no:"墨西哥人待客熱情，Pásale（正式說 Pásele）是『請進』，estás en tu casa 是經典客套話，意思是不用拘束。"},{es:"Gracias por la invitación, traje unos postres.",zh:"謝謝你的邀請，我帶了一些甜點。",no:"受邀到家裡作客，帶點心、飲料或水果是很好的禮貌，不需要太貴重；traje 是 traer 的過去式。"},{es:"Estuvo todo muy rico, pero ya no puedo más.",zh:"一切都很好吃，但我真的吃不下了。",no:"主人常會一直勸你再吃一點，ya no puedo más 是禮貌又誠實的婉拒，先稱讚 estuvo muy rico 會更得體。"}];
-var K26=[{w:"Pásale",m:"請進",f:"Coloquial"},{w:"Estás en tu casa",m:"就當自己家",f:"Neutral"},{w:"La invitación",m:"邀請",f:"Neutral"},{w:"Estuvo todo muy rico",m:"一切都很好吃",f:"Neutral"}];
-var Q26_1={q:"墨西哥主人對你說「Pásale, estás en tu casa」，意思是？",o:["請進，就當自己家","請在門外等","你走錯房子了","請把鞋子脫掉"],a:0,x:"Pásale = 請進，estás en tu casa = 就當自己家，是墨西哥人熱情待客的經典用語。"};
-var Q26_2={q:"受邀到朋友家，想說「謝謝你的邀請」，哪個說法正確？",o:["Gracias de la invitación para.","Gracias a invitar.","Gracias por la invitación.","Gracias la invitación por."],a:2,x:"Gracias por + 名詞 = 為了…謝謝你，Gracias por la invitación 是最標準的說法。"};var Q26_3={q:"吃飽了想禮貌婉拒主人再添菜，最適合說？",o:["Dame más rápido.","Ya no puedo más, gracias.","Está feo, no quiero.","No me gusta, quítalo."],a:1,x:"Ya no puedo más, gracias. = 我真的吃不下了，謝謝。禮貌又誠實。"};
-var Q26_4={type:'fill',q:'請輸入「就當自己家」的西班牙文（不需要標點）',answer:'estás en tu casa',alt:['estas en tu casa'],x:'Estás en tu casa = 就當自己家。墨西哥人待客的經典客套話。'};
-var Q26_5={type:'listen',audio:'Estuvo todo muy rico, pero ya no puedo más.',q:'剛才你聽到的句子是什麼意思？',o:['請進，就當自己家','謝謝你的邀請，我帶了一些甜點','我想再吃一點','一切都很好吃，但我真的吃不下了'],a:3,x:'Estuvo todo muy rico, pero ya no puedo más. = 一切都很好吃，但我真的吃不下了。'};
-
-
-// Day 27
-var S27=[{es:"Tengo una reservación a nombre de Nelson para dos noches.",zh:"我有一筆以 Nelson 名字訂的房，住兩晚。",no:"reservación 在墨西哥很常用（西班牙較常說 reserva）；a nombre de = 以…的名義，check-in 時報上名字即可。"},{es:"¿A qué hora sale el próximo autobús a Guadalajara?",zh:"下一班往瓜達拉哈拉的巴士幾點出發？",no:"墨西哥長途巴士發達（如 ADO、Primera Plus），autobús 也常說 camión；長途巴士總站叫 central de autobuses。"},{es:"Quisiera un boleto de ida y vuelta, por favor.",zh:"我想買一張來回票，麻煩你。",no:"ida y vuelta = 來回，solo ida = 單程；boleto = 票（Day 19 學過）。"}];
-var K27=[{w:"Una reservación",m:"一筆訂位／訂房",f:"Neutral"},{w:"A nombre de",m:"以…的名義",f:"Neutral"},{w:"El próximo autobús",m:"下一班巴士",f:"Neutral"},{w:"Ida y vuelta",m:"來回",f:"Neutral"}];
-var Q27_1={q:"到飯店櫃台想說『我有訂房，以 Nelson 的名字，住兩晚』，最自然的說法是？",o:["Tengo una reservación a nombre de Nelson para dos noches.","Quiero reservar mis dos noches ayer.","Soy una reservación de dos noches.","Hay dos noches de mi nombre."],a:0,x:"tener una reservación a nombre de... = 有一筆以…名字訂的房，是 check-in 的標準說法。"};
-var Q27_2={q:"「ida y vuelta」的意思是？",o:["單程","來回","轉乘","退票"],a:1,x:"ida y vuelta = 來回，solo ida = 單程。"};var Q27_3={q:"想問『下一班巴士幾點出發？』，怎麼說？",o:["¿Dónde está el próximo autobús hora?","¿Cuánto cuesta salir el autobús?","¿A qué hora sale el próximo autobús?","¿Quién sale a qué hora autobús?"],a:2,x:"¿A qué hora sale el próximo autobús? 是問發車時間的標準句型。"};
-var Q27_4={type:'fill',q:'請輸入「我想買一張來回票」的西班牙文（不需要標點）',answer:'quisiera un boleto de ida y vuelta',alt:['quiero un boleto de ida y vuelta'],x:'Quisiera un boleto de ida y vuelta = 我想買一張來回票。quisiera 比 quiero 更委婉。'};
-var Q27_5={type:'listen',audio:'¿A qué hora sale el próximo autobús a Guadalajara?',q:'剛才你聽到的句子是什麼意思？',o:['我有一筆訂房，住兩晚','我想買一張來回票','請問巴士站在哪裡？','下一班往瓜達拉哈拉的巴士幾點出發？'],a:3,x:'¿A qué hora sale el próximo autobús a Guadalajara? = 下一班往瓜達拉哈拉的巴士幾點出發？'};
-
-
-// Day 28
-var S28=[{es:"Ahorita voy, nada más termino esto.",zh:"我馬上就過去，我先把這個做完。",no:"ahorita 在墨西哥彈性很大：可能是『馬上』，也可能是『等一下』甚至更久，要靠語氣和情境判斷；nada más = 只要…就…。"},{es:"¿A qué hora quedamos mañana, a las diez en punto?",zh:"我們明天幾點碰面，十點整嗎？",no:"quedar = 約定碰面，en punto = 整點；朋友聚會常『晚一點到』，工作會議則通常要準時，可以再確認一次。"},{es:"Nos vemos al rato, no tardo.",zh:"待會見，我不會太久。",no:"al rato = 待會兒，no tardo = 我不會太久（tardar 在 Day 15 學過）。"}];
-var K28=[{w:"Ahorita",m:"馬上／等一下（彈性）",f:"Coloquial"},{w:"Quedamos",m:"我們約好／約碰面",f:"Neutral"},{w:"En punto",m:"整點、準時",f:"Neutral"},{w:"Al rato",m:"待會兒",f:"Coloquial"}];
-var Q28_1={q:"墨西哥人說「ahorita」，最貼切的理解是？",o:["一定是 1 分鐘內","時間彈性：可能馬上，也可能晚一點","絕對不會做","明年才會做"],a:1,x:"ahorita 在墨西哥很有彈性，可能是馬上，也可能是等一下甚至更久，要看語氣和情境。"};
-var Q28_2={q:"時間後面加「en punto」表示什麼？",o:["整點、準時","大約","差不多","已經過了"],a:0,x:"a las diez en punto = 十點整。"};var Q28_3={q:"想跟朋友說『待會見』，最自然的說法是？",o:["Nos vemos el año.","Veo al rato nos.","Nos vemos al rato.","Nos vamos al rato ver."],a:2,x:"Nos vemos al rato = 待會見，al rato = 待會兒，是墨西哥朋友間很自然的道別。"};
-var Q28_4={type:'fill',q:'請輸入「待會見」的西班牙文（不需要標點）',answer:'nos vemos al rato',x:'Nos vemos al rato = 待會見。al rato = 待會兒。'};
-var Q28_5={type:'listen',audio:'Ahorita voy, nada más termino esto.',q:'剛才你聽到的句子是什麼意思？',o:['我們明天幾點碰面？','待會見，我不會太久','我馬上就過去，我先把這個做完','我已經到了'],a:2,x:'Ahorita voy, nada más termino esto. = 我馬上就過去，我先把這個做完。'};
-
-
 
 var LESSONS=[
   {day:1,theme:"問候語",target:"學會各種場合的墨西哥式問候與回應",sentences:S1,keywords:K1,quiz:[Q1_1,Q1_2,Q1_3,Q1_4,Q1_5]},
@@ -1345,14 +1224,7 @@ var LESSONS=[
   {day:18,theme:"郵局寄件與包裹",target:"能到郵局寄送包裹、詢問運費與追蹤包裹",sentences:S18,keywords:K18,quiz:[Q18_1,Q18_2,Q18_3,Q18_4,Q18_5]},
   {day:19,theme:"看電影與休閒娛樂",target:"能買電影票、約朋友看電影並討論休閒活動",sentences:S19,keywords:K19,quiz:[Q19_1,Q19_2,Q19_3,Q19_4,Q19_5]},
   {day:20,theme:"節慶與生日派對",target:"能參與墨西哥節慶活動、祝賀生日並理解慶祝文化",sentences:S20,keywords:K20,quiz:[Q20_1,Q20_2,Q20_3,Q20_4,Q20_5]},
-  {day:21,theme:"機場報到與出入境",target:"能完成機場報到、行李托運與入境問答",sentences:S21,keywords:K21,quiz:[Q21_1,Q21_2,Q21_3,Q21_4,Q21_5]},
-  {day:22,theme:"理髮與美容沙龍",target:"能在理髮店說明想剪的長度與造型，並完成付款與小費",sentences:S22,keywords:K22,quiz:[Q22_1,Q22_2,Q22_3,Q22_4,Q22_5]},
-  {day:23,theme:"家中維修與水電問題",target:"能向房東或維修人員說明熱水、漏水、停電等居家問題",sentences:S23,keywords:K23,quiz:[Q23_1,Q23_2,Q23_3,Q23_4,Q23_5]},
-  {day:24,theme:"健身房與運動",target:"能詢問健身房月費與營業時間，並聊聊自己的運動習慣",sentences:S24,keywords:K24,quiz:[Q24_1,Q24_2,Q24_3,Q24_4,Q24_5]},
-  {day:25,theme:"咖啡店與麵包店",target:"能在咖啡店或麵包店點飲料與麵包，並回答外帶或內用",sentences:S25,keywords:K25,quiz:[Q25_1,Q25_2,Q25_3,Q25_4,Q25_5]},
-  {day:26,theme:"受邀到墨西哥人家作客",target:"能得體地接受邀請、道謝、稱讚料理並禮貌婉拒再添菜",sentences:S26,keywords:K26,quiz:[Q26_1,Q26_2,Q26_3,Q26_4,Q26_5]},
-  {day:27,theme:"訂飯店與搭長途巴士",target:"能辦理飯店入住、詢問巴士時刻並購買來回車票",sentences:S27,keywords:K27,quiz:[Q27_1,Q27_2,Q27_3,Q27_4,Q27_5]},
-  {day:28,theme:"時間與約定（Ahorita 文化）",target:"能約定碰面時間，並理解 ahorita、al rato 這類彈性時間說法",sentences:S28,keywords:K28,quiz:[Q28_1,Q28_2,Q28_3,Q28_4,Q28_5]}
+  {day:21,theme:"機場報到與出入境",target:"能完成機場報到、行李托運與入境問答",sentences:S21,keywords:K21,quiz:[Q21_1,Q21_2,Q21_3,Q21_4,Q21_5]}
 ];
 
 var STORAGE_KEY='mx_lesson_progress_v1';
@@ -1383,7 +1255,7 @@ function init(optDay){
   loadVocab();
   try{var d=localStorage.getItem(STORAGE_KEY);if(d)progress=JSON.parse(d)}catch(e){}
   if(typeof browser!=='undefined'){window.addEventListener('beforeunload',function(){browser.close();});}
-  if(optDay&&optDay>=1&&optDay<=28){currentDay=optDay;}
+  if(optDay&&optDay>=1&&optDay<=21){currentDay=optDay;}
   else{
     try{var d=localStorage.getItem(STORAGE_KEY);if(d){var pr=JSON.parse(d);currentDay=(pr.currentDay)||1;}}catch(e){currentDay=1;}
   }
@@ -1399,7 +1271,7 @@ function init(optDay){
     else{addToVocab(currentDictWord,currentDictMeaning,currentDictNote);}
     showDict(currentDictWord,currentDictMeaning,currentDictNote);
   };
-  document.getElementById('btn-next').onclick=function(){if(currentDay<28)renderDay(currentDay+1)};
+  document.getElementById('btn-next').onclick=function(){if(currentDay<21)renderDay(currentDay+1)};
   document.getElementById('dict-overlay').onclick=closeDictPopup;
   document.getElementById('dict-close').onclick=closeDictPopup;
 }
